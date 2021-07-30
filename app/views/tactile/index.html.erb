@@ -1,0 +1,25 @@
+<div class="title">触覚本リーダー</div>
+<font size="1" color=indigo>
+  触覚本とは、視覚に障害があるかたの教科書としての用途を模索しており、文章のほか、絵やマンガ、写真、グラフ、二次元分布図などが墨字と点字で立体的に重ねあわさった点字教材となっております。<br>
+  文章の部分は音声で聴くこともでき、グラフや二次元分布図、写真なども音声で説明されます。<br>
+  点字で描画された部分を指でなぞることで理解が進み、深く記憶に刻み込まれます。<br>
+</font>
+<table class="book-table" border="1" >
+  <tr>
+    <th colspan="2">触覚本いろいろ</th>
+  </tr>
+  <% for i in 0..@max_book_size  do %>
+    <tr>
+      <td>
+        <%=link_to tactile_mokuji_path(book_id:i), data: {"turbolinks"=>false} do %>
+          <%= image_tag  @book_imgfile[i], :size =>'108x156'  %>
+        <% end %>
+      </td>
+      <td >
+        <%=link_to tactile_mokuji_path(book_id:i) do %>
+          <span><font size="3" ><%= @book_title[i]%></font></span>
+          <p id="p2"><font size="2" ><%= simple_format @book_content[i] %></font></p>
+        <% end %>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,172 @@
+<p>音声の選択</p>
+
+<p>シーン：
+  <select id="scene-select" >
+    <option value=-1 selected>TTSを使用するシーンを選択</option>
+    <option value=0 >TTS1 (ja) Default</option>
+    <option value=1>TTS2 (ja)</option>
+    <option value=2>TTS3 (en)</option>
+    <option value=3>TTS4 (en)</option>
+  </select>　
+</p>
+
+<p>音声　：
+  <select id="voice-select"></select>　
+  <button id="speak-btn">再生</button>
+</p>
+<p>速さ　：
+<select id="voice-rate">
+  <option value=0.6>遅い2</option>
+  <option value=0.8>遅い1</option>
+  <option value=0.9 selected>普通</option>
+  <option value=1.0>速い1</option>
+  <option value=1.2>速い2</option>
+  <option value=1.5>速い3</option>
+</select>
+</p>
+<p>高さ　：
+<select id="voice-pitch">
+  <option value=0.5>低い</option>
+  <option value=1.0 selected>普通</option>
+  <option value=1.5>高い　　</option>
+</select>
+</p>
+<p>音量　：
+<select id="voice-volume">
+  <option value=0.4>小</option>
+  <option value=0.7 selected>中</option>
+  <option value=1.0>大　　　</option>
+</select>
+</p>
+<p>
+  <input type="button" onclick="history.back()" value="キャンセル">　　　
+  <input type="button" onclick="save_exit()" value="　　ＯＫ　　">　　　
+</p>
+
+
+<script type="text/javascript">
+  const sceneSelect = document.querySelector('#scene-select')
+  const voiceSelect = document.querySelector('#voice-select')
+  const rateSelect   = document.querySelector('#voice-rate')
+  const pitchSelect  = document.querySelector('#voice-pitch')
+  const volumSelect  = document.querySelector('#voice-volume')
+  const speakBtn    = document.querySelector('#speak-btn')
+  const okBtn       = document.querySelector('#ok-btn')
+
+  var svoices = new Array("","","","");
+  var rates  = new Array("0.8","0.8","0.8","0.8");
+  var pitchs = new Array("1.0","1.0","1.0","1.0");
+  var volums = new Array("0.7","0.7","0.7","0.7");
+
+  var v_scene = -1;
+  function sceneSelectChanged(){
+    var s = sceneSelect.value;
+    if (s < 0) {
+      sceneSelect.value = 0;
+      s = 0;
+    }
+    v_scene = s;
+    console.log("sceneSelect1:"+v_scene+",voice="+svoices[v_scene]+",rate="+rates[v_scene]+",pitch="+pitchs[v_scene]+",vol="+volums[v_scene]);
+    appendVoices();
+    voiceSelect.value = svoices[v_scene];
+    rateSelect.value = rates[v_scene];
+    pitchSelect.value = pitchs[v_scene];
+    volumSelect.value = volums[v_scene];
+    console.log("sceneSelect2:"+v_scene+",voice="+voiceSelect.value+",rate="+rates[v_scene]+",pitch="+pitchs[v_scene]+",vol="+volums[v_scene]);
+  }
+  sceneSelect.addEventListener('change', sceneSelectChanged);
+
+  voiceSelect.addEventListener('change', function() {
+    svoices[v_scene] = voiceSelect.value;
+  })
+  rateSelect.addEventListener('change', function() {
+    rates[v_scene] = rateSelect.value;
+  })
+  pitchSelect.addEventListener('change', function() {
+    pitchs[v_scene] = pitchSelect.value;
+  })
+  volumSelect.addEventListener('change', function() {
+    volums[v_scene] = volumSelect.value;
+  })
+
+  // selectタグに音声を集計
+  function appendVoices() {
+    //初回実行時の getVoices() は空配列が返される。ユーザーによる操作が介在しないといけないのでシーンコンボの操作でカバー
+    const voices = speechSynthesis.getVoices();
+    if (voices.length==0){
+      console.log("voices.length=0");
+    }
+    voiceSelect.innerHTML = '';
+    voices.forEach(voice => {
+      // 日本語Only
+      if(voice.lang.match('ja') && (v_scene==0 || v_scene == 1)){
+        const option = document.createElement('option');
+        option.value = voice.name;
+        option.text  = `${voice.name}`;
+        voiceSelect.appendChild(option);
+      }
+      if(voice.lang.match('en') && (v_scene==2 || v_scene == 3)){
+        const option = document.createElement('option');
+        option.value = voice.name;
+        option.text  = `${voice.name}`;
+        voiceSelect.appendChild(option);
+      }
+    });
+  }
+
+  //非同期に一個ずつVoiceを上げてくる
+  speechSynthesis.onvoiceschanged = e => {
+    appendVoices();
+  }
+
+  speakBtn.addEventListener('click', function() {
+    var uttr;
+    if (v_scene==0 || v_scene == 1) uttr = new SpeechSynthesisUtterance("こんにちは、お元気ですか");
+    if (v_scene==2 || v_scene == 3) uttr = new SpeechSynthesisUtterance("Hello, how are you");
+    uttr.voice = speechSynthesis.getVoices()
+                                .filter(voice => voice.name === svoices[v_scene])[0];
+    uttr.rate = rates[v_scene];
+    uttr.pitch = pitchs[v_scene];
+    uttr.volume = volums[v_scene];
+    speechSynthesis.speak(uttr);
+  })
+
+  function save_exit(){
+    localStorage.setItem("voiceVoice", svoices.toString());
+    localStorage.setItem("voiceRate",  rates);
+    localStorage.setItem("voicePitch", pitchs);
+    localStorage.setItem("voiceVolum", volums);  
+    console.log("save_exit():voice="+svoices.toString());
+    console.log("save_exit():rates="+rates);
+    console.log("save_exit():pitch="+pitchs+","+volums);
+    history.back();
+  }
+  function load_tts_param(){
+    var aa = localStorage.getItem("voiceVoice");
+    if (aa != null ) svoices = aa.split(",");
+    var bb = localStorage.getItem("voiceRate");
+    if (bb != null ) rates = bb.split(",");
+    var cc = localStorage.getItem("voicePitch");
+    if (cc != null ) pitchs = cc.split(",");
+    var dd = localStorage.getItem("voiceVolum");
+    if (dd != null ) volums = dd.split(",");
+
+    console.log("load_tts_param():voice="+svoices[0]+","+svoices[1]+","+svoices[2]+","+svoices[3]);
+    console.log("load_tts_param():rates="+rates[0]+","+rates[1]+","+rates[2]+","+rates[3]);
+    console.log("load_tts_param():pitchs="+pitchs[0]+","+pitchs[1]+","+pitchs[2]+","+pitchs[3]);
+    console.log("load_tts_param():volums="+volums[0]+","+volums[1]+","+volums[2]+","+volums[3]);
+  }
+  //Timer
+  function sleep(waitMsec) {
+    var startMsec = new Date();
+    while (new Date() - startMsec < waitMsec);
+  }
+
+
+
+
+
+  //各シーン毎のTTSパラメーターをロード
+  load_tts_param();
+
+</script>

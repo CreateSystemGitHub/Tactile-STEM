@@ -1,0 +1,16 @@
+{:uriI"�file://app/assets/images/II/II0/II-4/II-4.txt?type=text/plain&id=e18669eb765ad878f87d37ccf2fd7629c491d740a91a7ef5be9786f3a7e31ffa:ET:load_pathI"app/assets/images;T:filenameI"+app/assets/images/II/II0/II-4/II-4.txt;T:	nameI"II/II0/II-4/II-4;T:logical_pathI"II/II0/II-4/II-4.txt;T:content_typeI"text/plain;T:sourceI"
+#FOLDER=II-4
+::target=010 title="自然数（N）は、足し算と、掛け算に関して、ぐん（G）になるのか、調べよう。定義によると、次の４条件を満たせばよい。" shape=rect coords=26,64,698,190
+::target=011 title="１．１．１、　代数系：　耳慣れない言葉と記号：ぐん、とは" shape=rect coords=26,15,683,63
+::target=012 title="前提：　任意の、二つの自然数に（数学者の言葉では、任意のげん、a、ｂ、所属、Gと書く）、例えば、足し算と、掛け算という、演算（中空中丸）が定義でき、それらの演算の結果も、自然数である。" shape=rect coords=26,190,698,355
+::target=013 title="G1：結合そく：任意のげん、a、ｂ、ｃ、所属、G、に対し、以下の式が、成立する。左括弧、a演算b、右括弧、演算、c、=、a、演算、左括弧、b、演算、c、右括弧　。足し算、掛け算、共に、OKである。" shape=rect coords=26,356,698,521
+::target=014 title="G2：単位げんの存在：任意のげん、a、所属、G、に対し，次の式を満たす、げん、e、所属、G、が存在する．a、演算、e、=、e、演算、a、=、a、掛け算は、１。足し算は、ゼロが、e単位げんとなる。" shape=rect coords=26,521,698,686
+::target=015 title="総合評価：不合格。自然数には、足し算、掛け算に、逆げんがないので、どちらでも、ぐん、にならない。" shape=rect coords=26,939,698,1026
+::target=016 title="G3：逆げんの存在：任意のげん、a、所属、G、に対し，　次の式を満たす、げん、a、所属、G、が存在する．a、演算、a、　=、e。　足し算も、掛け算も、ダメである。" shape=rect coords=26,686,698,812
+::target=017 title="G4：交換そく：任意のげん、a，b、所属、G、に対し，以下の式が成立する．a、演算、b、=、b、演算、a。　足し算も、掛け算も、OKである。" shape=rect coords=26,813,698,939
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"9file-digest://app/assets/images/II/II0/II-4/II-4.txt;TTF:charsetI"
+utf-8;F:digest"%Y��z�M�ap*9h<U`�..�d����v�:lengthi
+:dependencies_digest"%���TR��q!�|lfH�e��?W̯,ݫݜ:idI"Ee18669eb765ad878f87d37ccf2fd7629c491d740a91a7ef5be9786f3a7e31ffa;F:
+mtimel+ss�`

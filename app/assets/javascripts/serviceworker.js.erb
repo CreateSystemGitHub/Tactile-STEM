@@ -1,0 +1,354 @@
+//https://developers.google.com/web/fundamentals/primers/service-workers?hl=ja
+
+
+var CACHE_VERSION = 'v1';
+var CACHE_NAME = CACHE_VERSION + ':tactilestem-sw-cache';
+var urlsToCache = [
+  // make sure serviceworker.js is not required by application.js
+  // if you want to reference application.js from here
+        '/',
+        '/?',
+        '/manifest.json',
+        '/favicon.ico', 
+      //  '/assets/cable.js',
+      //  '/assets/jquery.rwdImageMaps.min.js',
+      //  '/assets/jsQR.js',
+      //  '/assets/manifest.json',
+      //  '/assets/serviceworker-companion.js',
+      //  '/assets/tactileshow.js',
+      //  '/assets/application.css',
+      //  '/assets/tactile.css',
+
+
+        '/assets/appicon/tactileicon-192.png',
+        '/assets/appicon/tactileicon-512.png',
+        '/assets/nosound.mp3',
+        '/assets/arrow_0.png',
+        '/assets/arrow_1.png',
+        '/assets/arrow_2.png',
+        '/assets/arrow_3.png',
+        '/assets/arrow_4.png',
+        '/assets/arrow_5.png',
+        '/assets/arrow_6.png',
+        '/assets/tts_settings.png',
+        '/assets/BOOKS/books.csv',
+        '/assets/BOOKS/II.jpg',
+        '/assets/BOOKS/TT.jpg',
+        '/assets/TT/Contents.txt',
+        '/assets/II/Contents.txt',
+
+
+//  '/assets/TT/TT0/TT-1/TT-1_1.mp3',
+
+//  '/tactile/index.html',
+//  '/tactile/mokuji.html',
+//  '/tactile/show.html',
+//  '/tactile/tts_settings.html',
+
+
+  '/offlineTactile.html',
+
+];
+
+
+var HHTTimages = [
+  '/tactile/mokuji?book_id=0',
+  '/tactile/mokuji?book_id=1',
+
+  '/tactile/show?book=HH&fn=0&pid=0&spid=0',
+  '/assets/HH/HH0/HH-0-1/HH-0-1.jpg',
+  '/assets/HH/HH0/HH-0-1/HH-0-1.mp3',
+  '/assets/HH/HH0/HH-0-1/HH-0-1.txt',
+
+  '/tactile/show?book=HH&fn=0&pid=1&spid=0',
+  '/assets/HH/HH0/HH-0-2/HH-0-2.jpg',
+  '/assets/HH/HH0/HH-0-2/HH-0-2.mp3',
+  
+  '/tactile/show?book=HH&fn=0&pid=2&spid=0',
+  '/assets/HH/HH0/HH-1/HH-1.jpg',
+  '/assets/HH/HH0/HH-1/HH-1.mp3',
+
+  '/tactile/show?book=HH&fn=0&pid=3&spid=0',
+  '/assets/HH/HH0/HH-2/HH-2.jpg',
+  '/assets/HH/HH0/HH-2/HH-2.mp3',
+  '/assets/HH/HH0/HH-2/HH-2.txt',
+
+  '/tactile/show?book=HH&fn=0&pid=4&spid=0',
+  '/assets/HH/HH0/HH-3/HH-3.jpg',
+  '/assets/HH/HH0/HH-3/HH-3.mp3',
+  '/assets/HH/HH0/HH-3/HH-3.txt',
+
+  '/tactile/show?book=HH&fn=0&pid=5&spid=0',
+  '/assets/HH/HH0/HH-4/HH-4.jpg',
+  '/assets/HH/HH0/HH-4/HH-4.mp3',
+  '/assets/HH/HH0/HH-4/HH-4.txt',
+
+];
+var HHTTimagesX = [
+
+];
+var contentToCache = urlsToCache.concat(HHTTimagesX);
+
+
+function onInstall(event) {
+  console.log('[Serviceworker]', "Installing!", event);
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function prefill(cache) {
+      console.log('[Serviceworker]', "Opened cache");
+      return cache.addAll(contentToCache);
+    })        
+  );
+}
+
+function onActivate(event) {
+  console.log('[Serviceworker]', "Activating!", event);
+
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      console.log('[Serviceworker]', "Activating1!", cacheNames);
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          // Return true if you want to remove this cache,
+          // but remember that caches are shared across
+          // the whole origin
+
+          return cacheName.indexOf(CACHE_VERSION) !== 0;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+}
+
+
+
+//
+//Rangeリクエストがあった場合。(Audio file などで再生範囲を指定して再生する場合など)
+//Rangeリクエストの場合20を返す必要がある。
+//cathe.matchではRangeリクエストに対応していないので
+//cathe.matchでは200が返る。networkからは206で返る。
+// ==> cathe.matchでも部分取得と206が返るようにする。
+// ==>206 で put すると error となるので現在 put していない。
+//
+function onFetch(event) {
+  if (event.request.headers.has('range')) {
+    //
+    //  Range request
+    //
+    //var pos = Number(/^bytes\=(\d+)\-$/g.exec(event.request.headers.get('range'))[1]);
+    let cacheOrNet = 0;
+    let rangeHeader = event.request.headers.get('range');
+    let rangeMatch = rangeHeader.match(/^bytes\=(\d+)\-(\d+)?/)
+    let pos = Number(rangeMatch[1]);
+    let pos2 = rangeMatch[2];
+    if (pos2) { pos2 = Number(pos2); }
+    console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
+  
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
+        return cache.match(event.request.url);
+      }).then(function(res) {
+        if (!res){
+          cacheOrNet = 1;
+          console.log('[SW]','Range: Not Found then load from network', event.request.url);
+          return fetch(event.request).then(res => res.arrayBuffer());
+        } else{
+          console.log('[SW]','Range: Found in cache', event.request.url,', status:', res.status);
+          return res.arrayBuffer();
+        }
+      }).then(function(ab) {
+        {
+          var resp = new Response(
+            ab.slice(pos),
+            {
+              status: 206,
+              statusText: 'Partial Content',
+              headers: [
+                //['Content-Type', 'video/webm'],
+                ['Content-Range', 'bytes ' + pos + '-' + (pos2 || (ab.byteLength - 1)) + '/' + ab.byteLength]] 
+            }
+          );
+          if (cacheOrNet == 1){
+            console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
+          } else{
+            console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
+          }
+          return resp;
+        }
+      }).catch(function(){
+            console.log('[SW]','Range OFFLINE: ');
+            return caches.match('/offlineTactile.html');
+      }));
+  } 
+  else{
+    //
+    // Non-Range request
+    //「onFetch」イベントは「GET」リクエストのみをキャッシュできる
+    //  ==> Rails : link_to で method: :getを指定するとPOSTで呼ばれてしまう。
+    //console.log('[SW]','AAAAAAAAA', event.request.url, event.request.method, event.request.mode);
+    event.respondWith(
+      //ignoreSearch:true は正しく動作しない。 ?以下を省略してcache hitするが、rails action が呼ばれないみたい      
+      caches.match(event.request, {ignoreSearch:false})
+        .then(function(response) {
+          // Cache hit - return response
+          if (response) {
+            console.log('[SW]','Found in cache: ', response.url, response.status);
+            return response;
+          }
+
+          //console.log('[SW]','Not Found in cache: AAAAAAAAA', event.request.url, event.request.method);
+
+          // IMPORTANT:Clone the request. A request is a stream and
+          // can only be consumed once. Since we are consuming this
+          // once by cache and once by the browser for fetch, we need
+          // to clone the response.
+          var fetchRequest = event.request.clone();
+          return fetch(fetchRequest)
+            .then(function(response) {
+              // Check if we received a valid response
+              if(!response || response.status !== 200 || response.type !== 'basic') {
+                console.log('[SW]','Not Found in network:', response.url, response.status);
+                return caches.match('/offlineTactile.html');
+              }
+              console.log('[SW]','Found in network: ', response.url, response.status, response.type);
+              // IMPORTANT:Clone the response. A response is a stream
+              // and because we want the browser to consume the response
+              // as well as the cache consuming the response, we need
+              // to clone it so we have two streams.
+
+              //'put' on 'Cache': Request method 'POST' is unsupported
+              var responseToCache = response.clone();
+              if (fetchRequest.method === 'POST'){
+                console.log('[SW]','Can not put to cache: ', responseToCache.url);
+                return response;
+              }
+              caches.open(CACHE_NAME)
+                .then(function(cache) {
+                  console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
+                  //cache.put(event.request, responseToCache);
+              });
+              return response;
+            })
+            .catch(function(){
+              console.log('[SW]','OFFLINE: ', fetchRequest.url);
+              return caches.match('/offlineTactile.html');
+            });
+        })
+    );
+  }
+
+}
+
+
+/*
+function onFetch(event) {
+  if (event.request.headers.has('range')) {
+    //
+    //  Range request
+    //
+    //var pos = Number(/^bytes\=(\d+)\-$/g.exec(event.request.headers.get('range'))[1]);
+    let cacheOrNet = 0;
+    let rangeHeader = event.request.headers.get('range');
+    let rangeMatch = rangeHeader.match(/^bytes\=(\d+)\-(\d+)?/)
+    let pos = Number(rangeMatch[1]);
+    let pos2 = rangeMatch[2];
+    if (pos2) { pos2 = Number(pos2); }
+    console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
+  
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
+        return cache.match(event.request.url);
+      }).then(function(res) {
+        if (!res){
+          cacheOrNet = 1;
+          console.log('[SW]','Range: Not Found then load from network', event.request.url);
+          return fetch(event.request).then(res => res.arrayBuffer());
+        } else{
+          console.log('[SW]','Range: Found in cache', event.request.url,', status:', res.status);
+          return res.arrayBuffer();
+        }
+      }).then(function(ab) {
+        {
+          var resp = new Response(
+            ab.slice(pos),
+            {
+              status: 206,
+              statusText: 'Partial Content',
+              headers: [
+                //['Content-Type', 'video/webm'],
+                ['Content-Range', 'bytes ' + pos + '-' + (pos2 || (ab.byteLength - 1)) + '/' + ab.byteLength]] 
+            }
+          );
+          if (cacheOrNet == 1){
+            console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
+          } else{
+            console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
+          }
+          return resp;
+        }
+      }));
+  } else{
+    //
+    // Non-Range request
+    //
+    event.respondWith(
+      //ignoreSearch:true は正しく動作しない。
+      //  ==> Rails : tactile_controller.rb def show が呼ばれない
+      caches.match(event.request, {ignoreSearch:false}).then(
+        function(response) {
+          // Cache hit - return response
+          if (response) {
+            console.log('[SW]','Found in cache: ', response.url, response.status);
+            return response;
+          }
+
+          // IMPORTANT:Clone the request. A request is a stream and
+          // can only be consumed once. Since we are consuming this
+          // once by cache and once by the browser for fetch, we need
+          // to clone the response.
+          var fetchRequest = event.request.clone();
+          return fetch(fetchRequest).then(
+            function(response) {
+              // Check if we received a valid response
+              if(!response || response.status !== 200 || response.type !== 'basic') {
+                console.log('[SW]','Not Found in network: !=200 ', response.url, response.status);
+                return caches.match('/offlineTactile.html');
+              }
+              console.log('[SW]','Found in network: ', response.url, response.status);
+              // IMPORTANT:Clone the response. A response is a stream
+              // and because we want the browser to consume the response
+              // as well as the cache consuming the response, we need
+              // to clone it so we have two streams.
+
+              //'put' on 'Cache': Request method 'POST' is unsupported
+              var responseToCache = response.clone();
+              if (fetchRequest.method === 'POST'){
+                console.log('[SW]','Can not put to cache: ', responseToCache.url);
+                return response;
+              }
+              caches.open(CACHE_NAME)
+                .then(function(cache) {
+                  console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
+                  cache.put(event.request, responseToCache);
+              });
+              return response;
+            }
+          ).catch(function(){
+            console.log('[SW]','OFFLINE: ');
+            return caches.match('/offlineTactile.html');
+          });
+        })
+    );
+  }
+}
+*/
+
+self.addEventListener('install', onInstall);
+self.addEventListener('activate', onActivate);
+self.addEventListener('fetch', onFetch);
+
+
+

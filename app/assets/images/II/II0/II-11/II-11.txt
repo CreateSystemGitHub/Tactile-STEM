@@ -1,0 +1,23 @@
+﻿#FOLDER=II-11
+::target=010 title="１．２．２、数と式の書き方,読み方：１" shape=rect coords=89,19,674,67
+::target=011,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=47,577,147,625
+::target=012 title="丸括弧、例えば、左括弧、a、+、b、右括弧、と読む。" shape=rect coords=33,231,149,318
+::target=013,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=47,361,164,448
+::target=014,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=52,454,168,541
+::target=015,TTS2 title="ラテフでは、$、左丸括弧、a、+、b、右丸括弧、$。" shape=rect coords=203,228,322,276
+::target=016,TTS2 title="Python、では、左丸括弧、a、+、b、右丸括弧。" shape=rect coords=209,269,296,317
+::target=017,TTS2 title="ラテフでは、$、左角括弧、a、+、b、右角括弧、$。" shape=rect coords=215,364,336,412
+::target=018,TTS2 title="ラテフでは、$、逆スラッシュ、日本語キーボードでは、円記号、左波括弧、a、+、b、逆スラッシュ、日本語キーボードでは、円記号、右波括弧、$。" shape=rect coords=214,455,367,503
+::target=019,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=49,700,148,748
+::target=020,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=52,820,135,868
+::target=021,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=218,405,307,453
+::target=022,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=219,492,301,540
+::target=023,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=55,913,139,961
+::target=024 title="数式の読み方、書き方を、三列で説明する。各行の左は、日本語よみ、中央は、上に、ラテフ,下にPython、右は英語よみ。文字と声で提示。" shape=rect coords=24,68,702,194
+::target=025,TTS3 title="open　parenthesis.　a.　plus.　b.　close　parenthesis" shape=rect coords=360,241,688,319
+::target=026,TTS3 title="open　bracket.　a.　plus.　b.　close　bracket" shape=rect coords=367,369,669,435
+::target=027,TTS3 title="open　brace.　a.　plus.　b.　close　brace" shape=rect coords=370,459,625,523
+::target=028,TTS3 title="a.　plus.　b.　is.　c.　a.　plus.　b.　equals.　c" shape=rect coords=370,590,611,658
+::target=029,TTS3 title="a.　minus.　b.　equals.　c.　b.　subtracted.　from.　a.　leaves.　c" shape=rect coords=366,710,647,817
+::target=030,TTS3 title="a.　divided　by.　b.　is.　c" shape=rect coords=366,834,647,873
+::target=031,TTS3 title="a.　times.　b.　is.　c.　a.　by.　b.　equals.　c.　a.　multiplied　by.　b.　is.　c" shape=rect coords=400,894,699,1000

@@ -1,0 +1,174 @@
+<div class="show"  ontouchstart="";>
+      <div class="show_main" >
+        <div class="show_image" id="image-area" >
+          <img id="image" src="/assets/<%= @image_filename%>"  usemap="#image-map" alt="触覚図の画像" oncontextmenu="return false;" />
+        </div>
+        <!-- この領域がクリックされた時、または入ってきた時に再生または読み上げ(speakOne)が実行される    -->
+        <map name="image-map" oncontextmenu="return false" >
+          <% for i in 0..@max_imagemap do %>
+            <area href="#" <%= @imagemap[i]%> onclick="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>',1); return false;}"  onmouseover="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>',0); return false;}" >
+          <% end %>
+        </map>
+        <!-- 解説用の別頁起動ボタン -->
+        <div class="floating"> 
+          <%= button_to @tenjiModeBtnTitle, tactile_show_path(book_id:@book_id,pid:@page_id,spid:@subpage,fn:"0"), {method: :get, onclick:"speakCancel()", id:"tenjiBtn", class:"show_floating_btn1", disabled:@subpage_disable} %>
+        </div>
+        <!-- 全画面設定用ボタン -->
+        <div class="floating_A4" id="A4SettingBtn" > 
+          <button type="button" id="A4SettingBtn_IP" class="show_floating_A4" onclick="onA4Setting_plus()"  title="拡大"><img src="/assets/arrow_1.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_IM" class="show_floating_A4" onclick="onA4Setting_mins()"  title="縮小"><img src="/assets/arrow_2.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_HM" class="show_floating_A4" onclick="onA4Setting_hmins()" title="高さ微調整マイナス"><img src="/assets/arrow_4.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_HP" class="show_floating_A4" onclick="onA4Setting_hplus()" title="高さ微調整プラス"><img src="/assets/arrow_3.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_WM" class="show_floating_A4" onclick="onA4Setting_wmins()" title="幅微調整マイナス"><img src="/assets/arrow_6.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_WP" class="show_floating_A4" onclick="onA4Setting_wplus()" title="幅微調整プラス"><img src="/assets/arrow_5.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_TU" class="show_floating_A4" onclick="onA4Setting_up()"    title="上に移動"  >⬆️</button>
+          <button type="button" id="A4SettingBtn_TD" class="show_floating_A4" onclick="onA4Setting_down()"  title="下に移動"  >⬇️</button>
+          <button type="button" id="A4SettingBtn_LM" class="show_floating_A4" onclick="onA4Setting_left()"  title="左へ移動"  >⬅️</button>
+          <button type="button" id="A4SettingBtn_LP" class="show_floating_A4" onclick="onA4Setting_right()" title="右へ移動"  >➡️</button>
+        </div>
+        
+      </div>
+</div>
+<audio id="audio2"></audio>
+
+<footer class="show_footer">
+  <% if @audio_file_exist == 1 %> 
+    <!-- mp3 あり-->
+    <div class="flex-item2" >
+      <%= button_to "再生", nil, {remote: true, method: :post, onclick:"{audioPlay(); return false;}", id:"playBtn", class:"show_footer_btn2"} %>
+    </div>
+    <div class="flex-item1">
+      <!-- button_toは、getでパラメータを渡してくれないので解決策として input type="button"で代替え -->
+      <input type="button" value="次頁" onclick="location.replace('<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>')" id="nextBtn", class="show_footer_btn" <%=@next_disable%>>
+    </div>
+    <div class="flex-item1">
+      <input type="button" value="前頁" onclick="location.replace('<%= tactile_show_path(book_id:@book_id,pid:@prev_id.to_s,spid:'0',fn:'0') %>')" id="backBtn", class="show_footer_btn" <%=@prev_disable%>>
+    </div>
+    <div class="flex-item1">
+      <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
+    </div>
+    <!-- A4 check box -->
+    <div class="flex-item3" >
+      <form class="show_footer_btn3">
+        <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>A4</span></label>
+      </form>
+    </div>
+    <!-- A4 Settings button -->
+    <div class="flex-item4" , id="settings", style="visibility:hidden" >
+      <button type="button" class="show_footer_btn4" onclick="enableA4Setting()">
+        <img src="/assets/arrow_0.png" width="20" height="20" alt="画像のサイズ設定"/>
+      </button>
+    </div>
+    <!-- controlslist="nodownload" for Chrome-->
+    <audio id="audio" preload="auto"
+      src= "/assets/<%=@audio_filename%>"
+      onPlay="onPlay()"
+      onPause="onPause()"
+      currentTime=0
+      あなたのブラウザーは <code>audio</code> 要素に対応していません。
+    </audio>
+  <% else %>
+    <!-- mp3 なし txtあり-->
+    <% if @text_file_exist == 1 %>
+      <div class="flex-item2">
+        <%= button_to "Speak", nil, {remote: true, method: :post, onclick:"{speak('#{@text_content}'); return false;}", id:"playBtn", class:"show_footer_btn3"} %>
+      </div>
+      <div class="flex-item1">
+        <input type="button" value="次頁" onclick="{location.href='<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>'; speakCancel(); }" id="nextBtn", class="show_footer_btn" <%=@next_disable%>>
+      </div>
+      <div class="flex-item1">
+        <input type="button" value="前頁" onclick="{location.href='<%= tactile_show_path(book_id:@book_id,pid:@prev_id.to_s,spid:'0',fn:'0') %>'; speakCancel(); }" id="backBtn", class="show_footer_btn" <%=@prev_disable%>>
+      </div>
+      <div class="flex-item1">
+        <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
+      </div>
+      <!-- A4 check box -->
+      <div class="flex-item3">
+        <form class="show_footer_btn3">
+          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>A4</span></label>
+        </form>
+      </div>
+      <!-- TTS Settings button -->
+      <div class="flex-item4">
+        <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn"} do %>
+          <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定"/>
+        <% end %>
+      </div>
+      <!-- A4 Settings button -->
+        <div class="flex-item4" , id="settings", style="visibility:hidden" >
+          <button type="button" class="show_footer_btn4" onclick="enableA4Setting()">
+            <img src="/assets/arrow_0.png" width="20" height="20" alt="画像のサイズ設定"/>
+          </button>
+      </div>
+      <audio id="audio" 
+        src= "/assets/nosound.mp3" 
+        あなたのブラウザーは <code>audio</code> 要素に対応していません。
+      </audio>
+    <% else %>
+      <!-- mp3 txt 共になし-->
+      <div class="flex-item2">
+        <%= button_to "再生", nil, {remote: true, method: :post, id:"playBtn", class:"show_footer_btn2", disabled:true } %>
+      </div>
+      <div class="flex-item1">
+        <input type="button" value="次頁" onclick="location.href='<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>'" id="nextBtn", class="show_footer_btn" <%=@next_disable%> >
+      </div>
+      <div class="flex-item1">
+        <input type="button" value="前頁" onclick="location.href='<%= tactile_show_path(book_id:@book_id,pid:@prev_id.to_s,spid:'0',fn:'0') %>'" id="backBtn", class="show_footer_btn" <%=@prev_disable%> >
+      </div>
+      <div class="flex-item1">
+        <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
+      </div>
+      <!-- A4 check box -->
+      <div class="flex-item3">
+        <form class="show_footer_btn3">
+          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>A4</span></label>
+        </form>
+      </div>
+    <% end %>
+  <% end %>
+</footer>
+
+
+
+<script type="text/javascript">
+    var v_A4 = parseInt(localStorage.getItem("A4_Display"),10);
+    if (isNaN(v_A4)) v_A4 = 0;
+    const a4 = document.getElementById("A4Chck");
+    if (v_A4==0){
+      a4.checked = false;
+      onA4(false);
+    }
+    else{
+      a4.checked = true;
+      onA4(true);
+    }
+
+    var vol = localStorage.getItem("audioVolume");
+    if (isNaN(vol)) vol = 1;
+    if (vol == 0) vol = 1;
+    document.getElementById("audio").volume = vol;
+    document.getElementById("audio").muted = false;
+</script>
+
+<script>
+  $(function() {
+    //console.log("rwdImageMaps()");
+    $('img[usemap]').rwdImageMaps();
+  });
+
+  $(function(){
+    $('area').hover(
+     function() { $(this).focus().css('outline','1px solid #FF0000');  },
+     function() { $(this).blur().css('outline','none'); }
+    )
+  });
+
+  window.addEventListener('DOMContentLoaded', function(){
+    resizeImage();
+    window.addEventListener('resize', function(){
+      resizeImage();
+      //console.log("resizeImage() & rwdImageMaps()");
+      $('img[usemap]').rwdImageMaps();
+    });
+  });
+</script>

@@ -1,0 +1,2 @@
+﻿#FOLDER=II-9
+::target=010 title="１．１．５、　代数系：　耳慣れない言葉と記号：例題" shape=rect coords=31,28,688,115
