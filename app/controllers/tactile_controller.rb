@@ -290,14 +290,14 @@ class TactileController < ApplicationController
   #
   # file format
   # (play end time):(speaking text):(imagemap data)
-  # 28000:近くに龍清寺があります。
+  # 28000:近くに龍清寺があります。:target=100 title=--- shape ---
   # ::target=010 title="茅葺屋根" shape=poly coords=59,414,224,340,225,323,--------
   #
   def readtextfile(txtfile, file_path)
     src = "app/assets/images/" + txtfile
-    @text_content = ""
+    @text_content = ""      #(speaking text)
     @map_text_content = []
-    @book_content = []
+    #@book_content = []
     @imagemap = []
     @imagemap_target = []
     @max_imagemap = -1;
@@ -305,9 +305,9 @@ class TactileController < ApplicationController
       
       if !line.start_with?("#") then
         strs = line.split(":", 3)
-        aa=""
-        bb=""
-        cc=""
+        aa=""   #play end time 
+        bb=""   #speaking text
+        cc=""   #imagemap data
         if (strs[0]!=nil) then aa = strs[0].strip end
         if (strs[1]!=nil) then bb = strs[1].strip end
         if (strs[2]!=nil) then cc = strs[2].strip end
@@ -316,6 +316,7 @@ class TactileController < ApplicationController
         #p "cc=#{cc}"
         if aa.blank? or bb.blank?
         else
+          #0:abcdefg
           @text_content << bb
           @text_content << '。\n' 
         end
@@ -325,8 +326,8 @@ class TactileController < ApplicationController
           ee = nil
           if dd!=nil then
             dd1 = cc.slice(dd+7,20)
-            dd2 = dd1.index(' ')
-            ee= cc.slice(dd+7,dd2)
+            dd2 = dd1.index(' ')      #first separator target=XXXXX,YYY,ZZZ_
+            ee= cc.slice(dd+7,dd2)    #ee = target
             ff = ee.split(',')
             gg = file_path+ff[0]+".mp3"
             if !asset_exists?(gg) then
