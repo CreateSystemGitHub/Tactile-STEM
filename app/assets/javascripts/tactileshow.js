@@ -402,11 +402,17 @@ function appendVoices(){
     addUserDict(dt, "正六角形", "せーろっか^っけー");
     addUserDict(dt, "正七角形", "せーななか^っけー");
     addUserDict(dt, "正八角形", "せーはちか^っけー");
+    addUserDict(dt, "凸頂点", "とつちょ^ーてん");
     addUserDict(dt, "凹頂点", "おうちょ^ーてん");
     addUserDict(dt, "右半身", "みぎは^んしん");
     addUserDict(dt, "左半身", "ひだりは^んしん");
     addUserDict(dt, "正積方位図", "せいせきほーい^ず");
     addUserDict(dt, "ＬａＴｅＸ", "ラテフ");
+    addUserDict(dt, "ラテフ", "ラテフ");
+    addUserDict(dt, "開区間", "かいく^かん");
+    addUserDict(dt, "閉区間", "へいく^かん");
+    addUserDict(dt, "３乗根", "さんじょ^ーこん");
+    addUserDict(dt, "結合則", "けつご^ーそく");
     
   }
   else{

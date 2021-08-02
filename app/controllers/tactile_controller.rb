@@ -72,7 +72,7 @@ class TactileController < ApplicationController
     @pagenos = []
     @filenames = []
     @contents = []
-    CSV.foreach(src, { col_sep: ":" }) do |line1|
+    CSV.foreach(src, encoding:"UTF-8", col_sep: ":" ) do |line1|
       aa = line1[0]
       bb = line1[1]
       cc = line1[2]

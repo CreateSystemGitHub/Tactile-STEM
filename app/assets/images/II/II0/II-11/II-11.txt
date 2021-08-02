@@ -20,4 +20,4 @@
 ::target=028,TTS3 title="a.　plus.　b.　is.　c.　a.　plus.　b.　equals.　c" shape=rect coords=370,590,611,658
 ::target=029,TTS3 title="a.　minus.　b.　equals.　c.　b.　subtracted.　from.　a.　leaves.　c" shape=rect coords=366,710,647,817
 ::target=030,TTS3 title="a.　divided　by.　b.　is.　c" shape=rect coords=366,834,647,873
-::target=031,TTS3 title="a.　times.　b.　is.　c.　a.　by.　b.　equals.　c.　a.　multiplied　by.　b.　is.　c" shape=rect coords=400,894,699,1000
+::target=031,TTS3 title="a.　times.　b.　is.　c.　a.　by.　b.　equals.　c.,　a.　multiplied　by.　b.　is.　c" shape=rect coords=400,894,699,1000
