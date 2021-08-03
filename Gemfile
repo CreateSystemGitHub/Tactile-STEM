@@ -10,11 +10,13 @@ ruby '3.0.2'
 #gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'rails', '~> 6.1.3.1'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+#gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+#2021/08/03
+#gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -68,7 +70,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-  gem 'pg'
+#2021/08/03
+#  gem 'pg'
 end
 #2021/08/02
 #gem 'puma', '~> 3.11'
@@ -78,3 +81,5 @@ gem 'serviceworker-rails'
 gem 'jquery-rails'
 #Add 2021/07/15
 gem 'jquery-turbolinks'
+#Add 2021/08/03
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
