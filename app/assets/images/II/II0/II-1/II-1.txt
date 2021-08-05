@@ -1,5 +1,15 @@
-﻿#FOLDER=II-1
+﻿#Page 1
+#FOLDER=II-1
+#このページのメインのmp3は#FOLDER=で指定したmp3ファイルです。このmp3がページ全体の朗読に使用されます。
+#以下の0:で始まる文はこのページのメインのmp3がない場合にTTSで読み上げられます。
 
 0:数学記号や数式の、触覚線での表現、LaTeXとPythonでのスクリプト表記および、日本語、英語の音声表現
 
+#target=はmp3の拡張子を除いたファイル名と','区切りでスタート時間、ストップ時間を示します。','省略時はmp3全体を再生します。
+#target=nnn,TTS1 ~ TTS4　と指定した場合、mp3の有無に関係なく TTSn が使用されます。
+#title=" ｘｘｘ "は、targetで指定したmp3ファイルが存在しない場合、TTSで読み上げられます。また、カーソルを合わせたときのHintになります。
+#ただし、現状では半角spが終端記号となっていますので半角spが現れた時点までしか読上げません。
+#shape=rect or shape=poly coords= --- は、ImageMap data であり、pptmファイルのマクロ(ImageMapGet)から採取できます。また、ImageMapGeneratorでも算出可能です。
+
 ::target=010 title="数学記号や数式の、触覚線での表現、LaTeXとPythonでのスクリプト表記および、日本語、英語の音声表現" shape=rect coords=58,185,661,311
+::target=011,TTS3 title="Mathematical　symbols　and　equations　drawn　as　tactile　images,　written　in　LaTex　and　Python　scripts,　and　read　aloud　in　Japanese　and　English" shape=rect coords=62,377,677,608
