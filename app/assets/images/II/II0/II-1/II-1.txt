@@ -11,5 +11,6 @@
 #ただし、現状では半角spが終端記号となっていますので半角spが現れた時点までしか読上げません。
 #shape=rect or shape=poly coords= --- は、ImageMap data であり、pptmファイルのマクロ(ImageMapGet)から採取できます。また、ImageMapGeneratorでも算出可能です。
 
-::target=010 title="数学記号や数式の、触覚線での表現、LaTeXとPythonでのスクリプト表記および、日本語、英語の音声表現" shape=rect coords=58,185,661,311
-::target=011,TTS3 title="Mathematical　symbols　and　equations　drawn　as　tactile　images,　written　in　LaTex　and　Python　scripts,　and　read　aloud　in　Japanese　and　English" shape=rect coords=62,377,677,608
+::target=010 title="数学記号や数式の、触覚線での表現、LaTeXとPythonでのスクリプト表記および、日本語、英語の音声表現" shape=rect coords=88,183,628,315
+
+::target=011,TTS3 title="Mathematical　symbols　and　equations　drawn　as　tactile　images,　written　in　LaTex　and　Python　scripts,　and　read　aloud　in　Japanese　and　English" shape=rect coords=57,373,664,610

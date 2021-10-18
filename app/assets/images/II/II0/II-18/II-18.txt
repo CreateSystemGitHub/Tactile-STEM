@@ -1,0 +1,45 @@
+﻿#FOLDER=II-18
+
+::target=010 title="1.2.5：対数、と、複素数" shape=rect coords=135,23,531,80
+
+::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=18,79,693,176
+
+::target=012 title=自然対数、log、(、a、)、ln、(、a、)" shape=rect coords=21,199,169,300
+
+::target=013 title="ラテフでは、$、円記号、log、(、a、)、または、$、円記号、lｎ、(、a、)、$" shape=rect coords=205,184,387,260
+
+::target=014 title="パイソンでは、import、 numpy、 as、 np、改行、a、=、2.0、改行、log、(、a、)" shape=rect coords=206,261,496,362
+
+::target=015 TTS3 title="natural log, or, natural logarithm" shape=rect coords=438,189,694,260
+
+::target=016 title="常用対数、log、下付き、10、(、a、)" shape=rect coords=21,365,175,452
+
+::target=017 title="ラテフでは、$、円記号、log、アンダースコア、左波括弧、10、右波括弧、(、a、)、$" shape=rect coords=201,367,399,418
+
+::target=018 title="パイソンでは、np、ドット、log、10、(、a、)" shape=rect coords=206,422,374,464
+
+::target=019 TTS3 title="common logarithm,or,log base 10, or,log with base 10" shape=rect coords=405,371,672,468
+
+::target=020 title="複素数、z、=、x+yi" shape=rect coords=22,489,159,571
+
+::target=021 title="ラテフでは、$、z、=、x、+、iy、$" shape=rect coords=213,483,379,526
+
+::target=022 title="パイソンでは、x=3; y=4j; z=x+y" shape=rect coords=217,534,374,610
+
+::target=023 TTS3 title="complex number, z,=,x,+,yi, where i is the imaginary unit. Python uses j as the imaginary unit." shape=rect coords=425,479,702,638
+
+::target=024 title="複素数の実部、Re、(、z、）" shape=rect coords=30,649,158,762
+
+::target=025 title="ラテフでは、$、Re、(z)、$、または、$、円記号、Re、左波括弧、z、左波括弧、$。後者はドイツ文字になる。" shape=rect coords=178,640,446,749
+
+::target=026 title="パイソンでは、x=3; y=4j; z=x+y、改行、np、ドット、real、(、z、)" shape=rect coords=179,749,442,821
+
+::target=027 TTS3 title="real part of a complex number z." shape=rect coords=457,645,646,745
+
+::target=028 title="複素数の虚部、Im、(、z、）" shape=rect coords=32,831,161,938
+
+::target=029 title="ラテフでは、$、Im、(z)、$、または、$、円記号、Im、左波括弧、z、左波括弧、$。後者はドイツ文字になる。" shape=rect coords=178,838,445,938
+
+::target=030 title="パイソンでは、x=3; y=4j; z=x+y、改行、np、ドット、imag、(、z、)" shape=rect coords=184,943,446,1020
+
+::target=031 TTS3 title="imaginary part of a complex number z." shape=rect coords=464,828,680,942

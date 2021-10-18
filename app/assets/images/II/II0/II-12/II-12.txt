@@ -1,29 +1,61 @@
 ﻿#FOLDER=II-12
-::target=010 title="ラテフ、では、$、a、キャレット記号、n、$。" shape=rect coords=236,586,333,634
-::target=011 title="Python、では、a、アステリスク、アステリスク、エヌ。" shape=rect coords=240,636,323,684
-::target=012 title="１．２．２、数と式の、書き方、読み方：２。" shape=rect coords=51,35,636,83
-::target=013 title="分数、ｂ、ぶんの、a。" shape=rect coords=43,499,196,547
-::target=014 title="ラテフ、では、$、円記号、frac、左なみ括弧、a、右なみ括弧、左なみ括弧、b、右なみ括弧、$。" shape=rect coords=230,499,416,547
-::target=015 title="Python、では、a、スラッシュ、b。" shape=rect coords=240,536,307,584
-::target=016 title="分数、5、ぶんの、２．" shape=rect coords=43,416,197,464
-::target=017 title="ラテフでは、$、逆スラッシュ、または、円記号、frac、左なみ括弧、2、右なみ括弧、左なみ括弧、5、右なみ括弧、$。" shape=rect coords=231,414,417,462
-::target=018 title="Python、では、２、スラッシュ、５。" shape=rect coords=234,452,302,500
-::target=019 title="a、の、平方根、あるいは、ルート、a。" shape=rect coords=45,719,211,806
-::target=020 title="a、の、3、じょうこん。" shape=rect coords=45,833,193,881
-::target=021 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=474,829,677,916
-::target=022 title="a、の、左丸括弧、b、スラッシュ、c、右丸括弧、じょう" shape=rect coords=43,928,211,976
-::target=023 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=477,926,671,974
-::target=024 title="小数、小さいの、小、と、数と書く。小数、２、点、５" shape=rect coords=41,175,173,223
-::target=025 title="ラテフ、では、＄、２，点、５、＄。" shape=rect coords=267,173,358,221
-::target=026 title="Python、では、２，点、５．" shape=rect coords=274,210,332,258
-::target=027 title="循環小数、0、点、8、9、7、で、９、と、７，が、繰り返す、場合、９，と、７，の上に点をつけるか、下線を引いて、その、二つが、セットで、循環することを、表す。上に、、点を、うつのは、困難な、ため、下線を、引くことを、勧める。" shape=rect coords=43,254,202,341
-::target=028 title="ラテフ、では、$、0、点、8、逆スラッシュ、または、日本語キーボードでは、円記号、dot、左なみ括弧、9、右なみ括弧、円記号、dot、左なみ括弧、7、右なみ括弧、$。" shape=rect coords=204,255,492,303
-::target=029 title="各行の左は、日本語よみ、中央は、上に、ラテフ,下にPython、右は英語よみ。文字と声で提示。" shape=rect coords=36,83,714,170
-::target=030 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=474,718,674,805
-::target=031 title="ラテフ、では、$、円記号、frac、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=236,714,391,762
-::target=032 title="Python、では、a、アステリスク、アステリスク、左丸括弧、0、点、5、右丸括弧、または、math、ドット、s、q、r、t、左丸括弧、a、右丸括弧。" shape=rect coords=240,756,422,830
-::target=033 title="ラテフ、では、$、円記号、s、q、r、t、左角括弧、3、右角括弧、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=240,836,432,884
-::target=034 title="a、の、n、乗。" shape=rect coords=48,587,173,635
-::target=035 title="Python、では、a、アステリスク、アステリスク、左丸括弧、1、スラッシュ、3、右丸括弧。" shape=rect coords=245,884,381,926
-::target=036 title="ラテフ、では、$、a、キャレット記号、左なみ括弧、左丸括弧、b、スラッシュ、c、右丸括弧、右なみ括弧、$。" shape=rect coords=242,926,406,974
-::target=037 title="Python、では、a、アステリスク、アステリスク、左丸括弧、b、スラッシュ、c、右丸括弧。" shape=rect coords=245,977,380,1019
+
+::target=010 title="１．２．２、数と式の、書き方、読み方：２。" shape=rect coords=49,37,637,82
+
+::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=33,83,713,172
+
+::target=012 title="小数、小さいの、小、と、数と書く。小数、２、点、５" shape=rect coords=41,178,176,229
+
+::target=013 title="ラテフ、では、＄、２，点、５、＄。" shape=rect coords=259,176,364,216
+
+::target=014 title="Python、では、２，点、５．" shape=rect coords=260,218,364,253
+
+::target=015 TTS3 title="Decimal, two point five" shape=rect coords=487,176,694,253
+
+::target=016 title="循環小数、0、点、8、9、7、で、９、と、７，が、繰り返す、場合、９、と、7、の上に点をつけるか、下線を引いて、その、二つが、セットで、循環することを、表す。上に、、点を、うつのは、困難な、ため、下線を、引くことを、勧める。" shape=rect coords=37,259,191,344
+
+::target=017 title="ラテフ、では、$、0、点、8、逆スラッシュ、すなわち、日本語キーボードの、円記号、d、o、t、左なみ括弧、9、右なみ括弧、円記号、d、o、t、左なみ括弧、7、右なみ括弧、$。" shape=rect coords=205,259,487,301
+
+::target=018 title="Pythonに、循環小数を表す方法はない。" shape=rect coords=206,303,477,381
+
+::target=019 TTS3 title="repetend decimal, 0.8, followed by repeating,9,7" shape=rect coords=490,263,691,415
+
+::target=020 title="分数、5、ぶんの、2。" shape=rect coords=42,415,194,472
+
+::target=021 title="ラテフでは、$、逆スラッシュ、または、円記号、frac、左なみ括弧、2、右なみ括弧、左なみ括弧、5、右なみ括弧、$。" shape=rect coords=227,421,419,460
+
+::target=022 title="Python、では、２、スラッシュ、５。" shape=rect coords=228,462,310,497
+
+::target=023 TTS3 title="two fifths, OR, two over five" shape=rect coords=488,423,700,498
+
+::target=024 title="べき乗、a、の、n乗。" shape=rect coords=49,494,174,551
+
+::target=025 title="ラテフ、では、$、a、キャレット記号、n、$。" shape=rect coords=237,499,338,549
+
+::target=026 title="Python、では、a、アステリスク、アステリスク、エヌ。" shape=rect coords=238,558,341,601
+
+::target=027 TTS3 title="a to n, or, a to the n-th power, or, a to the power of n." shape=rect coords=419,501,710,627
+
+::target=028 title="a、の、平方根、あるいは、ルート、a。" shape=rect coords=41,631,206,719
+
+::target=029 title="ラテフ、では、$、円記号、frac、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=233,632,388,670
+
+::target=030 title="Python、では、a、アステリスク、アステリスク、左丸括弧、0、点、5、右丸括弧、または、m、a、t、h、ドット、s、q、r、t、左丸括弧、a、右丸括弧。" shape=rect coords=237,672,422,742
+
+::target=031 TTS3 title="root a, or, square root of a." shape=rect coords=472,643,677,718
+
+::target=032 title="a、の、3、じょうこん。" shape=rect coords=45,759,198,820
+
+::target=033 title="ラテフ、では、$、円記号、s、q、r、t、左角括弧、3、右角括弧、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=233,766,422,813
+
+::target=035 title="Python、では、a、アステリスク、アステリスク、左丸括弧、1、スラッシュ、3、右丸括弧。" shape=rect coords=233,817,374,862
+
+::target=036 TTS3 title="cube root a, or, a to one-third." shape=rect coords=469,766,666,838
+
+::target=037 title="a の、左括弧、cぶんの、b、右括弧、乗。" shape=rect coords=42,894,211,949
+
+::target=038 title="ラテフ、では、$、a、キャレット記号、左なみ括弧、左丸括弧、b、スラッシュ、c、右丸括弧、右なみ括弧、$。" shape=rect coords=241,897,405,946
+
+::target=039 title="Python、では、a、アステリスク、アステリスク、左丸括弧、b、スラッシュ、c、右丸括弧。" shape=rect coords=245,946,385,989
+
+::target=040 TTS3 title="a to b over c." shape=rect coords=469,908,671,950
