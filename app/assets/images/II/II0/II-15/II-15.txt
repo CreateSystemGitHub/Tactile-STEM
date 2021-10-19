@@ -1,0 +1,53 @@
+﻿#FOLDER=II-15
+
+::target=010 title="1.2.2：数と式の、書き方、読み方 5" shape=rect coords=62,13,627,76
+
+::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=26,75,707,164
+
+::target=012 title="ベクトル、a、と、ベクトル、b、が直交" shape=rect coords=25,167,212,323
+
+::target=013 title="ラテフでは、$、円記号、v、e、c、左波括弧、a、右波括弧、円記号、p、e、r、p、円記号、v、e、c、左波括弧、b、右波括弧$" shape=rect coords=234,167,562,211
+
+::target=014 title="Pythonに、ない" shape=rect coords=239,255,441,303
+
+::target=015 TTS3 title="vectors a and b are perpendicular to each other" shape=rect coords=457,215,703,326
+
+::target=016 title="一次式、a x + b" shape=rect coords=37,332,154,409
+
+::target=017 title="ラテフ、では、$、a、ｘ、+、b、$" shape=rect coords=243,335,382,379
+
+::target=018 title="Python では、a、アステリスク、x、+、b" shape=rect coords=257,384,373,423
+
+::target=019 TTS3 title="a times x plus b" shape=rect coords=464,338,625,408
+
+::target=020 title="二次式、a x2 + b x + c" shape=rect coords=36,411,192,519
+
+::target=021 title="ラテフ、では、$、a、ｘ、カレット、左波括弧、2、右波括弧、+、b、x、+、c、$" shape=rect coords=225,423,442,466
+
+::target=022 title="Python、では、a、アステリスク、x、アステリスク、アステリスク、2、+、b、アステリスク、x、+、c" shape=rect coords=229,470,402,535
+
+::target=023 TTS3 title="a times x-squared + b times x + c" shape=rect coords=461,417,669,512
+
+::target=024 title="一次式の2乗　(x + a)、2乗" shape=rect coords=35,525,219,613
+
+::target=025 title="ラテフ、では、$、左括弧、ｘ、+、a、右括弧、カレット、左波括弧、2、右波括弧$" shape=rect coords=242,536,415,576
+
+::target=026 title="Pythonでは、左括弧、x、+、a、右括弧、アステリスク、アステリスク、2。" shape=rect coords=257,578,391,620
+
+::target=027 TTS3 title="left bracket x + a right bracket　squared" shape=rect coords=437,522,693,620
+
+::target=028 title="一次式の積、（、x + a、）、掛ける、（、x − a、）" shape=rect coords=33,617,220,697
+
+::target=029 title="ラテフ、では、$、左括弧、ｘ、+、a、右括弧、左括弧、x、-、a、右括弧、$" shape=rect coords=253,623,437,659
+
+::target=030 title="Pythonでは、左括弧、ｘ、+、a、右括弧、アステリスク、左括弧、x、-、a、右括弧" shape=rect coords=256,658,438,703
+
+::target=031 TTS3 title="left bracket x + a right bracket left bracket x – a right bracket" shape=rect coords=449,620,703,752
+
+::target=032 title="添え字付き多項式、a、下付き、0、x、上付き、3、+、a、下付き、1、x、上付き、2、+、a、下付き、2、x、+、a、下付き、3" shape=rect coords=31,767,266,900
+
+::target=033 title="ラテフ、では、$、a、アンダースコア、0、ｘ、カレット、左括弧、3、右括弧、+、a、アンダースコア、1、x、カレット、左括弧、2、右括弧、+、a、アンダースコア、2、x、+、a、アンダースコア、3、$" shape=rect coords=272,767,674,815
+
+::target=034 title="Pythonでは、arrayで表す。" shape=rect coords=269,819,464,899
+
+::target=035 TTS3 title="a sub 0 times x to 3 + a sub 1 times x to 2 + a sub 2 times x + a sub 3" shape=rect coords=463,821,689,1019

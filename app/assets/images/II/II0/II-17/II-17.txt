@@ -1,0 +1,30 @@
+﻿#FOLDER=II-17
+
+::target=010 title="1.2.4：三角関数と、簡単な公式" shape=rect coords=109,21,626,72
+
+::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,71,707,159
+
+::target=012 title="加法定理1：sin、(、a+b、)、=、sin、(、a、)、cos、(、b、)、+、cos、(、a、)、sin、(、b、)" shape=rect coords=30,168,219,280
+
+::target=013 title="ラテフでは、$、円記号、sin、左括弧、a、+、b、右括弧、=、円記号、sin、左括弧、a、右括弧、円記号、cos、左括弧、b、右括弧、+、円記号、cos、左括弧、a、右括弧、円記号、sin、左括弧、b、右括弧、$" shape=rect coords=221,165,386,235
+
+::target=014 title="パイソンでは、import、 numpy、 as、 np、改行、a、=、np、ドット、pi、スラッシュ、6、セミコロン、b、=、np、ドット、pi、スラッシュ、6、改行、np、ドット、sin、(、a、)、アステリスク、np、ドット、cos、(、b、)、円記号、+、np、ドット、cos、(、a、)、アステリスク、np、ドット、sin、(、b、)" shape=rect coords=223,235,398,301
+
+::target=015 TTS3 title="sine,(,a+b,),=,sine,(,a,),cosine,(,b,),+,cosine,(,a,),sine,(,b,)." shape=rect coords=425,166,698,301
+
+::target=016 title="加法定理2：cos、(、a+b、)、=、cos、(、a、)、cos、(、b、)、-、sin、(、a、)、sin、(、b、)" shape=rect coords=36,309,180,384
+
+::target=017 title="ラテフでは、$、円記号、cos、左括弧、a、+、b、右括弧、=、円記号、cos、左括弧、a、右括弧、円記号、cos、左括弧、b、右括弧、-、円記号、sin、左括弧、a、右括弧、円記号、sin、左括弧、b、右括弧、$" shape=rect coords=225,303,370,345
+
+::target=018 title="Python では、np、ドット、cos、(、a、)、アステリスク、np、ドット、cos、(、b、)、円記号、-、np、ドット、sin、(、a、)、アステリスク、np、ドット、sin、(、b、)" shape=rect coords=225,345,516,410
+
+::target=019 TTS3 title="cosine,(,a+b,),=,cosine,(,a,),cosine,(,b,),-,sine,(,a,),sine,(,b,)." shape=rect coords=541,314,647,353
+
+::target=020 title="加法定理3：tan、(、a+b、)、=、(、tan、(、a、)、+、tan、(、b、)、)、/、(、1、-、tan、(、a、)、tan、(、b、)、)" shape=rect coords=35,399,200,471
+
+::target=021 title="ラテフでは、$、円記号、tan、左括弧、a、+、b、右括弧、=、左括弧、円記号、tan、左括弧、a、右括弧、円記号、tan、左括弧、b、右括弧、右括弧、/、左括弧、1、-、円記号、tan、左括弧、a、右括弧、円記号、tan、左括弧、b、右括弧、右括弧、$" shape=rect coords=229,413,413,456
+
+::target=022 title="Pythonでは、(、np、ドット、tan、(、a、)、アステリスク、np、ドット、tan、(、b、)、)、/、(、1、-、np、ドット、tan、(、a、)、アステリスク、np、ドット、tan、(、b、)、)" shape=rect coords=230,457,412,491
+
+::target=023 TTS3 title="tan,(,a+b,),=,(,tan,(,a,),+,tan,(,b,),),/,(,1,-,tan,(,a,),tan,(,b,),)" shape=rect coords=529,414,663,458
+

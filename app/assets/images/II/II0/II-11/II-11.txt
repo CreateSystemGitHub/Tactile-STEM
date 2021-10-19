@@ -1,23 +1,60 @@
 ﻿#FOLDER=II-11
-::target=010 title="１．２．２、数と式の書き方,読み方：１" shape=rect coords=89,19,674,67
-::target=011,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=47,577,147,625
-::target=012 title="丸括弧、例えば、左括弧、a、+、b、右括弧、と読む。" shape=rect coords=33,231,149,318
-::target=013,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=47,361,164,448
-::target=014,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=52,454,168,541
-::target=015,TTS2 title="ラテフでは、$、左丸括弧、a、+、b、右丸括弧、$。" shape=rect coords=203,228,322,276
-::target=016,TTS2 title="Python、では、左丸括弧、a、+、b、右丸括弧。" shape=rect coords=209,269,296,317
-::target=017,TTS2 title="ラテフでは、$、左角括弧、a、+、b、右角括弧、$。" shape=rect coords=215,364,336,412
-::target=018,TTS2 title="ラテフでは、$、逆スラッシュ、日本語キーボードでは、円記号、左波括弧、a、+、b、逆スラッシュ、日本語キーボードでは、円記号、右波括弧、$。" shape=rect coords=214,455,367,503
-::target=019,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=49,700,148,748
-::target=020,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=52,820,135,868
-::target=021,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=218,405,307,453
-::target=022,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=219,492,301,540
-::target=023,TTS2 title="ジューの、N、じょう。すぐ下に、ラテフ、その下に、パイソン、での表現。右に、英語での発音。" shape=rect coords=55,913,139,961
-::target=024 title="数式の読み方、書き方を、三列で説明する。各行の左は、日本語よみ、中央は、上に、ラテフ,下にPython、右は英語よみ。文字と声で提示。" shape=rect coords=24,68,702,194
-::target=025,TTS3 title="open　parenthesis.　a.　plus.　b.　close　parenthesis" shape=rect coords=360,241,688,319
-::target=026,TTS3 title="open　bracket.　a.　plus.　b.　close　bracket" shape=rect coords=367,369,669,435
-::target=027,TTS3 title="open　brace.　a.　plus.　b.　close　brace" shape=rect coords=370,459,625,523
-::target=028,TTS3 title="a.　plus.　b.　is.　c.　a.　plus.　b.　equals.　c" shape=rect coords=370,590,611,658
-::target=029,TTS3 title="a.　minus.　b.　equals.　c.　b.　subtracted.　from.　a.　leaves.　c" shape=rect coords=366,710,647,817
-::target=030,TTS3 title="a.　divided　by.　b.　is.　c" shape=rect coords=366,834,647,873
-::target=031,TTS3 title="a.　times.　b.　is.　c.　a.　by.　b.　equals.　c.,　a.　multiplied　by.　b.　is.　c" shape=rect coords=400,894,699,1000
+::target=010 title="１．２．２、数と式の書き方,読み方：１" shape=rect coords=89,22,667,67
+
+::target=011 title="数式の読み方、書き方を、三列の表で、説明する。各行は、左は日本語読み、中央は、上にラテフ、下にパイソン。右は英語読み。文字と声で提示。" shape=rect coords=24,70,694,195
+
+::target=012 title="丸括弧または、小括弧または、括弧、例、左括弧、a、+、b、右括弧、と読む。" shape=rect coords=29,209,179,335
+
+::target=013 title="ラテフでは、$、左丸括弧、a、+、b、右丸括弧、$。" shape=rect coords=200,207,322,252
+
+::target=014 TTS title="Python、では、左丸括弧、a、+、b、右丸括弧。" shape=rect coords=205,255,315,295
+
+::target=015 TTS3 title="open　parenthesis.　a.　plus.　b.　close　parenthesis, or round brackets." shape=rect coords=349,219,695,330
+
+::target=016 title="角括弧または、大括弧。、例、左角括弧、a、+、b、右角括弧、と読む。" shape=rect coords=36,336,155,452
+
+::target=017 title="ラテフでは、$、左角括弧、a、+、b、右角括弧、$。" shape=rect coords=213,347,335,390
+
+::target=018 title="Python、では、左角括弧、a、+、b、右角括弧。" shape=rect coords=217,390,310,432
+
+::target=019 TTS3 title="open　bracket.　a.　plus.　b.　close　bracket, or square brackets." shape=rect coords=353,337,667,450
+
+::target=020 title="波括弧または、中括弧。例、左波括弧、a、+、b、右波括弧、と読む。" shape=rect coords=37,455,181,581
+
+::target=021 title="ラテフでは、$、逆スラッシュ、すねわち、日本語キーボードの円記号、左波括弧、a、+、b、逆スラッシュ、すなわち、日本語キーボードの円記号、右波括弧、$。" shape=rect coords=216,459,362,502
+
+::target=022 title="Python、では、左波括弧、a、+、b、右波括弧。" shape=rect coords=217,502,314,545
+
+::target=023 TTS3 title="open　brace.　a.　plus.　b.　close　brace, or curly brackets." shape=rect coords=367,460,637,574
+
+::target=024 title="a、+、b、=、 c。" shape=rect coords=45,597,154,647
+
+::target=025 title="ラテフでは、$、a、+、b、=、c、$。" shape=rect coords=206,586,341,634
+
+::target=026 title="Python、では、a、+、b、=、c。" shape=rect coords=213,636,318,674
+
+::target=028 TTS3 title="a.　plus.　b.　is.　c.　OR,　a.　plus.　b.　equals.　c" shape=rect coords=364,594,614,672
+
+::target=029 title="a、-、b、=、 c。" shape=rect coords=49,710,154,753
+
+::target=030 title="ラテフでは、$、a、-、b、=、c、 $。" shape=rect coords=206,700,343,744
+
+::target=031 title="Python、では、a、-、b、=、c。" shape=rect coords=215,744,320,790
+
+::target=032 TTS3 title="a.　minus.　b.　is.　c.　OR, a.　minus.　b.　equals.　c  OR,　a.　minus.　b.　leaves.　c" shape=rect coords=357,705,654,822
+
+::target=033 title="a、割る, b、=、 c。" shape=rect coords=50,821,141,875
+
+::target=034 title="ラテフでは、$、a、スラッシュ、b、=、c、$。" shape=rect coords=205,827,306,872
+
+::target=035 title="Python、では、a、スラッシュ、b、=、c。" shape=rect coords=208,873,298,918
+
+::target=036 TTS3 title="a.　divided, by,　b.　is.　c." shape=rect coords=365,832,639,880
+
+::target=037 title="a、掛ける, b、=、 c。" shape=rect coords=59,917,138,967
+
+::target=038 title="ラテフでは、$、a、スラッシュ、t、i、m、e、s、スペース、b、=、c、$。" shape=rect coords=214,924,394,967
+
+::target=039 title="Python、では、a、アステリスク、b、=、c。" shape=rect coords=211,969,286,1007
+
+::target=040 TTS3 title="a. times, b. is.c.　OR, a, by, b, equals, c, OR, a, multiplied, by, c, is, c" shape=rect coords=401,893,694,1005

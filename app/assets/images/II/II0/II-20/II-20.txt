@@ -1,0 +1,37 @@
+﻿#FOLDER=II-21
+
+::target=010 title="1.2.7：微分と積分に関する式" shape=rect coords=160,25,592,80
+
+::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=31,80,700,167
+
+::target=012 title="一変数関数の微分：重力加速度" shape=rect coords=10,175,185,342
+
+::target=013 title="ラテフでは、円記号、v、=、円記号、frac、左波括弧、dx、右波括弧、左波括弧、dt、右波括弧、$、および、$、円記号、g、=、-、円記号、frac、左波括弧、d、カレット、2、x、右波括弧、左波括弧、dt、カレット、2、右波括弧、$" shape=rect coords=192,175,446,222
+
+::target=014 title="パイソン（シムパイ）では、from sympy import *、改行、v、a、r、(、シングル引用記号、t、コンマ、g、シングル引用記号、)、改行、x、=、先頭が大文字の、Function、(、シングル引用記号、x、シングル引用記号、)、(、t、)、改行、e、q、1、=、大文字のE、q、(、diff、(、x、コンマ、t、コンマ、2、)、コンマ、-、g、)、改行、d、s、o、l、v、e、(、e、q、1、)" shape=rect coords=195,224,510,384
+
+::target=015 TTS3 title="Temporal variation of height x(t) under igravity, g. Second derivative, g, is a constant." shape=rect coords=536,167,714,394
+
+::target=016 title="多変数関数の偏微分、山の勾配" shape=rect coords=9,397,183,506
+
+::target=017 title="ラテフ：山の標高を、$、ｆ、（、ｘ、コンマ、ｙ、）、＝、x、カレット、2、y、$、と仮定すると、勾配は、$、円記号、f、r、a、c、左波括弧、円記号、partial、スペース、f、(、x、コンマ、y、)、右波括弧、左波括弧、円記号、partial、スペース、x、右波括弧、=、2、x、y、$" shape=rect coords=184,399,527,504
+
+::target=018 title="sympyで：from、スペース、sympy、スペース、import、スペース、アステリスク、改行、x、コンマ、y、=、symbols、(、シングル引用記号、x、コンマ、y、シングル引用記号、)、改行、f、=、(、x、アステリスク、アステリスク、2、)、アステリスク、y、改行、d、i、f、f、(、f、コンマ、x、)" shape=rect coords=185,509,530,645
+
+::target=019 TTS3 title="Exampl: Height is defined by f,(,x,comma,y,),=,x^2 y. Patial derivative is the slope in x direction." shape=rect coords=538,411,704,531
+
+::target=020 title="多変数関数の全微分：df" shape=rect coords=16,645,189,793
+
+::target=021 title="ラテフでは、$、d、f、=、円記号、frac、左波括弧、円記号、partial、スペース、f、(、x、コンマ、y、)、右波括弧、左波括弧、円記号、partial、スペース、x、右波括弧、dx、+、円記号、frac、左波括弧、円記号、partial、スペース、f、(、x、コンマ、y、)、右波括弧、左波括弧、円記号、partial、スペース、y、右波括弧、dy、$" shape=rect coords=193,645,445,716
+
+::target=022 title="パイソン（シムパイ）では、x、コンマ、y、=、symbols、(、シングル引用記号、x、コンマ、y、シングル引用記号、)、改行、f、=、(、x、アステリスク、アステリスク、2、)、アステリスク、y、改行、diff、(、f、コンマ、x、)、アステリスク、dx、+、diff、(、f、コンマ、y、)、アステリスク、dy" shape=rect coords=193,716,510,883
+
+::target=023 TTS3 title="Total derivative is the slope in (,dx,comma,dy,) direction." shape=rect coords=525,645,711,872
+
+::target=024 title="一変数関数の積分：速度の積分" shape=rect coords=17,897,165,1017
+
+::target=025 title="ラテフでは、$、円記号、v、=、円記号、frac、左波括弧、dx、右波括弧、左波括弧、dt、右波括弧、=、マイナス、gt、$、および、$、\￥円記号、int、アンダースコア、左波括弧、0、右波括弧、アステリスク、左波括弧、t、右波括弧、v、dt、=、マイナス、円記号、frac、左波括弧、1、右波括弧、左波括弧、2、右波括弧、gt、アステリスク、2、$" shape=rect coords=17,897,165,1017
+
+::target=026 title="パイソン（シムパイ）では、t、=、symbols、(、シングル引用記号、t、シングル引用記号、)、改行、g、=、v、a、r、(、シングル引用記号、g、シングル引用記号、、)、改行、f、=、マイナス、g、アステリスク、t、改行、integrate、(、f、コンマ、t、)" shape=rect coords=195,954,448,1026
+
+::target=027 TTS3 title="Integral　of　velocity　under　gravity,　g,　is　the　height　minus　(　1　over　2　)　gt　asterisk　2" shape=rect coords=519,881,702,1018

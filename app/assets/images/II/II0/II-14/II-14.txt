@@ -1,0 +1,53 @@
+﻿#FOLDER=II-14
+
+::target=010 title="1.2.2：数と式の、書き方、読み方：4" shape=rect coords=59,21,648,74
+
+::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,74,709,164
+
+::target=012 title="べき乗： a の n乗" shape=rect coords=31,164,175,248
+
+::target=013 title="ラテフ、では、$、a、カレット、n、$ " shape=rect coords=257,164,371,212
+
+::target=014 title="Python、では、a、アステリスク、アステリスク、n" shape=rect coords=259,213,372,253
+
+::target=015 TTS3 title="a to the n-th power" shape=rect coords=408,167,698,217
+
+::target=016 title="数式でない、上付き添え字" shape=rect coords=33,253,177,374
+
+::target=017 title="ラテフ、では、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、カレット、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧$" shape=rect coords=201,254,567,303
+
+::target=018 title="Python では、ない。" shape=rect coords=209,303,484,355
+
+::target=019 TTS3 title="a with superscript n" shape=rect coords=504,305,690,378
+
+::target=020 title="数列、a、 下付き、 n。" shape=rect coords=34,378,196,468
+
+::target=021 title="ラテフ、では、$、a、アンダースコア、n、$。" shape=rect coords=210,370,294,411
+
+::target=022 title="Python、では、i、m、p、o、r、t、スペース、a、s、スペース、n、p、改行、a、=、n、p、ドット、a、r、r、a、y、左丸括弧、左角括弧、0、1、2、3、右角括弧、右丸括弧、改行、a、左角括弧、n、右角括弧" shape=rect coords=210,411,492,528
+
+::target=023 TTS3 title="array with subscript n" shape=rect coords=508,389,681,473
+
+::target=024 title="数式でない、下付き添え字" shape=rect coords=38,529,184,660
+
+::target=025 title="ラテフ、では、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、アンダースコア、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧、$" shape=rect coords=197,529,573,572
+
+::target=026 title="Python、では、文字の、array、として表す。" shape=rect coords=203,571,503,656
+
+::target=027 TTS3 title="array with subscript n" shape=rect coords=512,597,691,674
+
+::target=028 title="ベクトル表示、v、の上に矢印、または、太文字の、ｖ" shape=rect coords=37,674,236,837
+
+::target=029 title="ラテフ、では、$、円記号、v、e、c、スペース、v、$。" shape=rect coords=249,676,413,725
+
+::target=030 title="Pythonでは、アレー、array、として表す。" shape=rect coords=251,727,517,810
+
+::target=031 TTS3 title="vector v" shape=rect coords=525,689,661,748
+
+::target=032 title="2点、A、B、を結ぶ、ベクトル表示、ABの上に、矢印" shape=rect coords=40,847,256,974
+
+::target=033 title="ラテフ、では、$、円記号、o、v、e、r、r、i、g、h、t、a、r、r、o、w、左波括弧、A、B、右波括弧、$。" shape=rect coords=262,842,574,888
+
+::target=034 title="Pythonに、位置ベクトルの差として表す。" shape=rect coords=265,889,492,1008
+
+::target=035 TTS3 title="vector connecting points A and B" shape=rect coords=502,893,706,1009
