@@ -1,76 +1,76 @@
 ﻿#FOLDER=II-16
 
-::target=010 title="1.2.3：三角関数、呼び方、書き方" shape=rect coords=109,21,626,72
+::target=010 title="1.2.3：三角関数、呼びかた、書き方" shape=rect coords=109,21,626,72
 
-::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,71,707,159
+::target=011 title="各ぎょうの左は日本語読み、中央は、上にラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,71,707,159
 
-::target=012 title="角度変換、ラジアン = 度　掛ける　180分の1、パイ" shape=rect coords=30,168,219,280
+::target=012 title="角度変換、単位、ラジアン、イコール、単位、度、掛ける、180分の1、パイ" shape=rect coords=30,168,219,280
 
 ::target=013 title="角度、90度は、2分の1　パイ　ラジアン" shape=rect coords=221,165,386,235
 
 ::target=014 title="角度、60度は、3分の1　パイ　ラジアン" shape=rect coords=223,235,398,301
 
-::target=015 TTS3 title="90 degree is a half of pi radian and 60 degree is one third of pi radian" shape=rect coords=425,166,698,301
+::target=015,TTS3 title="90　degree　is　a　half　of　pi　radian　and　60　degree　is　one　third　of　pi　radian" shape=rect coords=425,166,698,301
 
-::target=016 title="サイン関数、sin、(、x、)" shape=rect coords=36,309,180,384
+::target=016 title="サイン関数、sin、左括弧、x、右括弧" shape=rect coords=36,309,180,384
 
-::target=017 title="ラテフ、では、$、s、i、n、左括弧、x、右括弧、$" shape=rect coords=225,303,370,345
+::target=017 title="ラテフ、では、$、円記号、s、i、n、左波括弧、x、右波括弧、$" shape=rect coords=225,303,370,345
 
-::target=018 title="Python では、import、n、u、m、p、y、スペース、a、s、スペース、n、p、改行、n、p、ドット、s、i、n、左括弧、x、右括弧" shape=rect coords=225,345,516,410
+::target=018 title="Pythonでは、import、n、u、m、p、y、スペース、a、s、スペース、n、p、改行、n、p、ドット、s、i、n、左括弧、x、右括弧" shape=rect coords=225,345,516,410
 
-::target=019 TTS3 title="sine x" shape=rect coords=541,314,647,353
+::target=019,TTS3 title="sine　x" shape=rect coords=541,314,647,353
 
-::target=020 title="コサイン関数、cos、(、x、)" shape=rect coords=35,399,200,471
-::target=021 title="ラテフ、では、$、c、o、s、左括弧、x、右括弧、$" shape=rect coords=229,413,413,456
+::target=020 title="コサイン関数、cos、左括弧、x、右括弧" shape=rect coords=35,399,200,471
+::target=021 title="ラテフ、では、$、円記号、c、o、s、左波括弧、x、右波括弧、$" shape=rect coords=229,413,413,456
 
 ::target=022 title="Python、では、n、p、ドット、c、o、s、左括弧、x、右括弧" shape=rect coords=230,457,412,491
 
-::target=023 TTS3 title="co-sine x" shape=rect coords=529,414,663,458
+::target=023,TTS3 title="co-sine　x" shape=rect coords=529,414,663,458
 
-::target=024 title="tangent関数、tan、(、x、)" shape=rect coords=36,477,171,584
+::target=024 title="tangent関数、tan、左括弧、x、右括弧" shape=rect coords=36,477,171,584
 
 ::target=025 title="ラテフ、では、$、円記号、t、a、n、左波括弧、x、右波括弧、$" shape=rect coords=236,496,410,539
 
 ::target=026 title="Pythonでは、n、p、ドット、t、a、n、左括弧、x、右括弧" shape=rect coords=236,539,410,576
 
-::target=027 TTS3 title="tangent x" shape=rect coords=527,504,677,543
+::target=027,TTS3 title="tangent　x" shape=rect coords=527,504,677,543
 
-::target=028 title="co-tangent、関数、cot、(、x、)" shape=rect coords=35,585,190,688
+::target=028 title="cotangent、関数、cot、左括弧、x、右括弧" shape=rect coords=35,585,190,688
 
 ::target=029 title="ラテフ、では、$、円記号、c、o、t、左波括弧、x、右波括弧、$" shape=rect coords=238,591,396,629
 
 ::target=030 title="Pythonでは、n、p、ドット、c、o、t、左括弧、x、右括弧" shape=rect coords=241,628,393,665
 
-::target=031 TTS3 title="co-tangent x" shape=rect coords=500,580,687,619
+::target=031,TTS3 title="co-tangent　x" shape=rect coords=500,580,687,619
 
-::target=032 title="secant、関数、sec、(、x、)" shape=rect coords=34,689,206,767
+::target=032 title="secant、関数、sec、左括弧、x、右括弧" shape=rect coords=34,689,206,767
 ::target=033 title="ラテフ、では、$、円記号、s、e、c、左波括弧、x、右波括弧、$" shape=rect coords=245,677,406,719
 
 ::target=034 title="Pythonでは、n、p、ドット、s、e、c、左括弧、x、右括弧" shape=rect coords=254,723,398,763
 
-::target=035 TTS3 title="secant x" shape=rect coords=505,682,679,722
+::target=035,TTS3 title="secant　x" shape=rect coords=505,682,679,722
 
-::target=036 title="co-secant、関数、cosec、(、x、)" shape=rect coords=32,772,236,845
+::target=036 title="cosecant、関数、cosec、左括弧、x、右括弧" shape=rect coords=32,772,236,845
 
 ::target=037 title="ラテフ、では、$、円記号、c、s、c、左波括弧、x、右波括弧、$" shape=rect coords=253,767,402,809
 
 ::target=038 title="Pythonでは、n、p、ドット、c、s、c、左括弧、x、右括弧" shape=rect coords=250,808,402,848
 
-::target=039 TTS3 title="co-secant x" shape=rect coords=479,769,682,810
+::target=039,TTS3 title="co-secant　x" shape=rect coords=479,769,682,810
 
-::target=040 title="arc-sine、関数、arcsine、(、x、)" shape=rect coords=32,853,216,936
+::target=040 title="arc-sine、関数、arcsine、左括弧、x、右括弧" shape=rect coords=32,853,216,936
 
 ::target=041 title="ラテフ、では、$、円記号、a、r、c、s、i、n、左波括弧、x、右波括弧、$" shape=rect coords=253,852,446,896
 
 ::target=042 title="Pythonでは、n、p、ドット、a、r、c、s、i、n、左括弧、x、右括弧" shape=rect coords=256,897,434,936
 
-::target=043 TTS3 title="arc-sine x" shape=rect coords=509,852,655,893
+::target=043,TTS3 title="arc-sine　x" shape=rect coords=509,852,655,893
 
-::target=044 title="arc-cosine、関数、arccosine、(、x、)" shape=rect coords=29,943,243,1018
+::target=044 title="arc-cosine、関数、arccosine、左括弧、x、右括弧" shape=rect coords=29,943,243,1018
 
 ::target=045 title="ラテフ、では、$、円記号、a、r、c、c、o、s、左波括弧、x、右波括弧、$" shape=rect coords=261,941,452,981
 
 ::target=046 title="Pythonでは、n、p、ドット、a、r、c、c、o、s、左括弧、x、右括弧" shape=rect coords=259,983,443,1022
 
-::target=047 TTS3 title="arc-cosine x" shape=rect coords=505,938,666,979
+::target=047,TTS3 title="arc-cosine　x" shape=rect coords=505,938,666,979
 

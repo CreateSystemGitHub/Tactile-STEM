@@ -4,7 +4,7 @@
 0:技術的なメモ
 ::target=010 title="技術的なメモ" shape=rect coords=201,15,494,74
 ::target=011 title="以下に、技術的な要点を列挙する" shape=rect coords=109,83,604,128
-::target=012 title="１：教材の電子出版部分は、ブラウザが使える電子機器の上で、HTML、CSS、Javascriptで、表現される、Progressive、Web、Apps（PWA）アプリで提供される。PC、アイフォン、スマートフォン、アイパッド、クロムブックの全てで、読み、聴くことができる。" shape=rect coords=1,130,718,269
+::target=012 title="１：教材の電子出版部分は、ブラウザが使える電子機器の上で、HTML、CSS、Javascriptで、表現される、Progressive、Web、Apps（PWA）アプリで提供される。PC、アイフォン、スマートフォン、アイパッド、クロムブックの全てで、読み、聞く、ことができる。" shape=rect coords=1,130,718,269
 ::target=013 title="２：教材の触覚図は、Sinka社のEasyTactix３Dプリンターで、専用の、紙、（A4)、にカラー印刷したあと、触覚線を、エンボス加工されたものを、想定している。将来は、カラー印刷に、透明な、触覚線を、重ねたものを、用意する、可能性もある。" shape=rect coords=1,275,714,408
 ::target=014 title="３：触覚図は、A4紙大の、タッチスクリーンが付いた、電子機器の、ブラウザのスクリーンに被せ、指でなぞることを、想定している。" shape=rect coords=1,412,698,489
 ::target=015 title="４：触覚図をデスプレーの上に被せ、タッチした触覚線に関する説明を聞く場合は、以下のようにする。" shape=rect coords=1,497,702,573

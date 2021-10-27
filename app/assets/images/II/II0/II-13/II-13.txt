@@ -2,62 +2,62 @@
 
 ::target=010 title="１．２．２、数と式の、書き方、読み方：３。" shape=rect coords=65,25,648,78
 
-::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=24,81,710,169
+::target=011 title="各ぎょうの左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=24,81,710,169
 
-::target=012 title="a, 小なり, b,　a < b　" shape=rect coords=23,179,216,268
+::target=012 title="a、小なり、b" shape=rect coords=23,179,216,268
 
-::target=013 title="ラテフ、では、$、a，<、b、$。" shape=rect coords=233,186,362,228
+::target=013 title="ラテフ、では、$、a、小なり記号、b、$" shape=rect coords=233,186,362,228
 
-::target=014 title="Python、では、a < b" shape=rect coords=237,231,364,265
+::target=014 title="Python、では、a、小なり記号、b" shape=rect coords=237,231,364,265
 
-::target=015 TTS3 title="a is less than b" shape=rect coords=409,187,634,233
+::target=altb title="altb.mp3" shape=rect coords=409,187,634,233
 
-::target=016 title="a, 小なりイコール, b,　a ≦ b" shape=rect coords=25,268,212,383
+::target=016 title="a、小なりイコール、b" shape=rect coords=25,268,212,383
 
-::target=017 title="ラテフ、では、$、a，円記号、l、e、q、スペース、b、$。" shape=rect coords=236,267,395,312
+::target=017 title="ラテフ、では、$、a、円記号、l、e、q、スペース、b、$" shape=rect coords=236,267,395,312
 
-::target=018 title="Python、では、a、 <、=、 b" shape=rect coords=241,316,370,362
+::target=018 title="Python、では、a、小なり、続けて、イコール、b" shape=rect coords=241,316,370,362
 
-::target=019 TTS3 title="a is less than or equal to b" shape=rect coords=413,271,632,349
+::target=alteqb title="alteqb.mp3" shape=rect coords=413,271,632,349
 
-::target=020 title="a, 大なり, b,　a > b　" shape=rect coords=28,388,192,470
+::target=020 title="a、大なり、b" shape=rect coords=28,388,192,470
 
-::target=021 title="ラテフ、では、$、a，>、b、$。" shape=rect coords=233,393,371,432
+::target=021 title="ラテフ、では、$、a，大なり、b、$" shape=rect coords=233,393,371,432
 
-::target=022 title="Python、では、a、 >、 b" shape=rect coords=235,433,373,464
+::target=022 title="Python、では、a、大なり、b" shape=rect coords=235,433,373,464
 
-::target=023 TTS3 title="a is greater than b" shape=rect coords=409,391,668,438
+::target=agtb title="agtb.mp3" shape=rect coords=409,391,668,438
 
-::target=024 title="a, 大なりイコール, b." shape=rect coords=31,475,210,585
+::target=024 title="a、大なりイコール、b" shape=rect coords=31,475,210,585
 
-::target=025 title="ラテフ、では、$、a，円記号、g、e、q、スペース、b、$。" shape=rect coords=234,473,393,515
+::target=025 title="ラテフ、では、$、a，円記号、g、e、q、スペース、b、$" shape=rect coords=234,473,393,515
 
-::target=026 title="Python、では、a、 >、=、 b" shape=rect coords=239,519,366,559
+::target=026 title="Python、では、a、大なり、続けて、イコール、b" shape=rect coords=239,519,366,559
 
-::target=027 TTS3 title="a is greater than or equal to b" shape=rect coords=412,471,678,546
+::target=agteqb title="agteqb.mp3" shape=rect coords=412,471,678,546
 
-::target=028 title="a、小なり、x、小なり、イーコール、b、a < x ≤ b." shape=rect coords=33,595,231,751
+::target=028 title="a、小なり、x、小なり、イーコール、b" shape=rect coords=33,595,231,751
 
-::target=029 title="ラテフ、では、$、a，<, x, 円記号、l、e、q、スペース、 b、$。" shape=rect coords=234,595,412,640
+::target=029 title="ラテフ、では、$、a、小なり、x、円記号、l、e、q、スペース、b、$" shape=rect coords=234,595,412,640
 
-::target=030 title="Pythonでは、a < x ; x <= b" shape=rect coords=237,652,403,696
+::target=030 title="Pythonでは、a、小なり、x、セミコロン、または、改行、x、小なり、続けて、イコール、b" shape=rect coords=237,652,403,696
 
-::target=031 TTS3 title="a is less than x, and, x is less than or equal to b" shape=rect coords=417,599,690,719
+::target=altxlteqb title="altxlteqb.mp3" shape=rect coords=417,599,690,719
 
 ::target=032 title="a、定義、イーコール、b" shape=rect coords=35,759,247,877
 
-::target=033 title="ラテフ、では、$、a，円記号、e、q、u、i、v、スペース、 b、$。" shape=rect coords=249,759,435,803
+::target=033 title="ラテフ、では、$、a，円記号、e、q、u、i、v、スペース、b、$" shape=rect coords=249,759,435,803
 
 ::target=034 title="Pythonに、ない。" shape=rect coords=251,808,456,851
 
-::target=035 TTS3 title="a is equivalent to b" shape=rect coords=462,752,686,835
+::target=aequivb title="aequivb.mp3" shape=rect coords=462,752,686,835
 
 ::target=036 title="a、ノット、イーコール、b" shape=rect coords=34,876,238,1002
 
-::target=037 title="ラテフ、では、$、a，円記号、n、e、q、スペース、 b、$。" shape=rect coords=254,878,422,924
+::target=037 title="ラテフ、では、$、a，円記号、n、e、q、スペース、b、$" shape=rect coords=254,878,422,924
 
-::target=038 title="Pythonでは、a、感嘆符、=、b" shape=rect coords=258,933,350,976
+::target=038 title="Pythonでは、a、感嘆符、続けて、イコール、b" shape=rect coords=258,933,350,976
 
-::target=039 TTS3 title="a is not equal to b" shape=rect coords=445,881,653,960
+::target=aneqb title="aneqb.mp3" shape=rect coords=445,881,653,960
 
 
