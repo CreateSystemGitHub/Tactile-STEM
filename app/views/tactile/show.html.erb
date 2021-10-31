@@ -30,6 +30,9 @@
       </div>
 </div>
 <audio id="audio2"></audio>
+<audio id="effect_sound_enter" preload="auto">
+  <source src="/assets/effect32.mp3">
+</audio>
 
 <footer class="show_footer">
   <% if @audio_file_exist == 1 %> 
@@ -126,6 +129,9 @@
       </div>
     <% end %>
   <% end %>
+
+  <div id="output"></div>
+
 </footer>
 
 

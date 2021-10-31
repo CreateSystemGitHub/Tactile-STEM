@@ -347,6 +347,13 @@ function audioPlay2(src, start, stop){
 }
 
 //////////////////////////////////////////////////////
+//    3'rd Mp3 player for hover enter
+//////////////////////////////////////////////////////
+function effectPlay_enter(src){
+  document.getElementById("effect_sound_enter").play();
+  console.log("effectPlay_enter")
+}
+//////////////////////////////////////////////////////
 //    Web Speech API WC3
 //////////////////////////////////////////////////////
 function speechEnabled(){
@@ -498,6 +505,7 @@ function load_tts_param(){
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+//  Enter image map
 //  speak or play immediately on click or hover
 // sound: target=mp3,start_time,stop_time   play mp3
 // sound: target=mp3,TTS1 Jp default        Speak with TTS1, mp3s are ignored.
@@ -506,30 +514,52 @@ function load_tts_param(){
 // sound: target=mp3,TTS4 English Female    Speak with TTS4, mp3s are ignored.
 ///////////////////////////////////////////////////////////////////////////////
 function speakOne(path, text, sound, click){
-  console.log("sound="+sound + ",clicj=" + click);
-  if (click==0) return;
+  console.log("speakOne:path=%s,sound=%s,click=%d",path,sound,click);
+  if (click==0){
+    effectPlay_enter();
+    return;
+  }
+  //Clipboard file serch
+  if (sound!=null && sound.length>0){
+    var sound1 = sound.split(',');
+    var filename = path + sound1[0] + ".ltx"
+    if (filename.length > 0){
+      readTextFileToClipboard(filename);
+    }
+    filename = path + sound1[0] + ".pyt"
+    if (filename.length > 0){
+      readTextFileToClipboard(filename);
+    }
+  }
   v_scene = 0;
   if (sound!=null && sound.length>0){
     var sound1 = sound.split(',');
-    var filename = path + sound1[0] + ".mp3"
-    if (sound1.length ==3){
-      //alert("start="+sound1[1]+",stop="+sound1[2])
-      audioPlay2(filename,sound1[1],sound1[2]);
-      return;
-    }
+    if (sound1[1] == 'TTS'  || sound1[1] == 'TTS1' ||
+        sound1[1] == 'TTS2' || sound1[1] == 'TTS3' || sound1[1] == 'TTS4'){
+        //TTS Playing
+    } else{
+      //mp3 playing
+      var filename = path + sound1[0] + ".mp3"
+      if (sound1.length ==3){
+        //alert("start="+sound1[1]+",stop="+sound1[2])
+        audioPlay2(filename,sound1[1],sound1[2]);
+        return;
+      }
       if (sound1.length !=2){
         audioPlay2(filename, 0, 0);
-      return;
+        return;
+      }
     }
     //TTS(1-4)
     if (!tts_enable) {
       tts_enble = appendVoices();
     }
+    if (sound1[1] == "TTS")  v_scene = 0;
     if (sound1[1] == "TTS1") v_scene = 0;
     if (sound1[1] == "TTS2") v_scene = 1;
     if (sound1[1] == "TTS3") v_scene = 2;
     if (sound1[1] == "TTS4") v_scene = 3;
-  console.log("speakOne():tts_enable="+tts_enable+",sound="+sound1[1]+",v_scene="+v_scene);
+  //console.log("speakOne():tts_enable="+tts_enable+",sound="+sound1[1]+",v_scene="+v_scene);
   }
   speechSynthesis.cancel()
   const uttr = new SpeechSynthesisUtterance(text)
@@ -611,5 +641,54 @@ function camera(folder){
   });
 }
 
+// copy to Clipboard
+//  HTML上にテキストエリアを仮に作りそこにデータを移す。
+//  
+function copyTextToClipboard(textVal){
+  var copyFrom = document.createElement("textarea");
+  copyFrom.textContent = textVal;
+  var bodyElm = document.getElementsByTagName("body")[0];
+  bodyElm.appendChild(copyFrom);
+  copyFrom.select();  // テキストエリアの値を選択
+  var retVal = document.execCommand('copy');  // コピーコマンド発行
+  bodyElm.removeChild(copyFrom);
+  return retVal;
+}
 
+function loadTextFile(fName){
+  var xmlhttp = new XMLHttpRequest();
+//  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onload = function() {
+    if (xmlhttp.readyState == 4) {
+      if (xmlhttp.status == 200) { 
+        console.log("file="+fName+",status = " + xmlhttp.status);
+        if (xmlhttp.responseURL.endsWith('.ltx') || xmlhttp.responseURL.endsWith('.pyt')){
+          copyTextToClipboard(xmlhttp.responseText);
+        }
+      }
+    }
+  }
+  xmlhttp.open("GET", fName);
+  xmlhttp.send();
+}
+
+function  readTextFileToClipboard(sfile){
+  loadTextFile(sfile);
+  /*
+  var file = document.querySelector('#getfile');
+  // input 変化時に読み込む
+  file.onchange = function (){
+    var fileList = file.files;
+    var reader = new FileReader();
+    reader.readAsText(fileList[0]);
+    reader.onerror = function(){
+      console.log("readTextFileToClipboard:ERROR");
+    }
+    reader.onload = function  () {  
+      copyTextToClipboard(reader.result);
+      console.log("copyTextToClipboard:"+reader.result);
+    };
+  };
+  */
+}
 

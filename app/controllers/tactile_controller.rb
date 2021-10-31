@@ -331,10 +331,11 @@ class TactileController < ApplicationController
             ff = ee.split(',')
             gg = file_path+ff[0]+".mp3"
             if !asset_exists?(gg) then
+              #mp3 not found
               if (ff[1] and ff[1].length > 0) then
                 ee = ff[0] + "," + ff[1]
               else
-                ee = ""
+                ee = ff[0] + ",TTS"
               end
             end
           end
