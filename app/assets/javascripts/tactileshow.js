@@ -643,7 +643,7 @@ function camera(folder){
 
 // copy to Clipboard
 //  HTML上にテキストエリアを仮に作りそこにデータを移す。
-//  
+//  execCommandがdeprecatedなので書き直しが必要
 function copyTextToClipboard(textVal){
   var copyFrom = document.createElement("textarea");
   copyFrom.textContent = textVal;
@@ -657,7 +657,6 @@ function copyTextToClipboard(textVal){
 
 function loadTextFile(fName){
   var xmlhttp = new XMLHttpRequest();
-//  xmlhttp.onreadystatechange = function() {
   xmlhttp.onload = function() {
     if (xmlhttp.readyState == 4) {
       if (xmlhttp.status == 200) { 
@@ -674,21 +673,5 @@ function loadTextFile(fName){
 
 function  readTextFileToClipboard(sfile){
   loadTextFile(sfile);
-  /*
-  var file = document.querySelector('#getfile');
-  // input 変化時に読み込む
-  file.onchange = function (){
-    var fileList = file.files;
-    var reader = new FileReader();
-    reader.readAsText(fileList[0]);
-    reader.onerror = function(){
-      console.log("readTextFileToClipboard:ERROR");
-    }
-    reader.onload = function  () {  
-      copyTextToClipboard(reader.result);
-      console.log("copyTextToClipboard:"+reader.result);
-    };
-  };
-  */
 }
 

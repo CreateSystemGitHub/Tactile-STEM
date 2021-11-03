@@ -325,9 +325,8 @@ class TactileController < ApplicationController
           dd = cc.index('target=')
           ee = nil
           if dd!=nil then
-            dd1 = cc.slice(dd+7,20)
-            dd2 = dd1.index(' ')      #first separator target=XXXXX,YYY,ZZZ_
-            ee= cc.slice(dd+7,dd2)    #ee = target
+            dd1 = cc.index(' ') #first separator ::target=XXXXX,YYY,ZZZ_
+            ee = cc[dd+7..dd1-1]
             ff = ee.split(',')
             gg = file_path+ff[0]+".mp3"
             if !asset_exists?(gg) then

@@ -9,17 +9,17 @@
 
 ::target=014 title="Pythonは、数値を扱うプログラムなので、等間隔に並ぶ数値を、リンスペース、L、i、n、s、p、a、c、e、と呼ぶ関数で定義します。始点、終点の数値と、数値の総数を、指定します。" shape=rect coords=22,509,716,628
 
-::target=015 title="Pythonのプログラムでは、下の宣言文が、定義文の前に、書かれているとします。英語小文字で、import、スペース、n、u、m、p、y、スペース、a、s、スペース、n、p" shape=rect coords=23,628,628,744
+::target=numpylinspace015 title="Pythonのプログラムでは、下の宣言文が、定義文の前に、書かれているとします。英語小文字で、import、スペース、n、u、m、p、y、スペース、a、s、スペース、n、p" shape=rect coords=23,628,628,744
 
-::target=016 title="閉区間。ラテフでは、左角カッコ、a、コンマ、b、右角カッコ" shape=rect coords=24,751,557,797
+::target=closedclosedsection016 title="閉区間。ラテフでは、左角カッコ、a、コンマ、b、右角カッコ" shape=rect coords=24,751,557,797
 
-::target=017 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値に小さな数を足す、10.0、プラス、0.1、コンマ、ステップの値、1.0、右カッコ" shape=rect coords=23,797,666,843
+::target=closedclosedsection017 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値に小さな数を足す、10.0、プラス、0.1、コンマ、ステップの値、1.0、右カッコ" shape=rect coords=23,797,666,843
 
-::target=018 title="右かい区間。ラテフでは、左角カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=26,845,581,887
+::target=closedopensection018 title="右開区間。ラテフでは、左角カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=26,845,581,887
 
-::target=019 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値、10.0、コンマ、ステップの値、１.0、右カッコ" shape=rect coords=29,887,701,928
+::target=closedopensection019 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値、10.0、コンマ、ステップの値、１.0、右カッコ" shape=rect coords=29,887,701,928
 
-::target=020 title="かい区間。ラテフでは、左丸カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=29,929,570,974
+::target=openopensection020 title="開区間。ラテフでは、左丸カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=29,929,570,974
 
-::target=021 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値、10.0、コンマ、ステップの値、１.0、右カッコ、ドット、左角括弧、1、コロン、右角括弧" shape=rect coords=32,976,677,1022
+::target=openopensection021 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値、10.0、コンマ、ステップの値、１.0、右カッコ、ドット、左角括弧、1、コロン、右角括弧" shape=rect coords=32,976,677,1022
 
