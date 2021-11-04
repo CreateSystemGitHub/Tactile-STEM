@@ -68,8 +68,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-#2021/08/03
+#2021/08/03  
 #  gem 'pg'
+#2021/11/04  
+  gem 'pg'
 end
 
 #Add 2021/03/06

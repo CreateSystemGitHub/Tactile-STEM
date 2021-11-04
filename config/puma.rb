@@ -26,6 +26,8 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 #
 #2021/08/03
 #workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+#2021/11/04
+workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
