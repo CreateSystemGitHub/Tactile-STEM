@@ -1,30 +1,30 @@
 ﻿#FOLDER=II-17
 
-::target=010 title="1.2.4：三角関数と、簡単な公式" shape=rect coords=109,21,626,72
+::target=trigeq010 title="1.2.4：三角関数と、簡単な公式" shape=rect coords=109,21,626,72
 
-::target=011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,71,707,159
+::target=trigeq011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,71,707,159
 
-::target=012 title="加法定理1：sin、左括弧、a+b、右括弧、イコール、sin、左括弧、a、右括弧、cos、左括弧、b、右括弧、プラス、cos、左括弧、a、右括弧、sin、左括弧、b、右括弧" shape=rect coords=30,168,219,280
+::target=trigeq012 title="加法定理1：sin、左括弧、a+b、右括弧、イコール、sin、左括弧、a、右括弧、cos、左括弧、b、右括弧、プラス、cos、左括弧、a、右括弧、sin、左括弧、b、右括弧" shape=rect coords=30,168,219,280
 
-::target=013 title="ラテフでは、$、円記号、sin、左括弧、a、+、b、右括弧、イコール、円記号、sin、左括弧、a、右括弧、円記号、cos、左括弧、b、右括弧、+、円記号、cos、左括弧、a、右括弧、円記号、sin、左括弧、b、右括弧、$" shape=rect coords=214,168,436,272
+::target=trigeq013 title="ラテフでは、$、円記号、sin、左括弧、a、+、b、右括弧、イコール、円記号、sin、左括弧、a、右括弧、円記号、cos、左括弧、b、右括弧、+、円記号、cos、左括弧、a、右括弧、円記号、sin、左括弧、b、右括弧、$" shape=rect coords=214,168,436,272
 
-::target=014 title="パイソンでは、import、sympy、as、sp、改行、sp、ドット、v、a、r、左括弧、シングル引用記号、a、カンマ、b、右括弧、改行、sp、ドット、e、x、p、a、n、d、アンダースコア、t、r、i、g、左括弧、sp、ドット、sin、左括弧、a、プラス、b、右括弧、右括弧" shape=rect coords=217,299,498,432
+::target=trigeq014 title="シムパイでは、import、スペース、sympy、スペース、as、スペース、sp、改行、sp、ドット、v、a、r、左括弧、シングル引用、a、カンマ、b、シングル引用、右括弧、改行、sp、ドット、e、x、p、a、n、d、アンダースコア、t、r、i、g、左括弧、sp、ドット、sin、左括弧、a、プラス、b、右括弧、右括弧" shape=rect coords=217,299,498,432
 
-::target=kahouteiri015 title="kahouteiri015.mp3”shape=rect coords=425,166,698,301
+::target=trigeq015,TTS3 title="sine,in,parentheses,a,+,b,=,sine,a,cosine,b,+,cosine,a,sine,b" shape=rect coords=425,166,698,301
 
-::target=016 title="加法定理2：cos、(、a+b、)、=、cos、(、a、)、cos、(、b、)、-、sin、(、a、)、sin、(、b、)" shape=rect coords=15,444,210,582
+::target=trigeq016 title="加法定理2：cos、(、a+b、)、=、cos、(、a、)、cos、(、b、)、-、sin、(、a、)、sin、(、b、)" shape=rect coords=15,444,210,582
 
-::target=017 title="ラテフでは、$、円記号、cos、左括弧、a、+、b、右括弧、=、円記号、cos、左括弧、a、右括弧、円記号、cos、左括弧、b、右括弧、-、円記号、sin、左括弧、a、右括弧、円記号、sin、左括弧、b、右括弧、$" shape=rect coords=220,447,453,548
+::target=trigeq017 title="ラテフでは、$、円記号、cos、左括弧、a、+、b、右括弧、=、円記号、cos、左括弧、a、右括弧、円記号、cos、左括弧、b、右括弧、-、円記号、sin、左括弧、a、右括弧、円記号、sin、左括弧、b、右括弧、$" shape=rect coords=220,447,453,548
 
-::target=018 title="Python では、np、ドット、cos、(、a、)、アステリスク、np、ドット、cos、(、b、)、円記号、-、np、ドット、sin、(、a、)、アステリスク、np、ドット、sin、(、b、)" shape=rect coords=209,569,505,706
+::target=trigeq018 title="シムパイでは、sp、ドット、e、x、p、a、n、d、アンダースコア、t、r、i、g、左括弧、sp、ドット、cos、左括弧、a、プラス、b、右括弧、右括弧" shape=rect coords=209,569,505,706
 
-::target=019,TTS3 title="cosine,(,a+b,),=,cosine,(,a,),cosine,(,b,),-,sine,(,a,),sine,(,b,)." shape=rect coords=457,444,714,570
+::target=trigeq019,TTS3 title="cosine,in,parentheses,a,+,b,equal,cosine,a,cosine,b,minus,sine,a,sine,b" shape=rect coords=457,444,714,570
 
-::target=020 title="加法定理3：tan、(、a+b、)、=、(、tan、(、a、)、+、tan、(、b、)、)、/、(、1、-、tan、(、a、)、tan、(、b、)、)" shape=rect coords=21,722,210,898
+::target=trigeq020 title="加法定理3：tan、(、a+b、)、=、(、tan、(、a、)、+、tan、(、b、)、)、/、(、1、-、tan、(、a、)、tan、(、b、)、)" shape=rect coords=21,722,210,898
 
-::target=021 title="ラテフでは、$、円記号、tan、左括弧、a、プラス、b、右括弧、イコール、左括弧、円記号、tan、左括弧、a、右括弧、プラス、円記号、tan、左括弧、b、右括弧、右括弧、スラッシュ、左括弧、1、マイナス、円記号、tan、左括弧、a、右括弧、円記号、tan、左括弧、b、右括弧、右括弧、$" shape=rect coords=214,725,458,870
+::target=trigeq021 title="ラテフでは、$、円記号、tan、左括弧、a、プラス、b、右括弧、イコール、左括弧、円記号、tan、左括弧、a、右括弧、プラス、円記号、tan、左括弧、b、右括弧、右括弧、スラッシュ、左括弧、1、マイナス、円記号、tan、左括弧、a、右括弧、円記号、tan、左括弧、b、右括弧、右括弧、$" shape=rect coords=214,725,458,870
 
-::target=022 title="Pythonでは、a、イコール、np、ドット、pi、スラッシュ、6、改行、b、イコール、np、ドット、pi、スラッシュ、6、改行、左括弧、np、ドット、tan、左括弧、a、右括弧、プラス、np、ドット、tan、左括弧、b、右括弧、右括弧、スラッシュ、左括弧、1、マイナス、np、ドット、tan、左括弧、a、右括弧、アステリスク、np、ドット、tan、左括弧、b、右括弧、右括弧" shape=rect coords=213,887,536,1024
+::target=trigeq022 title="シムパイでは、sp、ドット、e、x、p、a、n、d、アンダースコア、t、r、i、g、左括弧、sp、ドット、tan、左括弧、a、プラス、b、右括弧、右括弧" shape=rect coords=213,887,536,1024
 
-::target=kahouteiri023 title="kahouteiri023.mp3" shape=rect coords=470,729,710,836
+::target=trigeq023,TTS3 title="tan,in,parenthese,a,+,b,equal,parenthesis,tan,a,+,tan,b,parenthesis,slash,parenthesis,1,minus,tan,a,tan,b,parenthesis" shape=rect coords=470,729,710,836
 

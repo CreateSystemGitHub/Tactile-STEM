@@ -1,61 +1,61 @@
 ﻿#FOLDER=II-12
 
-::target=010 title="１．２．２、数と式の、書き方、読み方：２。" shape=rect coords=49,37,637,82
+::target=numerals010 title="１．２．２、数と式の、書き方、読み方：２。" shape=rect coords=45,27,635,83
 
-::target=011 title="各行の左は日本語読み、中央上段に、ラテフ、下段に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=33,83,713,172
+::target=numerals011 title="各ぎょうの左は日本語読み、中央は、上にラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,89,690,168
 
-::target=012 title="小数、小さいの、小、と、数と書く。小数、２、点、５" shape=rect coords=41,178,176,229
+::target=numerals012 title="小数、２、点、５" shape=rect coords=30,183,200,228
 
-::target=013 title="ラテフ、では、＄、２，点、５、＄。" shape=rect coords=259,176,364,216
+::target=numerals013 title="ラテフ、では、＄、２，点、５、＄。" shape=rect coords=258,179,362,217
 
-::target=014 title="Python、では、２，点、５．" shape=rect coords=260,218,364,253
+::target=numerals014 title="Python、では、２，点、５．" shape=rect coords=262,219,363,255
 
-::target=decimal25 title="decimal25.mp3" shape=rect coords=487,176,694,253
+::target=numerals015,TTS3 title="Decimal,two　point　five" shape=rect coords=490,176,694,252
 
-::target=016 title="循環小数、0、点、8、9、7、で、９、と、７，が、繰り返す、場合、９、と、7、の上に点をつけるか、下線を引いて、その、二つが、セットで、循環することを、表す。上に、、点を、うつのは、困難な、ため、下線を、引くことを、勧める。" shape=rect coords=37,259,191,344
+::target=numerals016 title="循環小数、0、点、8、9、7、で、９、と、７，が、繰り返す、場合、９、と、7、の上に点をつけるか、下線を引いて、その、二つが、セットで、循環することを、表す。上に、、点を、うつのは、困難な、ため、下線を、引くことを、勧める。" shape=rect coords=36,255,194,341
 
-::target=017 title="ラテフ、では、$、0、点、8、逆スラッシュ、すなわち、円記号、d、o、t、左なみ括弧、9、右なみ括弧、円記号、d、o、t、左なみ括弧、7、右なみ括弧、$。" shape=rect coords=205,259,487,301
+::target=numerals017 title="ラテフ、では、$、0、点、8、逆スラッシュ、すなわち円記号、d、o、t、左なみ括弧、9、右なみ括弧、円記号、d、o、t、左なみ括弧、7、右なみ括弧、$" shape=rect coords=205,261,487,302
 
-::target=018 title="Pythonに、循環小数を表す方法はない。" shape=rect coords=206,303,477,381
+::target=numerals018 title="Pythonに、循環小数を表す方法はない。" shape=rect coords=208,303,486,381
 
-::target=repetend title="repetend.mp3" shape=rect coords=490,263,691,415
+::target=numerals019,TTS3 title="repetend　decimal,0.8,followed　by　repeating,9,7" shape=rect coords=497,265,690,408
 
-::target=020 title="分数、5、ぶんの、2。" shape=rect coords=42,415,194,472
+::target=numerals020 title="分数、5ぶんの2。一行の中では、2、スラッシュ、５と、書く。" shape=rect coords=45,421,201,467
 
-::target=021 title="ラテフでは、$、円記号、frac、左なみ括弧、2、右なみ括弧、左なみ括弧、5、右なみ括弧、$、または、$、2、スラッシュ、5、$、または、$、2、スラッシュ、5、$。" shape=rect coords=227,421,419,460
+::target=numerals021 title="ラテフでは、$、円記号、frac、左なみ括弧、2、右なみ括弧、左なみ括弧、5、右なみ括弧、$。一行に収めるときには、$、2、スラッシュ、5、$。" shape=rect coords=224,412,423,457
 
-::target=022 title="Python、では、２、スラッシュ、５。" shape=rect coords=228,462,310,497
+::target=numerals022 title="Python、では、２、スラッシュ、５。" shape=rect coords=225,458,426,495
 
-::target=twofifths title="twofifths.mp3" shape=rect coords=488,423,700,498
+::target=numerals023,TTS3 title="two　fifths　or　two　over　five" shape=rect coords=498,414,689,488
 
-::target=024 title="べきじょう、a、の、n、じょう" shape=rect coords=49,494,174,551
+::target=numerals024 title="べきじょう、a、の、n、じょう" shape=rect coords=44,511,173,591
 
-::target=025 title="ラテフ、では、$、a、キャレット記号、n、$。" shape=rect coords=237,499,338,549
+::target=numerals025 title="ラテフ、では、$、a、キャレット記号、n、$。" shape=rect coords=231,507,346,554
 
-::target=026 title="Python、では、a、アステリスク、アステリスク、エヌ。" shape=rect coords=238,558,341,601
+::target=numerals026 title="Python、では、a、アステリスク、アステリスク、エヌ。" shape=rect coords=231,558,349,608
 
-::target=aton title="aton.mp3" shape=rect coords=419,501,710,627
+::target=numerals027,TTS3 title="a,　to　n,　or,　a,　to　the　n'th　power,　or,　a,　to　the　power　of　n" shape=rect coords=422,502,698,629
 
-::target=028 title="a、の、へいほうこん、あるいは、ルート、a。" shape=rect coords=41,631,206,719
+::target=numerals028 title="a、の、へいほうこん、あるいは、ルート、a。" shape=rect coords=34,648,209,735
 
-::target=029 title="ラテフ、では、$、円記号、s、q、r、t、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=233,632,388,670
+::target=numerals029 title="ラテフ、では、$、円記号、s、q、r、t、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=224,649,394,694
 
-::target=030 title="Python、では、a、アステリスク、アステリスク、左丸括弧、0、点、5、右丸括弧、または、n、p、ドット、s、q、r、t、左丸括弧、a、右丸括弧。" shape=rect coords=237,672,422,742
+::target=numerals030 title="Python、では、a、アステリスク、アステリスク、左丸括弧、0、点、5、右丸括弧、または、n、p、ドット、s、q、r、t、左丸括弧、a、右丸括弧" shape=rect coords=229,699,397,775
 
-::target=roota title="roota.mp3" shape=rect coords=472,643,677,718
+::target=numerals031,TTS3 title="root　a,　or　square　root,　a." shape=rect coords=455,652,668,734
 
-::target=032 title="a、の、3、じょうこん。" shape=rect coords=45,759,198,820
+::target=numerals032 title="aの、りっぽうこん、または、3じょうこん。" shape=rect coords=34,794,194,879
 
-::target=033 title="ラテフ、では、$、円記号、s、q、r、t、左角括弧、3、右角括弧、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=233,766,422,813
+::target=numerals033 title="ラテフ、では、$、円記号、s、q、r、t、左角括弧、3、右角括弧、左なみ括弧、a、右なみ括弧、$。" shape=rect coords=229,797,424,844
 
-::target=034 title="Python、では、a、アステリスク、アステリスク、左丸括弧、1、スラッシュ、3、右丸括弧。" shape=rect coords=233,817,374,862
+::target=numerals034 title="Python、では、a、アステリスク、アステリスク、左丸括弧、1、スラッシュ、3、右丸括弧。" shape=rect coords=232,847,383,892
 
-::target=cuberoota title="cuberoota.mp3" shape=rect coords=469,766,666,838
+::target=numerals035,TTS3 title="cube　root,　a,　or,　a,　to　one　third" shape=rect coords=457,798,670,881
 
-::target=036 title="a、の、左括弧、c、わる、b、右括弧、じょう" shape=rect coords=42,894,211,949
+::target=numerals036 title="a、の、左括弧、c、わる、b、右括弧、じょう" shape=rect coords=33,920,211,976
 
-::target=037 title="ラテフ、では、$、a、キャレット、左なみ括弧、左丸括弧、b、スラッシュ、c、右丸括弧、右なみ括弧、$。" shape=rect coords=241,897,405,946
+::target=numerals037 title="ラテフ、では、$、a、キャレット、左なみ括弧、左丸括弧、b、スラッシュ、c、右丸括弧、右なみ括弧、$。" shape=rect coords=233,922,410,972
 
-::target=038 title="Python、では、a、アステリスク、アステリスク、左丸括弧、b、スラッシュ、c、右丸括弧。" shape=rect coords=245,946,385,989
+::target=numerals038 title="Python、では、a、アステリスク、アステリスク、左丸括弧、b、スラッシュ、c、右丸括弧。" shape=rect coords=237,973,411,1014
 
-::target=atoboverc title="atoboverc.mp3" shape=rect coords=469,908,671,950
+::target=numerals039,TTS3 title="a,to,bracket,b,over　c,bracket" shape=rect coords=453,925,684,1011

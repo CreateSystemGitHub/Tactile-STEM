@@ -11,6 +11,12 @@
 #ただし、現状では半角spが終端記号となっていますので半角spが現れた時点までしか読上げません。
 #shape=rect or shape=poly coords= --- は、ImageMap data であり、pptmファイルのマクロ(ImageMapGet)から採取できます。また、ImageMapGeneratorでも算出可能です。
 
-::target=010 title="数学記号や数式の、触覚線での表現、LaTeXとPythonでのスクリプト表記および、日本語、英語の音声表現" shape=rect coords=88,183,628,315
+::target=cover010 title="触覚　STEM　教材　第IIかん" shape=rect coords=136,71,580,135
 
-::target=011,TTS3 title="Mathematical　symbols　and　equations　drawn　as　tactile　images,　written　in　LaTex　and　Python　scripts,　and　read　aloud　in　Japanese　and　English" shape=rect coords=57,373,664,610
+::target=cover011,TTS3 title="Tactile　STEM　Booklet　Vol.　II" shape=rect coords=91,140,633,213
+
+::target=cover012 title="2021年11月1日　かまえ　つねよし、東京大学および、スタンフォード大名誉教授。小出富夫、クリエート、システム開発株式会社" shape=rect coords=85,231,636,460
+
+::target=cover013 title="要旨。数学の中の代数で使われる概念と表記法の基礎を、視覚、触覚、音声を同期させ、説明する。各項目に対応するLaTeXとPython、シムパイのスクリプトをクリップボードに書き出し、読者が報告書やプログラムの制作を容易にする。" shape=rect coords=33,468,687,722
+
+::target=cover014,TTS3 title="Abstract.　Formulae　in　algebra　are　given　at　entry　level　in　tactile　and　audio　forms.　LaTex　and　python　codes　are　written　to　clipboard　to　assist　readers　in　writing　and　coding." shape=rect coords=37,726,690,989

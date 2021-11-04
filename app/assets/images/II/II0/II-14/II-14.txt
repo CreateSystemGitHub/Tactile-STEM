@@ -1,55 +1,45 @@
 ﻿#FOLDER=II-14
 
-::target=010 title="1.2.2：数と式の、書き方、読み方：4" shape=rect coords=59,21,648,74
+::target=array010 title="1.2.2：数と式の、書き方、読み方：4" shape=rect coords=60,20,642,71
 
-::target=011 title="各ぎょうの左は、日本語読み、中央は、上にラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,74,709,164
+::target=array011 title="各ぎょうの左は、日本語読み、中央は、上にラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=24,74,684,154
 
-::target=012 title="べきじょう、a、の、ｎ、じょう" shape=rect coords=31,164,175,248
+::target=array012 title="数式でない、ａに、上付きそえ字、n" shape=rect coords=24,164,174,286
 
-::target=013 title="ラテフ、では、$、a、カレット、n、$ " shape=rect coords=257,164,371,212
+::target=array013 title="ラテフでは、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、カレット、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧、$" shape=rect coords=197,165,563,215
 
-::target=014 title="Pythonでは、a、アステリスク、アステリスク、n" shape=rect coords=259,213,372,253
+::target=array014 title="Pythonには、ない" shape=rect coords=199,219,458,264
 
-::target=anthpower title="anthpower.mp3" shape=rect coords=408,167,698,217
+::target=array015,TTS3 title="character,　a,　with　superscript　n" shape=rect coords=472,223,692,294
 
-::target=016 title="数式でない、上付き、そえ字" shape=rect coords=33,253,177,374
+::target=array016 title="数式でない、ａに、下付きそえ字、n" shape=rect coords=25,298,170,412
 
-::target=017 title="ラテフ、では、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、カレット、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧$" shape=rect coords=201,254,567,303
+::target=array017 title="ラテフでは、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、アンダースコア、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧、$" shape=rect coords=192,293,561,339
 
-::target=018 title="Python、では、文字の、アレーとして、表す" shape=rect coords=209,303,484,355
+::target=array018 title="Pythonには、ない" shape=rect coords=197,346,454,390
 
-::target=asupern title="asupern.mp3" shape=rect coords=504,305,690,378
+::target=array019,TTS3 title="character,　a,　with　subscript　n" shape=rect coords=469,345,693,420
 
-::target=020 title="下付き、インデックス、nが、ついた、数列" shape=rect coords=34,378,196,468
+::target=array020 title="数式表現での、上付きと下付き" shape=rect coords=26,425,185,547
 
-::target=021 title="ラテフ、では、$、a、アンダースコア、n、$。" shape=rect coords=210,370,294,411
+::target=array021 title="ラテフ、では、$、a、カレット、n、$、と、$、a、アンダースコア、n、$" shape=rect coords=194,421,439,468
 
-::target=022 title="パイソンでは　a、イコール、n、p、ドット、a、r、r、a、y、左丸括弧、左角括弧、0、コンマ、1、コンマ、2、コンマ、3、右角括弧、右丸括弧、の数列で表し、a、左角括弧、n、右角括弧のように、指定する" shape=rect coords=210,411,492,528
+::target=array022 title="パイソンでは、上下の区別なくアレーで表す。例えば、import、スペース、numpy、スペース、as、スペース、np、改行、a、イコール、n、p、ドット、a、r、r、a、y、左丸括弧、左角括弧、0、コンマ、1、コンマ、2、コンマ、3、右角括弧、右丸括弧" shape=rect coords=196,472,498,629
 
-::target=aseriesn title="aseriesn.mp3" shape=rect coords=508,389,681,473
+::target=array023,TTS3 title="math　expression,　array　with　superscript,　or,　subscript" shape=rect coords=504,428,690,626
 
-::target=024 title="数式でない、下付き添え字" shape=rect coords=38,529,184,660
+::target=array024 title="ベクトル表示、v、の上に矢印を付ける、または、ｖ、を、太文字にする" shape=rect coords=17,650,226,815
 
-::target=025 title="ラテフ、では、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、アンダースコア、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧、$" shape=rect coords=197,529,573,572
+::target=array025 title="ラテフ、では、$、円記号、v、e、c、スペース、v、$" shape=rect coords=240,649,405,691
 
-::target=026 title="Python、では、文字の、アレーとして、表す" shape=rect coords=203,571,503,656
+::target=array026 title="Pythonでは、3次元べクトルは、n、p、ドット、a、r、r、a、y、左括弧、左角括弧、x、コンマ、y、コンマ、z、右角括弧、右括弧、となる" shape=rect coords=244,696,499,816
 
-::target=asubn title="asubn.mp3" shape=rect coords=512,597,691,630
+::target=array027,TTS3 title="vector　v" shape=rect coords=513,660,673,701
 
-::target=asubn title="asubn.mp3" shape=rect coords=512,631,691,674
+::target=array028 title="2点、A、B、を結ぶ、ベクトル表示、ABの上に、矢印" shape=rect coords=21,820,234,946
 
-::target=028 title="ベクトル表示、v、の上に矢印を付けるか、太文字の、ｖで表す" shape=rect coords=37,674,236,837
+::target=array029 title="ラテフ、では、$、円記号、o、v、e、r、r、i、g、h、t、a、r、r、o、w、左波括弧、A、B、右波括弧、$。" shape=rect coords=238,819,550,866
 
-::target=029 title="ラテフ、では、$、円記号、v、e、c、スペース、v、$。" shape=rect coords=249,676,413,725
+::target=array030 title="Pythonでは、位置ベクトルの差で表す。np、ドット、array、左括弧、左角括弧、A、x、コンマ、A、y、コンマ、A、z、右角括弧、右括弧、マイナス、np、ドット、array、左括弧、左角括弧、B、x、コンマ、B、y、コンマ、B、z、右角括弧、右括弧" shape=rect coords=241,870,518,987
 
-::target=030 title="Pythonでは、ナムパイ・アレー、n、p、ドット、a、r、r、a、y、として表す。" shape=rect coords=251,727,517,810
-
-::target=vectorv title="vectorv.mp3" shape=rect coords=525,689,661,748
-
-::target=032 title="2点、A、B、を結ぶ、ベクトル表示、ABの上に、矢印" shape=rect coords=40,847,256,974
-
-::target=033 title="ラテフ、では、$、円記号、o、v、e、r、r、i、g、h、t、a、r、r、o、w、左波括弧、A、B、右波括弧、$。" shape=rect coords=262,842,574,888
-
-::target=034 title="Pythonでは、位置ベクトルの差として表す。" shape=rect coords=265,889,492,1008
-
-::target=vecAB title="vecAB.mp3" shape=rect coords=502,893,706,1009
+::target=array032,TTS3 title="vector　connecting　points　A　and　B" shape=rect coords=525,871,690,1007

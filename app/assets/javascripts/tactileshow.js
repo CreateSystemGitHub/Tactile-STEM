@@ -18,6 +18,9 @@ var v_rates  = new Array("0.8","0.8","0.8","0.8");
 var v_pitchs = new Array("1.0","1.0","1.0","1.0");
 var v_volums = new Array("0.7","0.7","0.7","0.7");
 
+//Hover_Enter effect sound
+var effect_hover = false;
+
 
 function audioVolumeSave(){
   var vol = document.getElementById("audio").volume;
@@ -516,7 +519,7 @@ function load_tts_param(){
 function speakOne(path, text, sound, click){
   console.log("speakOne:path=%s,sound=%s,click=%d",path,sound,click);
   if (click==0){
-    effectPlay_enter();
+    if (effect_hover) effectPlay_enter();
     return;
   }
   //Clipboard file serch

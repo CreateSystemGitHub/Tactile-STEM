@@ -1,14 +1,29 @@
 ﻿#FOLDER=II-10
-::target=010 title="1.2、数式を音読し、ラテフ、パイソンで書く。" shape=rect coords=50,26,646,66
+::target=interval010 title="1.2、数式を音読し、ラテフ、パイソンで書く。" shape=rect coords=49,19,647,67
 
-::target=011 title="この教材では、数学を、情報技術を使い、すぐに、使える形で、学びます。基礎になるプログラムは、ラテフ(L、a、T、e、X)、パイソン(P、y、t、h、o、n)です。どちらも、清少納言に、「ことごとなるもの」と、言われそうな教材で、別々に教えられますが、ここでは、数学と関連させながら、ゆっくり、学びます。"  shape=rect coords=18,65,705,300
+::target=interval011 title="この教材では、最新のデータサイエンスを使い、数式や記号を含む論文やレポートを、きれいに印刷し、問題を計算機で解く方法を学ぶ。使うプログラムは、ラテフとパイソンである。第一かんで説明したように、各段階で、短いコードを、自分のファイルにコピーし、試せる工夫をしている。"  shape=rect coords=17,74,680,291
 
-::target=012 title="1、2、１、区間内の、数値の列を、指定する方法。" shape=rect coords=20,304,635,348
+::target=interval012 title="1、2、1、始点と終点で、数値の列を指定する" shape=rect coords=19,294,665,334
 
-::target=013 title="数値の列の「区間」には、閉区間と、かい区間が、ある。数学の教科書やLaTeXでは、閉区間の始点と終点には、各々、左と右の、角括弧が使われます。かい区間では、左と右の、丸括弧が使われます。" shape=rect coords=25,352,697,511
+::target=interval013 title="始点や終点が区間に含まれる場合、閉区間、含まない場合、かい区間と呼ぶ。始点が閉区間、終点がかい区間等の組み合わせもある。ラテフでは、閉区間は角括弧、かい区間は丸括弧で表す。" shape=rect coords=14,338,690,485
 
-::target=014 title="Pythonは、数値を扱うプログラムなので、等間隔に並ぶ数値を、リンスペース、L、i、n、s、p、a、c、e、と呼ぶ関数で定義します。始点、終点の数値と、数値の総数を、指定します。" shape=rect coords=22,509,716,628
+::target=interval014 title="Pythonは数値を扱うので、等間隔に並ぶ数列を、Linspace、と呼ぶ関数で、始点、終点と、あいだに入る数の総数で、定義する。" shape=rect coords=14,486,708,603
 
+<<<<<<< HEAD
+::target=interval015 title="ここではPythonのプログラムに、コード（スクリプト）の前に、次の宣言が、あると仮定。import、スペース、n、u、m、p、y、スペース、a、s、スペース、n、p、改行、n、l、イコール、np、ドット、l、i、n、s、p、a、c、e、改行" shape=rect coords=14,608,692,719
+
+::target=interval016 title="閉区間。ラテフでは、左角カッコ、a、コンマ、b、右角カッコ" shape=rect coords=17,726,430,775
+
+::target=interval017 title="パイソンでは、n、l、左括弧、a、コンマ、b、コンマ、n、s、t、e、p、コンマ、e、n、d、p、o、i、n、t、イコール、先頭大文字で、T、r、u、e、右括弧" shape=rect coords=20,774,666,817
+
+::target=interval018 title="右かい区間。ラテフでは、左角カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=23,824,580,873
+
+::target=interval019 title="パイソンでは、n、l、左括弧、a、コンマ、b、コンマ、n、s、t、e、p、コンマ、e、n、d、p、o、i、n、t、イコール、先頭大文字で、F、a、l、s、e、右括弧" shape=rect coords=27,874,697,914
+
+::target=interval020 title="かい区間。ラテフでは、左丸カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=29,921,551,971
+
+::target=interval021 title="パイソンでは、n、l、左括弧、a、コンマ、b、コンマ、n、s、t、e、p、コンマ、e、n、d、p、o、i、n、t、イコール、先頭大文字で、T、r、u、e、右括弧、左角括弧、1、コロン、右角括弧" shape=rect coords=27,972,678,1020
+=======
 ::target=numpylinspace015 title="Pythonのプログラムでは、下の宣言文が、定義文の前に、書かれているとします。英語小文字で、import、スペース、n、u、m、p、y、スペース、a、s、スペース、n、p" shape=rect coords=23,628,628,744
 
 ::target=closedclosedsection016 title="閉区間。ラテフでは、左角カッコ、a、コンマ、b、右角カッコ" shape=rect coords=24,751,557,797
@@ -22,4 +37,5 @@
 ::target=openopensection020 title="開区間。ラテフでは、左丸カッコ、a、コンマ、b、右丸カッコ" shape=rect coords=29,929,570,974
 
 ::target=openopensection021 title="パイソンでは、n、p、ドット、a、r、a、n、g、e、左カッコ、最初の値、1.0、コンマ、最終の値、10.0、コンマ、ステップの値、１.0、右カッコ、ドット、左角括弧、1、コロン、右角括弧" shape=rect coords=32,976,677,1022
+>>>>>>> 0a89b58b49a410da8ffea20f1b39ceb983712aa1
 

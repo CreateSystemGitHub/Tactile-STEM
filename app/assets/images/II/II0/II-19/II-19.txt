@@ -1,37 +1,37 @@
 ﻿#FOLDER=II-19
 
-::target=010 title="1.2.6：数列総和、数列総積" shape=rect coords=160,25,592,80
+::target=series010 title="1.2.6：数列総和、数列総積" shape=rect coords=160,25,592,80
 
-::target=011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=31,80,700,167
+::target=series011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=31,80,700,167
 
-::target=012 title="数値列総和、ギリシャ字、大文字、シグマで表す" shape=rect coords=10,175,185,342
+::target=series012 title="数値列総和、ギリシャ字、大文字、シグマで表す" shape=rect coords=10,175,185,342
 
-::target=013 title="ラテフでは、$、円記号、先頭が、大文字の、S、i、g、m、a、アンダースコア、左波括弧、1、右波括弧、カレット、左波括弧、5、右波括弧、i、$、のように書く" shape=rect coords=192,175,446,222
+::target=series013 title="ラテフでは、$、円記号、先頭が、大文字の、S、i、g、m、a、アンダースコア、左波括弧、1、右波括弧、カレット、左波括弧、5、右波括弧、i、$、のように書く" shape=rect coords=192,175,446,222
 
-::target=014 title="パイソンでは、import、スペース、numpy、スペース、as、スペース、np、改行、数列の最初の項、i0、イコール、1、改行、最後の項、iend、イコール、5、改行、np、ドット、arange、左括弧、数列の最初の項、i0、コンマ、最後の項、iend、プラス、0.5、コンマ、1、右括弧、ドット、sum、左括弧、右括弧、または、np、ドット、sum、左括弧、左角括弧、1、コンマ、2、コンマ、3、コンマ、4、コンマ、5、右角括弧、右括弧のように、数値を並べ書く" shape=rect coords=195,224,510,384
+::target=series014 title="パイソンでは、import、スペース、numpy、スペース、as、スペース、np、改行、数列の最初の項、i,0、イコール、1、改行、最後の項、i,e,n,d、イコール、5、改行、np、ドット、arange、左括弧、i0、コンマ、i,endに、ステップより小さい数値を足した数、例えば、iend、プラス、0.5、コンマ、ステップの大きさ、1、右括弧、ドット、sum、左括弧、右括弧。別の表記法もある。例えば、np、ドット、sum、左括弧、左角括弧、1、コンマ、2、コンマ、3、コンマ、4、コンマ、5、右角括弧、右括弧のように、数値を並べ書く" shape=rect coords=195,224,510,384
 
-::target=015,TTS3 title="Numerical　sum　over　a　series.　Upper　case　sigma　with　the　first　and　last　indices." shape=rect coords=536,167,714,394
+::target=series015,TTS3 title="Numerical　sum　over　a　series.　Upper　case　sigma　with　the　first　and　last　indices." shape=rect coords=536,167,714,394
 
-::target=016 title="数式列総和、変数のべきで展開する" shape=rect coords=9,397,183,506
+::target=series016 title="数式列総和、変数のべきで展開する" shape=rect coords=9,397,183,506
 
-::target=017 title="ラテフでは、$、円記号、先頭が、大文字の、S、i、g、m、a、アンダースコア、左波括弧、1、右波括弧、カレット、左波括弧、5、右波括弧、a、アンダースコア、左波括弧、k、右波括弧、x、カレット、k、$、または、、円記号、大文字 S、i、g、m、a、アンダースコア、左波括弧、k、イコール、1、右波括弧、カレット、左波括弧、k、イコール、5、右波括弧、a、アンダースコア、左波括弧、k、右波括弧、x、カレット、k、$" shape=rect coords=184,399,527,504
+::target=series017 title="ラテフでは、$、円記号、先頭が、大文字の、S、i、g、m、a、アンダースコア、左波括弧、1、右波括弧、カレット、左波括弧、5、右波括弧、a、アンダースコア、左波括弧、k、右波括弧、x、カレット、k、$、または、、円記号、大文字 S、i、g、m、a、アンダースコア、左波括弧、k、イコール、1、右波括弧、カレット、左波括弧、k、イコール、5、右波括弧、a、アンダースコア、左波括弧、k、右波括弧、x、カレット、k、$" shape=rect coords=184,399,527,504
 
-::target=018 title="シンボリック・パイソン、シムパイで、テイラー展開する例：import、スペース、s、y、m、p、y、スペース、as、スペース、sp、改行、x、イコール、大文字で始まる、sp、ドット、大文字の、S、y、m、b、o、l、左括弧、シングル引用記号、x、シングル引用記号、コンマ、real、イコール、True、右括弧、改行、sp、ドット、series、左括弧、sp、ドット、sin、左括弧、x、右括弧、コンマ、x、コンマ、0、コンマ、5、右括弧" shape=rect coords=185,509,530,645
+::target=series018 title="シムパイで、テイラー展開する例：import、スペース、s、y、m、p、y、スペース、as、スペース、sp、改行、x、イコール、sp、ドット、大文字で始まる、S、y、m、b、o、l、左括弧、シングル引用、x、シングル引用、右括弧、改行、sp、ドット、series、左括弧、sp、ドット、sin、左括弧、x、右括弧、コンマ、x、コンマ、0、コンマ、5、右括弧" shape=rect coords=185,509,530,645
 
-::target=019,TTS3 title="Power　series　expansion" shape=rect coords=538,411,704,531
+::target=series019,TTS3 title="Power　series　expansion" shape=rect coords=538,411,704,531
 
-::target=020 title="数値列総積、ギリシャ文字、大文字、パイで表す" shape=rect coords=16,645,189,793
+::target=series020 title="数値列総積、ギリシャ文字、大文字、パイで表す" shape=rect coords=16,645,189,793
 
-::target=021 title="ラテフでは、$、円記号、大文字で始まる、Pi、アンダースコア、左波括弧、1、右波括弧、カレット、左波括弧、5、右波括弧、i、$、または、$、円記号、大文字で始まる、Pi、アンダースコア、左波括弧、i、イコール、1、右波括弧、カレット、左波括弧、i、イコール、5、右波括弧、i、$" shape=rect coords=193,645,445,716
+::target=series021 title="ラテフでは、$、円記号、大文字で始まる、Pi、アンダースコア、左波括弧、1、右波括弧、カレット、左波括弧、5、右波括弧、i、$、または、$、円記号、大文字で始まる、Pi、アンダースコア、左波括弧、i、イコール、1、右波括弧、カレット、左波括弧、i、イコール、5、右波括弧、i、$" shape=rect coords=193,645,445,716
 
-::target=022 title="パイソンでは、最初の項、i0、イコール、1、セミコロン、最後の項、iend、イコール、5、改行、np、ドット、arange、左括弧、i0、コンマ、最後の項に小さな数値を足す、iend+0.5、コンマ、1、右括弧、ドット、p、r、o、d、左括弧、右括弧、または、np、ドット、p、r、o、d、左括弧、左角括弧、1、コンマ、2、コンマ、3、コンマ、4、コンマ、5、右角括弧、右括弧" shape=rect coords=193,716,510,883
+::target=series022 title="パイソンでは、最初の項、i0、イコール、1、セミコロン、最後の項、i,end、イコール、5、改行、np、ドット、arange、左括弧、i0、コンマ、最後の項に小さな数値を足す、i,end+0.5、コンマ、1、右括弧、ドット、p、r、o、d、左括弧、右括弧。別の表記法では、np、ドット、p、r、o、d、左括弧、左角括弧、1、コンマ、2、コンマ、3、コンマ、4、コンマ、5、右角括弧、右括弧" shape=rect coords=193,716,510,883
 
-::target=023,TTS3 title="Numerical　product　over　a　series.Upper　case　pi　with　the　first　and　last　indices" shape=rect coords=525,645,711,872
+::target=series023,TTS3 title="Numerical　product　over　a　series.Upper　case　pi　with　the　first　and　last　indices" shape=rect coords=525,645,711,872
 
-::target=024 title="階じょう：自然すうの、１、から、指定した数までの、総積" shape=rect coords=17,897,165,1017
+::target=series024 title="階じょう：自然すうの、１、から、指定した数までの、総積。数値、nに続けて、感嘆記号を書く。" shape=rect coords=16,882,180,1021
 
-::target=025 title="ラテフでは、$、n、感嘆記号、$" shape=rect coords=17,897,165,1017
+::target=series025 title="ラテフでは、$、n、感嘆記号、$" shape=rect coords=187,881,298,920
 
-::target=026 title="パイソンでは、import、スペース、m、a、t、h、改行、n、イコール、10、改行、m、a、t、h、ドット、factorial、左括弧、n、右括弧" shape=rect coords=195,954,448,1026
+::target=series026 title="パイソンでは、import、スペース、m、a、t、h、改行、n、イコール、10、改行、m、a、t、h、ドット、factorial、左括弧、n、右括弧" shape=rect coords=188,921,434,1020
 
-::target=027,TTS3 title="Factorial:　numerical　product　from　1　to　n." shape=rect coords=519,881,702,1018
+::target=series027,TTS3 title="Factorial:　numerical　product　from　1　to　n." shape=rect coords=515,886,698,1024

@@ -1,106 +1,105 @@
 ﻿#FOLDER=II-22
 0:ギリシャ文字
 
-::target=010 title="1.2.9：ギリシャ文字" shape=rect coords=186,8,518,60
+::target=greek010 title="1.2.9：ギリシャ文字" shape=rect coords=186,8,518,60
 
-::target=011 title="英語名" shape=rect coords=53,62,172,129
+::target=greek011 title="左コラムに英語の綴りと発音" shape=rect coords=53,62,172,129
 
-::target=012 title="ギリシャ文字、大文字と小文字" shape=rect coords=195,66,433,138
+::target=greek012 title="左から2番目に、大文字と小文字のギリシャ文字" shape=rect coords=195,66,433,138
 
-::target=013 title="ラテフで、ギリシャ字の大文字、小文字を書く、" shape=rect coords=439,63,674,136
+::target=greek013 title="ラテフで書く、ギリシャ字の大文字、小文字" shape=rect coords=439,63,674,136
 
-::target=alpha title="alpha.mp3" shape=rect coords=59,139,274,177
+::target=alpha title="alpha" shape=rect coords=59,139,274,177
 
-::target=014 title="ラテフでは、大文字は、ローマ字、大文字、A、小文字は、$、円記号、a、l、p、h、a、$" shape=rect coords=281,140,666,179
+::target=greek014 title="ラテフでは、大文字は、ローマ字、大文字、A、小文字は、$、円記号、a、l、p、h、a、$" shape=rect coords=281,140,666,179
 
-::target=beta title="beta.mp3" shape=rect coords=60,178,276,212
+::target=beta title="beta" shape=rect coords=60,178,276,212
 
-::target=015 title="ラテフでは、大文字は、ローマ字、大文字、B、小文字は、$、円記号、b、e、t、a、$" shape=rect coords=279,179,670,217
+::target=greek015 title="ラテフでは、大文字は、ローマ字、大文字、B、小文字は、$、円記号、b、e、t、a、$" shape=rect coords=279,179,670,217
 
-::target=gamma title="gamma.mp3" shape=rect coords=63,212,274,252
+::target=gamma title="gamma" shape=rect coords=63,212,274,252
 
-::target=016 title="ラテフでは、大文字は、$、円記号、大文字、G、a、m、m、a、$、小文字は、$、円記号、g、a、m、m、a、$" shape=rect coords=281,219,669,255
+::target=greek016 title="ラテフでは、大文字は、$、円記号、大文字、G、a、m、m、a、$、小文字は、$、円記号、g、a、m、m、a、$" shape=rect coords=281,219,669,255
 
-::target=delta title="delta.mp3" shape=rect coords=63,253,272,284
+::target=delta title="delta" shape=rect coords=63,253,272,284
 
-::target=017 title="ラテフでは、大文字は、$、円記号、大文字、D、e、l、t、a、小文字は、$、円記号、d、e、l、t、a、$" shape=rect coords=283,255,671,289
+::target=greek017 title="ラテフでは、大文字は、$、円記号、大文字、D、e、l、t、a、小文字は、$、円記号、d、e、l、t、a、$" shape=rect coords=283,255,671,289
 
-::target=epsilon title="epsilon.mp3" shape=rect coords=64,284,273,323
+::target=epsilon title="epsilon" shape=rect coords=64,284,273,323
 
-::target=018 title="ラテフでは、大文字は、ローマ字、大文字、E、小文字は、$、円記号、e、p、s、i、l、o、n、$" shape=rect coords=286,291,671,327
+::target=greek018 title="ラテフでは、大文字は、ローマ字、大文字、E、小文字は、$、円記号、e、p、s、i、l、o、n、$" shape=rect coords=286,291,671,327
 
-::target=zeta title="zeta.mp3" shape=rect coords=64,323,270,361
+::target=zeta title="zeta" shape=rect coords=64,323,270,361
 
-::target=019 title="ラテフでは、大文字は、ローマ字、大文字、Z、小文字は、$、円記号、z、e、t、a、$" shape=rect coords=285,330,674,360
+::target=greek019 title="ラテフでは、大文字は、ローマ字、大文字、Z、小文字は、$、円記号、z、e、t、a、$" shape=rect coords=285,330,674,360
 
-::target=eta title="eta.mp3" shape=rect coords=64,362,271,396
+::target=eta title="eta" shape=rect coords=64,362,271,396
 
-::target=020 title="ラテフでは、大文字は、ローマ字、大文字、H、小文字は、$、円記号、e、t、a、$" shape=rect coords=286,362,670,400
+::target=greek020 title="ラテフでは、大文字は、ローマ字、大文字、H、小文字は、$、円記号、e、t、a、$" shape=rect coords=286,362,670,400
 
-::target=theta title="theta.mp3" shape=rect coords=65,396,272,436
+::target=theta title="theta" shape=rect coords=65,396,272,436
 
-::target=021 title="ラテフでは、大文字は、$、円記号、大文字、T、h、e、t、a、$、小文字は、$、円記号、t、h、e、t、a、$" shape=rect coords=288,400,664,438
+::target=greek021 title="ラテフでは、大文字は、$、円記号、大文字、T、h、e、t、a、$、小文字は、$、円記号、t、h、e、t、a、$" shape=rect coords=288,400,664,438
 
-::target=iota title="iota.mp3" shape=rect coords=64,435,270,470
+::target=iota title="iota" shape=rect coords=64,435,270,470
 
-::target=022 title="ラテフでは、大文字は、ローマ字、大文字、I、小文字は、$、円記号、i、o、t、a、$" shape=rect coords=290,437,669,475
+::target=greek022 title="ラテフでは、大文字は、ローマ字、大文字、I、小文字は、$、円記号、i、o、t、a、$" shape=rect coords=290,437,669,475
 
-::target=kappa title="kappa.mp3" shape=rect coords=63,470,270,508
+::target=kappa title="kappa" shape=rect coords=63,470,270,508
 
-::target=023 title="ラテフでは、大文字は、ローマ字、大文字、K、小文字は、$、円記号、k、a、p、p、a、$" shape=rect coords=291,478,670,513
+::target=greek023 title="ラテフでは、大文字は、ローマ字、大文字、K、小文字は、$、円記号、k、a、p、p、a、$" shape=rect coords=291,478,670,513
 
-::target=lambda title="lambda.mp3" shape=rect coords=61,506,268,543
+::target=lambda title="lambda" shape=rect coords=61,506,268,543
 
-::target=024 title="ラテフでは、大文字は、$、円記号、大文字、L、a、m、b、d、a、小文字は、$、円記号、l、a、m、b、d、a、$" shape=rect coords=292,512,660,547
+::target=greek024 title="ラテフでは、大文字は、$、円記号、大文字、L、a、m、b、d、a、小文字は、$、円記号、l、a、m、b、d、a、$" shape=rect coords=292,512,660,547
 
-::target=mu title="mu.mp3" shape=rect coords=62,545,266,582
+::target=mu title="mu" shape=rect coords=62,545,266,582
 
-::target=025 title="ラテフでは、大文字は、ローマ字、大文字、M、小文字は、$、円記号、m、u、$" shape=rect coords=293,547,661,585
+::target=greek025 title="ラテフでは、大文字は、ローマ字、大文字、M、小文字は、$、円記号、m、u、$" shape=rect coords=293,547,661,585
 
-::target=nu title="nu.mp3" shape=rect coords=61,584,267,619
+::target=nu title="nu" shape=rect coords=61,584,267,619
 
-::target=026 title="ラテフでは、大文字は、ローマ字、大文字、N、小文字は、$、円記号、n、u、$" shape=rect coords=292,586,662,623
+::target=greek026 title="ラテフでは、大文字は、ローマ字、大文字、N、小文字は、$、円記号、n、u、$" shape=rect coords=292,586,662,623
 
-::target=xi title="xi.mp3" shape=rect coords=62,620,266,656
+::target=xi title="xi" shape=rect coords=62,620,266,656
 
-::target=027 title="ラテフでは、大文字は、$、円記号、大文字、X、i、$、大文字、小文字は、$、円記号、x、i、$" shape=rect coords=293,622,664,657
+::target=greek027 title="ラテフでは、大文字は、$、円記号、大文字、X、i、$、大文字、小文字は、$、円記号、x、i、$" shape=rect coords=293,622,664,657
 
-::target=omicron title="omicron.mp3" shape=rect coords=63,658,268,693
+::target=omicron title="omicron" shape=rect coords=63,658,268,693
 
-::target=028 title="ラテフでは、大文字は、ローマ字、大文字、O、小文字も、ローマ字、小文字、o" shape=rect coords=296,659,694,693
+::target=greek028 title="ラテフでは、大文字は、ローマ字、大文字、O、小文字も、ローマ字、小文字、o" shape=rect coords=296,659,694,693
 
-::target=pi title="pi.mp3" shape=rect coords=61,692,266,731
+::target=pi title="pi" shape=rect coords=61,692,266,731
 
-::target=029 title="ラテフでは、大文字は、$、円記号、大文字、P、i、$、小文字は、$、円記号、p、i、$" shape=rect coords=294,697,662,732
+::target=greek029 title="ラテフでは、大文字は、$、円記号、大文字、P、i、$、小文字は、$、円記号、p、i、$" shape=rect coords=294,697,662,732
 
-::target=rho title="rho.mp3" shape=rect coords=65,732,266,767
+::target=rho title="rho" shape=rect coords=65,732,266,767
 
-::target=030 title="ラテフでは、大文字は、ローマ字、大文字、P、小文字は、$、円記号、r、h、o、$" shape=rect coords=293,733,646,771
+::target=greek030 title="ラテフでは、大文字は、ローマ字、大文字、P、小文字は、$、円記号、r、h、o、$" shape=rect coords=293,733,646,771
 
-::target=sigma title="sigma.mp3" shape=rect coords=63,768,264,807
+::target=sigma title="sigma" shape=rect coords=63,768,264,807
 
-::target=031 title="ラテフでは、大文字は、$、円記号、大文字、S、i、g、m、a、$、小文字は、$、円記号、s、i、g、m、a、$" shape=rect coords=296,773,690,807
+::target=greek031 title="ラテフでは、大文字は、$、円記号、大文字、S、i、g、m、a、$、小文字は、$、円記号、s、i、g、m、a、$" shape=rect coords=296,773,690,807
+::target=tau title="tau" shape=rect coords=58,804,278,838
 
-::target=tau title="tau.mp3" shape=rect coords=58,804,278,838
+::target=greek032 title="ラテフでは、大文字は、ローマ字、大文字、T、小文字は、$、円記号、t、a、u、$" shape=rect coords=298,809,686,842
 
-::target=032 title="ラテフでは、大文字は、ローマ字、大文字、T、小文字は、$、円記号、t、a、u、$" shape=rect coords=298,809,686,842
+::target=upsilon title="upsilon" shape=rect coords=60,839,278,877
 
-::target=upsilon title="upsilon.mp3" shape=rect coords=60,839,278,877
+::target=greek033 title="ラテフでは、大文字は、$、円記号、大文字、U、p、s、i、l、o、n、$、小文字は、$、円記号、u、p、s、i、l、o、n、$" shape=rect coords=297,845,685,885
 
-::target=033 title="ラテフでは、大文字は、$、円記号、大文字、U、p、s、i、l、o、n、$、小文字は、$、円記号、u、p、s、i、l、o、n、$" shape=rect coords=297,845,685,885
+::target=phi title="phi" shape=rect coords=57,877,275,914
 
-::target=phi Audio title="phi.mp3" shape=rect coords=57,877,275,914
+::target=greek034 title="ラテフでは、大文字は、$、円記号、大文字、P、h、i、$、小文字は、$、円記号、p、h、i、$" shape=rect coords=296,883,693,918
 
-::target=035 title="ラテフでは、大文字は、$、円記号、大文字、P、h、i、$、小文字は、$、円記号、p、h、i、$" shape=rect coords=296,883,693,918
+::target=chi title="chi" shape=rect coords=60,916,272,953
 
-::target=chi Audio title="chi.mp3" shape=rect coords=60,916,272,953
+::target=greek035 title="ラテフでは、大文字は、ローマ字、大文字、X、小文字は、$、円記号、c、h、i、$" shape=rect coords=296,919,681,951
 
-::target=036 title="ラテフでは、大文字は、ローマ字、大文字、X、小文字は、$、円記号、c、h、i、$" shape=rect coords=296,919,681,951
+::target=psi title="psi" shape=rect coords=61,953,274,989
 
-::target=psi Audio title="psi.mp3" shape=rect coords=61,953,274,989
+::target=greek036 title="ラテフでは、大文字は、$、円記号、大文字、P、s、i、$、小文字は、$、円記号、p、s、i、$" shape=rect coords=297,954,673,994
 
-::target=037 title="ラテフでは、大文字は、$、円記号、大文字、P、s、i、$、小文字は、$、円記号、p、s、i、$" shape=rect coords=297,954,673,994
+::target=omega title="omega" shape=rect coords=61,989,271,1026
 
-::target=omega title="omega.mp3" shape=rect coords=61,989,271,1026
-
-::target=038 title="ラテフでは、大文字は、$、円記号、大文字、O、m、e、g、a、$、小文字は、$、円記号、o、m、e、g、a、$" shape=rect coords=297,993,671,1026
+::target=greek037 title="ラテフでは、大文字は、$、円記号、大文字、O、m、e、g、a、$、小文字は、$、円記号、o、m、e、g、a、$" shape=rect coords=297,993,671,1026

@@ -1,37 +1,37 @@
 ﻿#FOLDER=II-21
 
-::target=010 title="1.2.8：極限と、極限公式" shape=rect coords=194,19,583,69
+::target=lim010 title="1.2.8：極限と、極限公式" shape=rect coords=194,19,583,69
 
-::target=011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=33,66,709,148
+::target=lim011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=33,66,709,148
 
-::target=012 title="数式の変数、例えば、ｘ、が、0、無限大、等に、近づく時の値、l、i、m、x、矢印、値、と書く" shape=rect coords=8,154,202,352
+::target=lim012 title="数式の変数、例えば、ｘ、が、0、無限大、等に、近づく時の値、l、i、m、x、矢印、値、と書く" shape=rect coords=8,154,202,352
 
-::target=013 title="ラテフでは、$、円記号、lim、アンダースコア、左波括弧、x、円記号、to、円記号、infty、右波括弧、円記号、frac、左波括弧、1、右波括弧、左波括弧、x、右波括弧、$、のように書く" shape=rect coords=212,158,494,232
+::target=lim013 title="ラテフでは、$、円記号、lim、アンダースコア、左波括弧、x、円記号、to、円記号、infty、右波括弧、円記号、frac、左波括弧、1、右波括弧、左波括弧、x、右波括弧、$、のように書く" shape=rect coords=212,158,494,232
 
-::target=014 title="パイソン、シムパイでは、import、sympy、as、sp、改行、x、イコール、sp、ドット、先頭大文字の、Symbol、左括弧、シングル引用、x、シングル引用、右括弧、改行、無限大極限では、sp、ドット、limit、左括弧、1、スラッシュ、x、コンマ、x、コンマ、小文字、o、を二つ並べる、右括弧、改行、ゼロ極限では、sp、ドット、limit、左括弧、1、スラッシュ、x、コンマ、x、コンマ、0、右括弧" shape=rect coords=212,235,513,364
+::target=lim014 title="シムパイでは、import、sympy、as、sp、改行、x、イコール、sp、ドット、s、y、m、b、o、l、s、左括弧、シングル引用、x、シングル引用、右括弧、改行、無限大極限では、sp、ドット、limit、左括弧、1、スラッシュ、x、コンマ、x、コンマ、小文字、o、を二つ並べる、右括弧、改行、ゼロ極限では、sp、ドット、limit、左括弧、1、スラッシュ、x、コンマ、x、コンマ、0、右括弧" shape=rect coords=212,235,513,364
 
-::target=015,TTS3 title="Limiting　value　ｗhen　a　variable　approaches　0　or　infinity　or　a　value." shape=rect coords=521,156,712,347
+::target=lim015,TTS3 title="Limiting　value　ｗhen　a　variable　approaches　0　or　infinity　or　a　value." shape=rect coords=521,156,712,347
 
-::target=016 title="無限大、文章では、特殊記号、∞を挿入" shape=rect coords=9,371,158,510
+::target=lim016 title="無限大、文章では、特殊記号、∞を挿入" shape=rect coords=9,371,158,510
 
-::target=017 title="ラテフ：$、円記号、i、n、f、t、y、$、または、$、x、円記号、to、円記号、i、n、f、t、y、$" shape=rect coords=181,370,410,440
+::target=lim017 title="ラテフ：$、円記号、i、n、f、t、y、$、使い方は、$、x、円記号、to、円記号、i、n、f、t、y、$" shape=rect coords=181,370,410,440
 
-::target=018 title="シムパイでは、小文字、オー、を、二つ続けて、無限大を表す。例えば、1、プラス、sp、ドット、o、o、や、42、スラッシュ、sp、ドット、o、o、のように書く" shape=rect coords=181,440,480,568
+::target=lim018 title="シムパイでは、小文字、オー、を、二つ続けて、無限大を表す。例えば、1、プラス、sp、ドット、o、o、や、42、スラッシュ、sp、ドット、o、o、のように書く" shape=rect coords=181,440,480,568
 
-::target=019,TTS3 title="Infinity　symbol　looks　like　numeral　8　laid　down　sideway." shape=rect coords=517,362,669,558
+::target=lim019,TTS3 title="Infinity　symbol　looks　like　numeral　8　laid　down　sideway." shape=rect coords=517,362,669,558
 
-::target=020 title="微小量を表す、ギリシャ小文字、イプシロン" shape=rect coords=7,574,155,744
+::target=lim020 title="微小量を表す、ギリシャ小文字、イプシロン" shape=rect coords=7,574,155,744
 
-::target=021 title="ラテフでは、$、円記号、epsilon、$、または、$、円記号、lim、アンダースコア、左波括弧、円記号、epsilon、スペース、円記号、to、スペース、0、右波括弧、sin、左括弧、円記号、epsilon、右括弧、イコール、円記号、epsilon、$、のように表す" shape=rect coords=173,574,500,676
+::target=lim021 title="ラテフでは、$、円記号、epsilon、$、使い方は、$、円記号、lim、アンダースコア、左波括弧、円記号、epsilon、スペース、円記号、to、スペース、0、右波括弧、sin、左括弧、円記号、epsilon、右括弧、イコール、円記号、epsilon、$、のように表す" shape=rect coords=173,574,500,676
 
-::target=022 title="シムパイでは、x、イコール、sp、ドット、先頭大文字で、Symbol、左括弧、シングル引用、x、シングル引用、右括弧、改行、sp、ドット、e、x、p、r、イコール、sin、左括弧、x、右括弧、スラッシュ、x、改行、sp、ドット、e、x、p、r、ドット、e、v、a、l、f、左括弧、s、u、b、s、イコール、左波括弧、x、コロン0.01、右波括弧、右括弧" shape=rect coords=172,678,499,777
+::target=lim022 title="シムパイでは、x、イコール、sp、ドット、symbols、左括弧、シングル引用、x、シングル引用、右括弧、改行、sp、ドット、e、x、p、r、イコール、sin、左括弧、x、右括弧、スラッシュ、x、改行、sp、ドット、e、x、p、r、ドット、e、v、a、l、f、左括弧、s、u、b、s、イコール、左波括弧、x、コロン、0.01、右波括弧、右括弧" shape=rect coords=172,678,499,777
 
-::target=023,TTS3 title="Infinitesimal:　Greek　lower-case　epsilon　is　used　when　numerical　value　is　presumed　to　be　very　small." shape=rect coords=513,569,710,820
+::target=lim023,TTS3 title="Infinitesimal.　Greek　lower-case　epsilon　is　used　when　numerical　value　is　presumed　to　be　very　small." shape=rect coords=513,569,710,820
 
-::target=024 title="微小量、イプシロン、を使う、きんじち、の表現" shape=rect coords=9,818,146,961
+::target=lim024 title="微小量に対する、きんじ表現" shape=rect coords=9,818,146,961
 
-::target=025 title="ラテフでの例、$、円記号、sin、左括弧、円記号、epsilon、右括弧、円記号、a、p、p、r、o、x、円記号、epsilon、マイナス、左括弧、1、スラッシュ、6、右括弧、円記号、epsilon、カレット、3、$" shape=rect coords=154,821,509,900
+::target=lim025 title="ラテフでの例、$、円記号、sin、左括弧、円記号、epsilon、右括弧、円記号、a、p、p、r、o、x、円記号、epsilon、マイナス、左括弧、1、スラッシュ、6、右括弧、円記号、epsilon、カレット、3、$" shape=rect coords=154,821,509,900
 
-::target=026 title="シムパイでの例、x、イコール、sp、ドット、先頭大文字で、Symbol、左括弧、シングル引用、x、シングル引用、右括弧、改行、sp、ドット、e、x、p、r、イコール、sp、ドット、ln、左括弧、1、プラス、x、右括弧、改行、sp、ドット、e、x、p、r、ドット、e、v、a、l、f、左括弧、s、u、b、s、イコール、左波括弧、x、コロン、0.01、右波括弧、右括弧" shape=rect coords=153,899,503,1006
+::target=lim026 title="シムパイでの例、x、イコール、sp、ドット、symbols、左括弧、シングル引用、x、シングル引用、右括弧、改行、sp、ドット、e、x、p、r、イコール、sp、ドット、ln、左括弧、1、プラス、x、右括弧、改行、sp、ドット、e、x、p、r、ドット、e、v、a、l、f、左括弧、s、u、b、s、イコール、左波括弧、x、コロン、0.01、右波括弧、右括弧" shape=rect coords=153,899,503,1006
 
-::target=027,TTS3 title="If　epsilon　or　x　is　very　small,　sine　or　logarithm　for　x　takes　a　simple　polynomial　form." shape=rect coords=513,829,712,1026
+::target=lim027,TTS3 title="For　example　if　x　is　small,　sine　or　logarithm　for　x　takes　a　simple　polynomial　form." shape=rect coords=513,829,712,1026

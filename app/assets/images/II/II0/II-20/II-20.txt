@@ -1,37 +1,37 @@
 ﻿#FOLDER=II-21
 
-::target=010 title="1.2.7：微分と積分に関する式" shape=rect coords=160,25,592,60
+::target=diff010 title="1.2.7：微分と積分に関する式" shape=rect coords=143,10,619,53
 
-::target=011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=31,65,700,140
+::target=diff011 title="各ぎょうの左は日本語読み、中央は、上に、ラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=23,49,694,129
 
-::target=012 title="一変数関数の微分：重力加速度" shape=rect coords=10,142,185,242
+::target=diff012 title="一変数関数の微分：例、重力による、加速" shape=rect coords=3,132,179,265
 
-::target=013 title="ラテフでは、$、v、イコール、円記号、frac、左波括弧、d、x、右波括弧、左波括弧、d、t、右波括弧、$、および、$、g、イコール、マイナス、円記号、frac、左波括弧、d、カレット、2、x、右波括弧、左波括弧、d、t、カレット、2、右波括弧、$" shape=rect coords=192,142,446,200
+::target=diff013 title="ラテフでは、速度は、$、v、イコール、円記号、f、r、a、c、左波括弧、d、x、右波括弧、左波括弧、d、t、右波括弧、$、加速度は、$、g、イコール、マイナス、円記号、f、r、a、c、左波括弧、d、カレット、2、x、右波括弧、左波括弧、d、t、カレット、2、右波括弧、$" shape=rect coords=189,135,514,195 
 
-::target=014 title="パイソン（シムパイ）では、import、スペース、sympy、スペース、as、スペース、sp、改行、sp、ドット、v、a、r、左括弧、シングル引用、t、コンマ、g、シングル引用、右括弧、改行、x、イコール、sp、ドット、先頭が大文字の、Function、左括弧、シングル引用、x、シングル引用、右括弧、左括弧、t、右括弧、改行、e、q、1、イコール、sp、ドット、大文字のE、q、左括弧、sp、ドット、diff、左括弧、x、コンマ、t、コンマ、2、右括弧、コンマ、マイナス、g、右括弧、改行、sp、ドット、d、s、o、l、v、e、左括弧、e、q、1、右括弧" shape=rect coords=195,204,510,370
+::target=diff014 title="シムパイでは、import、スペース、sympy、スペース、as、スペース、sp、改行、sp、ドット、v、a、r、左括弧、シングル引用、t、コンマ、g、シングル引用、右括弧、改行、x、イコール、sp、ドット、先頭が大文字の、Function、左括弧、シングル引用、x、シングル引用、右括弧、左括弧、t、右括弧、改行、e、q、1、イコール、sp、ドット、大文字のE、q、左括弧、sp、ドット、diff、左括弧、x、コンマ、t、コンマ、2、右括弧、コンマ、マイナス、g、右括弧、改行、sp、ドット、d、s、o、l、v、e、左括弧、e、q、1、右括弧" shape=rect coords=189,195,493,374
 
-::target=015,TTS3 title="Temporal　variation　of　height　x,parenthesis,t,parenthesis　under　gravity,g.　Second　derivative,　g,　is　a　constant." shape=rect coords=536,142,714,367
+::target=diff015,TTS3 title="Velocity　as　derivative　of　height　x,　parenthesis,　t,　parenthesis,　acceleration　as　second　derivative　of　x" shape=rect coords=512,129,718,321
 
-::target=016 title="た変数関数の偏微分、山の勾配" shape=rect coords=9,397,183,506
+::target=diff016 title="た変数関数の偏微分、例、山の勾配" shape=rect coords=10,371,187,508
 
-::target=017 title="ラテフ：平面座標、x、y、の標高を、$、ｆ、左括弧、ｘ、コンマ、ｙ、右括弧、イコール、x、カレット、2、y、$、と仮定すると、勾配は、$、円記号、f、r、a、c、左波括弧、円記号、partial、スペース、f、左括弧、x、コンマ、y、右括弧、右波括弧、左波括弧、円記号、partial、スペース、x、右波括弧、イコール、2、x、y、$" shape=rect coords=184,375,527,475
+::target=diff017 title="ラテフ：平面座標、x、y、の標高を、$、ｆ、左括弧、ｘ、コンマ、ｙ、右括弧、イコール、x、カレット、2、y、$、と仮定すると、勾配は、$、円記号、f、r、a、c、左波括弧、円記号、partial、スペース、f、左括弧、x、コンマ、y、右括弧、右波括弧、左波括弧、円記号、partial、スペース、x、右波括弧、イコール、2、x、y、$" shape=rect coords=193,374,488,465
 
-::target=018 title="シンボリック・パイソン、sympy、では、import、スペース、sympy、スペース、as、スペース、sp、改行、x、コンマ、y、イコール、sp、ドット、symbols、左括弧、シングル引用、x、コンマ、y、シングル引用、右括弧、改行、f、イコール、左括弧、x、アステリスク、アステリスク、2、右括弧、アステリスク、y、改行、sp、ドット、d、i、f、f、左括弧、f、コンマ、x、右括弧" shape=rect coords=185,475,530,590
+::target=diff018 title="シンボリック・パイソン、sympy、では、import、スペース、sympy、スペース、as、スペース、sp、改行、x、コンマ、y、イコール、sp、ドット、symbols、左括弧、シングル引用、x、コンマ、y、シングル引用、右括弧、改行、f、イコール、左括弧、x、2連のアステリスク、2、右括弧、アステリスク、y、改行、sp、ドット、d、i、f、f、左括弧、f、コンマ、x、右括弧" shape=rect coords=193,466,483,586
 
-::target=019,TTS3 title="Exampl:　Height　is　defined　by　f,parenthesis,x,comma,y,parenthesis,equal,x,caret,2,y.　Patial　derivative　is　the　slope　in　x　direction." shape=rect coords=538,370,704,531
+::target=diff019,TTS3 title="Partial,derivative,of,height,f,at,x,comma,y,is,given,by,x,caret,2,times,y.Then,partial,derivative,in,x,is,slope,in,x,direction." shape=rect coords=495,326,722,582
 
-::target=020 title="た変数関数の全微分：df" shape=rect coords=16,600,189,693
+::target=diff020 title="た変数関数の全微分：df" shape=rect coords=8,582,186,702
 
-::target=021 title="ラテフでは、$、d、f、イコール、円記号、frac、左波括弧、円記号、partial、スペース、f、左括弧、x、コンマ、y、右括弧、右波括弧、左波括弧、円記号、partial、スペース、x、右波括弧、dx、プラス、円記号、frac、左波括弧、円記号、partial、スペース、f、左括弧、x、コンマ、y、右括弧、右波括弧、左波括弧、円記号、partial、スペース、y、右波括弧、dy、$" shape=rect coords=193,600,445,716
+::target=diff021 title="ラテフでは、$、d、f、イコール、円記号、frac、左波括弧、円記号、partial、スペース、f、右波括弧、左波括弧、円記号、partial、スペース、x、右波括弧、dx、プラス、円記号、frac、左波括弧、円記号、partial、スペース、f、右波括弧、左波括弧、円記号、partial、スペース、y、右波括弧、dy、$" shape=rect coords=195,590,474,719
 
-::target=022 title="シムパイでは、x、コンマ、y、dx、dy、イコール、sp、ドット、symbols、左括弧、シングル引用、x、コンマ、y、シングル引用、右括弧、改行、f、イコール、左括弧、x、アステリスク、アステリスク、2、右括弧、アステリスク、y、改行、sp、ドット、diff、左括弧、f、コンマ、x、右括弧、アステリスク、dx、プラス、sp、ドット、diff、左括弧、f、コンマ、y、右括弧、アステリスク、d、y" shape=rect coords=193,716,510,800
+::target=diff022 title="シムパイでは、x、コンマ、y、dx、dy、イコール、sp、ドット、symbols、左括弧、シングル引用、x、コンマ、y、シングル引用、右括弧、改行、f、イコール、左括弧、x、アステリスク、アステリスク、2、右括弧、アステリスク、y、改行、sp、ドット、diff、左括弧、f、コンマ、x、右括弧、アステリスク、dx、プラス、sp、ドット、diff、左括弧、f、コンマ、y、右括弧、アステリスク、d、y" shape=rect coords=192,720,587,835
 
-::target=023,TTS3 title="Total　derivative　is　the　slope　in　parenthesis,dx,comma,dy,parenthesis　direction." shape=rect coords=525,645,711,872
+::target=diff023,TTS3 title="Total,derivative,is,the,slope,in,direction,parenthesis,dx,comma,dy,parenthesis." shape=rect coords=509,583,686,720
 
-::target=024 title="一変数関数の積分：速度の積分" shape=rect coords=17,897,165,1017
+::target=diff024 title="一変数関数の積分：速度の積分" shape=rect coords=9,828,190,967
 
-::target=025 title="ラテフでは、$、円記号、v、イコール、円記号、f、r、a、c、左波括弧、d、x、右波括弧、左波括弧、d、t、右波括弧、イコール、マイナス、g、t、$、および、$、円記号、i、n、t、アンダースコア、左波括弧、0、右波括弧、カレット、左波括弧、t、右波括弧、v、d、t、イコール、マイナス、円記号、frac、左波括弧、1、右波括弧、左波括弧、2、右波括弧、g、t、アステリスク、2、$" shape=rect coords=17,872,165,930
+::target=diff025 title="ラテフでは、$、円記号、v、イコール、円記号、f、r、a、c、左波括弧、d、x、右波括弧、左波括弧、d、t、右波括弧、イコール、マイナス、g、t、$、および、$、円記号、i、n、t、アンダースコア、左波括弧、0、右波括弧、カレット、左波括弧、t、右波括弧、v、d、t、イコール、マイナス、円記号、frac、左波括弧、1、右波括弧、左波括弧、2、右波括弧、g、t、カレット、2、$" shape=rect coords=198,838,518,930
 
-::target=026 title="シムパイでは、t、イコール、sp、ドット、symbols、左括弧、シングル引用、t、シングル引用、右括弧、改行、g、イコール、sp、ドット、v、a、r、左括弧、シングル引用、g、シングル引用、、右括弧、改行、f、イコール、マイナス、g、アステリスク、t、改行、sp、ドット、integrate、左括弧、f、コンマ、t、右括弧" shape=rect coords=195,954,448,1026
+::target=diff026 title="シムパイでは、t、コンマ、g、イコール、sp、ドット、v、a、r、左括弧、シングル引用、t、コンマ、g、シングル引用、右括弧、改行、f、イコール、マイナス、g、アステリスク、t、が速度を、改行、sp、ドット、integrate、左括弧、f、コンマ、t、右括弧、が位置を与える" shape=rect coords=205,931,441,1027
 
-::target=027,TTS3 title="Integral　of　velocity　under　gravity,　g,　is　the　height　minus　parenthesis　1　over　2　parenthesis　g,t　caret　2" shape=rect coords=519,881,702,1018
+::target=diff027,TTS3 title="Integral,of,velocity　under　gravity,　g,　is　the　height　minus　parenthesis　1　over　2　parenthesis　g,t　caret　2" shape=rect coords=521,838,699,1031
