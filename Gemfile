@@ -71,7 +71,7 @@ group :production do
 #2021/08/03  
 #  gem 'pg'
 #2021/11/04  
-  gem 'pg'
+#  gem 'pg'
 end
 
 #Add 2021/03/06
