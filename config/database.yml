@@ -52,7 +52,8 @@ production:
   username: tactilestemreader
 # password: <%= ENV['TACTILESTEMREADER_DATABASE_PASSWORD'] %>
   password: createsystem
-
+#2021/11/04
+  host: postgres
   adapter: postgresql
   encoding: unicode
   pool: 5
