@@ -50,7 +50,8 @@ production:
   <<: *default
   database: tactilestemreader_production
   username: tactilestemreader
-  password: <%= ENV['TACTILEREADER_DATABASE_PASSWORD'] %>
+# password: <%= ENV['TACTILESTEMREADER_DATABASE_PASSWORD'] %>
+  password: createsystem
 
   adapter: postgresql
   encoding: unicode
