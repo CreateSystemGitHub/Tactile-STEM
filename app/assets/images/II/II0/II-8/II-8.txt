@@ -1,27 +1,29 @@
 ﻿#FOLDER=II-8
 
-::target=somegroups010 title="１．１．4、　代数系：　耳なれない言葉と記号：まとめ" shape=rect coords=4,16,687,72
+0:１の１の4、代数系。耳慣れない言葉と記号、まとめ
 
-::target=somegroups011 title="よくでてくる、グンの、種類。有限グン（ファイナイト・グループ）。ゲンの数が、有限な、場合。" shape=rect coords=18,75,699,160
+::target=somegroups010 title="１の１の4、代数系。耳慣れない言葉と記号、まとめ" shape=rect coords=4,16,687,72
 
-::target=somegroups012 title="例、二つの自然数、０，と、１，は、和算とセットすると、タンイゲンは０、ギャクゲンは、０には０、１には１で、グンとなる。0、+、1、イコール、1、+、0、イコール、1、そして、0、+、0、イコール、0、そして、1、+、1、イコール、0。" shape=rect coords=21,163,705,269
+::target=somegroups011 title="よく出てくる、グンの種類。有限グン（ファイナイト・グループ）。ゲンの数が、有限な、場合。" shape=rect coords=18,75,699,160
 
-::target=somegroups013 title="例、二つの自然数、０と、１、の、集合は、乗算を、以下のように、工夫すると、上の和算と併せて、タイとなる。タンイゲン、１、ギャクゲン、１の逆ゲンは１、0は除外する。0、カケ、1、イコール、0、カケ、0、イコール、0、そして、1、カケ、1、イコール、1。ここでは、１は、タンイゲンであり、１の逆ゲンでもある。" shape=rect coords=24,274,703,452
+::target=somegroups012 title="例、二つの自然数、０，と、１は、和算とセットすると、単位元は０、逆元は、０には０、１には１で、グンとなる。0、+、1、イコール、1、+、0、イコール、1。そして、0、+、0、イコール、0。そして、1、+、1、イコール、0。" shape=rect coords=21,163,705,269
 
-::target=somegroups014 title="無限グン（Infinite　Group）ゲンの数が、自然数、整数や実数のように、無限である場合。" shape=rect coords=25,454,648,515
+::target=somegroups013 title="例、二つの自然数、０と、１の集合は、乗算を、以下のように工夫すると、上の和算と併せて、タイとなります。単位元、１、逆元、１の逆元は１、0は除外する。0、カケ、1、イコール、0、カケ、0、イコール、0。そして、1、カケ、1、イコール、1。ここでは、１は、単位元であり、１の逆元でもある。" shape=rect coords=24,274,703,452
 
-::target=somegroups015 title="カカングン（Commutable　Group）、または、アーベルグン（Abel　Group）。演算の、前後のゲンを、入れ替えても、結果が、かわらないグン。実数の、和算、乗算は、ともにカカングンをなす。" shape=rect coords=26,520,685,670
+::target=somegroups014 title="無限群（Infinite　Group）ゲンの数が、自然数、整数や実数のように、無限である場合。" shape=rect coords=25,454,648,515
 
-::target=somegroups016 title="ヒ・カカングン。例えば、チカングン（Substitution　Group）は、一般に、ヒ・カカンである。右の、「あみだくじ」を、考える。ゲン、A、B、Cが、左から並んでいる。３つのゲンを、たて線に沿って、降ろして行く。よこ線との、交点で、両端のゲンの、順列の位置を、入れ替える。よこ線が現れる順序を変えると、結果は変わる。" shape=rect coords=25,676,484,1009
+::target=somegroups015 title="可換群（Commutable　Group）、または、アーベルグン（Abel　Group）。演算の前後のゲンを入れ替えても、結果が変わらないグン。実数の、和算、乗算は、ともに可換群をなす。" shape=rect coords=26,520,685,670
 
-::target=somegroups017 title="あみだくじ、左のたてせん、A。" shape=rect coords=516,705,560,968
+::target=somegroups016 title="非可換群。例えば、置換群（Substitution　Group）は、一般に、非可換である。右の、「あみだくじ」を、考える。ゲン、A、B、Cが、左から並んでいる。３つのゲンを、縦線に沿って、降ろして行く。横線との交点で、両端のゲンの、順列の位置を入れ替える。横線が現れる順序を変えると、結果は変わる。" shape=rect coords=25,676,484,1009
 
-::target=somegroups018 title="あみだくじ、真中のたてせん、B。" shape=rect coords=579,705,611,968
+::target=somegroups017 title="あみだくじ、左の縦線、A" shape=rect coords=516,705,560,968
 
-::target=somegroups019 title="あみだくじ、右のたてせん、C。" shape=rect coords=643,703,674,968
+::target=somegroups018 title="あみだくじ、真中の縦線、B" shape=rect coords=579,705,611,968
 
-::target=somegroups020 title="左たてせんと、真中たてせんを、つなぐ、よこせん、すなわち、左たてせんにいる、ゲンと、真中たてせんにいる、ゲンを、入れ替える、あるいは、ちかんする。" shape=rect coords=505,818,622,848
+::target=somegroups019 title="あみだくじ、右の縦線、C" shape=rect coords=643,703,674,968
 
-::target=somegroups021 title="左たてせんと、右たてせんを、つなぐ、よこせん、すなわち、左たてせんにいる、ゲンと、右たてせんにいる、ゲンを、入れ替える、あるいは、ちかんする。よこせんが、真中たてせんを、またいでいることに、ちゅうい。" shape=rect coords=510,893,675,933
+::target=somegroups020 title="左縦線と真中縦線を繋ぐ、横線、すなわち、左縦線にいるゲンと、真中縦線にいるゲンを、入れ替える、あるいは、置換する。" shape=rect coords=505,818,622,848
 
-::target=somegroups022 title="結果を示す場所。最後に、左たてせんの、下端に到達した、ゲンが、当たりを、得る。" shape=rect coords=501,968,676,1007
+::target=somegroups021 title="左縦線と、右縦線を繋ぐ、横線、すなわち、左縦線にいるゲンと、右縦線にいるゲンを、入れ替える、あるいは、置換する。横線が、真中縦線を、跨いでいることに注意。" shape=rect coords=510,893,675,933
+
+::target=somegroups022 title="結果を示す場所。最後に、左縦線の下の端に到達したゲンが、当たりを得る。" shape=rect coords=501,968,676,1007

@@ -302,6 +302,7 @@ function resizeImage(){
 //    2'nd Mp3 player for click or hover
 //  自動再生機能ポリシーで許可を取っておくこと
 //////////////////////////////////////////////////////
+var mp3 = null;
 function audioPlay2(src, start, stop){
   let tm;
   console.log(src+",start="+start+",stop="+stop);
@@ -309,17 +310,19 @@ function audioPlay2(src, start, stop){
   var stopTime = Number(stop);
   if (strtTime == NaN) strtTime=0;
   if (stopTime == NaN) stopTime=0;
-  var mp3 = document.getElementById("audio2");
-  if (!mp3.paused){
+  //以下は再生が途中で止まってしまう時がある。
+  //  var mp3 = document.getElementById("audio2");
+  if (mp3!=null && !mp3.paused){
     clearTimeout(tm);
     mp3.pause();
     mp3.currentTime=0;
-    console.log(src+",AAAAA:mp3.paused");
+    //console.log(src+",AAAAA:mp3.paused");
   }
+  mp3 = new Audio();
   mp3.src = src;
   mp3.load();
   if (mp3.readyState == 4) {
-    console.log(src+",BBBB:mp3.readyState == 4");
+    //console.log(src+",BBBB:mp3.readyState == 4");
     mp3.currentTime = start/1000;
     mp3.play();
     if (stopTime != 0){
@@ -336,7 +339,7 @@ function audioPlay2(src, start, stop){
       mp3.removeEventListener('canplaythrough', arguments.callee);
       mp3.currentTime = strtTime/1000.0;
       mp3.play();
-      console.log(src+",CCCC:mp3.play()");
+      //console.log(src+",CCCC:mp3.play()");
       if (stopTime != 0){
         tm = setTimeout(function(){
           console.log(src+",CCCC:mp3.timeout the pause");
@@ -345,6 +348,17 @@ function audioPlay2(src, start, stop){
           mp3.currentTime = 0;
         }, stopTime-strtTime);
       }
+    });
+    mp3.addEventListener('ended',function (e) {
+      //console.log(src+",CCCC:mp3.ended");
+      mp3 = null;
+    });
+    mp3.addEventListener('waiting',function (e) {
+      //console.log(src+",CCCC:mp3.waiting:"+mp3.readyState);
+    });
+    mp3.addEventListener('error',function (e) {
+      //console.log(src+",CCCC:mp3.error:"+e.currentTarget.error.code);
+      mp3 = null;
     });
   }
 }
@@ -663,7 +677,7 @@ function loadTextFile(fName){
   xmlhttp.onload = function() {
     if (xmlhttp.readyState == 4) {
       if (xmlhttp.status == 200) { 
-        console.log("file="+fName+",status = " + xmlhttp.status);
+        //console.log("file="+fName+",status = " + xmlhttp.status);
         if (xmlhttp.responseURL.endsWith('.ltx') || xmlhttp.responseURL.endsWith('.pyt')){
           copyTextToClipboard(xmlhttp.responseText);
         }

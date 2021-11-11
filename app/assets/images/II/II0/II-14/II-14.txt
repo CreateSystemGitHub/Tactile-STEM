@@ -1,45 +1,47 @@
 ﻿#FOLDER=II-14
 
-::target=array010 title="1.2.2：数と式の、書き方、読み方：4" shape=rect coords=60,20,642,71
+0:1の2の2、数と式の、書き方、読み方、4
 
-::target=array011 title="各ぎょうの左は、日本語読み、中央は、上にラテフ、下に、パイソン、右は英語読み。文字と声で提示。" shape=rect coords=24,74,684,154
+::target=array010 title="1の2の2、数と式の、書き方、読み方、4" shape=rect coords=60,20,642,71
 
-::target=array012 title="数式でない、ａに、上付きそえ字、n" shape=rect coords=24,164,174,286
+::target=array011 title="各行の左は、日本語読み、中央は、上にラテフ、下にパイソン、右は英語読み。文字と声で提示" shape=rect coords=24,74,684,154
 
-::target=array013 title="ラテフでは、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、カレット、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧、$" shape=rect coords=197,165,563,215
+::target=array012 title="数式でないａに、上付き添え字n" shape=rect coords=24,164,174,286
 
-::target=array014 title="Pythonには、ない" shape=rect coords=199,219,458,264
+::target=array013 title="ラテフでは、$,円記号,m,a,t,h,r,m,左波括弧,a,右波括弧,カレット,円記号,m,a,t,h,r,m,左波括弧,n,右波括弧,$" shape=rect coords=197,165,563,215
+
+::target=array014 title="Pythonには無い" shape=rect coords=199,219,458,264
 
 ::target=array015,TTS3 title="character,　a,　with　superscript　n" shape=rect coords=472,223,692,294
 
-::target=array016 title="数式でない、ａに、下付きそえ字、n" shape=rect coords=25,298,170,412
+::target=array016 title="数式でないａに、下付き添え字n" shape=rect coords=25,298,170,412
 
-::target=array017 title="ラテフでは、$、円記号、m、a、t、h、r、m、左波括弧、a、右波括弧、アンダースコア、円記号、m、a、t、h、r、m、左波括弧、n、右波括弧、$" shape=rect coords=192,293,561,339
+::target=array017 title="ラテフでは、$,円記号,m,a,t,h,r,m,左波括弧,a,右波括弧,アンダースコア,円記号,m,a,t,h,r,m,左波括弧,n,右波括弧,$" shape=rect coords=192,293,561,339
 
-::target=array018 title="Pythonには、ない" shape=rect coords=197,346,454,390
+::target=array018 title="Pythonには無い" shape=rect coords=197,346,454,390
 
 ::target=array019,TTS3 title="character,　a,　with　subscript　n" shape=rect coords=469,345,693,420
 
 ::target=array020 title="数式表現での、上付きと下付き" shape=rect coords=26,425,185,547
 
-::target=array021 title="ラテフ、では、$、a、カレット、n、$、と、$、a、アンダースコア、n、$" shape=rect coords=194,421,439,468
+::target=array021 title="ラテフでは、$,a,カレット,n,$,と、$,a,アンダースコア,n,$" shape=rect coords=194,421,439,468
 
-::target=array022 title="パイソンでは、上下の区別なくアレーで表す。例えば、import、スペース、numpy、スペース、as、スペース、np、改行、a、イコール、n、p、ドット、a、r、r、a、y、左丸括弧、左角括弧、0、コンマ、1、コンマ、2、コンマ、3、右角括弧、右丸括弧" shape=rect coords=196,472,498,629
+::target=array022 title="パイソンでは、上下の区別なくアレーで表す。例えば、import,スペース,numpy,スペース,as,スペース,np,改行,a,イコール,n,p,ドット,a,r,r,a,y,左丸括弧,左角括弧,0,コンマ,1,コンマ,2,コンマ,3,右角括弧,右丸括弧" shape=rect coords=196,472,498,629
 
 ::target=array023,TTS3 title="math　expression,　array　with　superscript,　or,　subscript" shape=rect coords=504,428,690,626
 
-::target=array024 title="ベクトル表示、v、の上に矢印を付ける、または、ｖ、を、太文字にする" shape=rect coords=17,650,226,815
+::target=array024 title="ベクトル表示,vの上に矢印を付ける、または、ｖを、太文字にする" shape=rect coords=17,650,226,815
 
-::target=array025 title="ラテフ、では、$、円記号、v、e、c、スペース、v、$" shape=rect coords=240,649,405,691
+::target=array025 title="ラテフでは、$,円記号,v,e,c,スペース,v,$" shape=rect coords=240,649,405,691
 
-::target=array026 title="Pythonでは、3次元べクトルは、n、p、ドット、a、r、r、a、y、左括弧、左角括弧、x、コンマ、y、コンマ、z、右角括弧、右括弧、となる" shape=rect coords=244,696,499,816
+::target=array026 title="Pythonでは、三次元ベクトルは、n,p,ドット,a,r,r,a,y,左括弧,左角括弧,x,コンマ,y,コンマ,z,右角括弧,右括弧となる" shape=rect coords=244,696,499,816
 
 ::target=array027,TTS3 title="vector　v" shape=rect coords=513,660,673,701
 
-::target=array028 title="2点、A、B、を結ぶ、ベクトル表示、ABの上に、矢印" shape=rect coords=21,820,234,946
+::target=array028 title="2点、A,Bを結ぶ、ベクトル表示、ABの上に矢印" shape=rect coords=21,820,234,946
 
-::target=array029 title="ラテフ、では、$、円記号、o、v、e、r、r、i、g、h、t、a、r、r、o、w、左波括弧、A、B、右波括弧、$。" shape=rect coords=238,819,550,866
+::target=array029 title="ラテフでは、$,円記号,o,v,e,r,r,i,g,h,t,a,r,r,o,w,左波括弧,A,B,右波括弧,$" shape=rect coords=238,819,550,866
 
-::target=array030 title="Pythonでは、位置ベクトルの差で表す。np、ドット、array、左括弧、左角括弧、A、x、コンマ、A、y、コンマ、A、z、右角括弧、右括弧、マイナス、np、ドット、array、左括弧、左角括弧、B、x、コンマ、B、y、コンマ、B、z、右角括弧、右括弧" shape=rect coords=241,870,518,987
+::target=array030 title="Pythonでは、位置ベクトルの差で表す。np,ドット,array,左括弧,左角括弧,A,x,コンマ,A,y,コンマ,A,z,右角括弧,右括弧,マイナス,np,ドット,array,左括弧,左角括弧,B,x,コンマ,B,y,コンマ,B,z,右角括弧,右括弧" shape=rect coords=241,870,518,987
 
 ::target=array032,TTS3 title="vector　connecting　points　A　and　B" shape=rect coords=525,871,690,1007

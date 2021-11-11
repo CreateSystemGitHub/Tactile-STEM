@@ -143,19 +143,19 @@ function onFetch(event) {
     let pos = Number(rangeMatch[1]);
     let pos2 = rangeMatch[2];
     if (pos2) { pos2 = Number(pos2); }
-    console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
+    //console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
   
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
-        console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
+        //console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
         return cache.match(event.request.url);
       }).then(function(res) {
         if (!res){
           cacheOrNet = 1;
-          console.log('[SW]','Range: Not Found then load from network', event.request.url);
+          //console.log('[SW]','Range: Not Found then load from network', event.request.url);
           return fetch(event.request).then(res => res.arrayBuffer());
         } else{
-          console.log('[SW]','Range: Found in cache', event.request.url,', status:', res.status);
+          //console.log('[SW]','Range: Found in cache', event.request.url,', status:', res.status);
           return res.arrayBuffer();
         }
       }).then(function(ab) {
@@ -171,14 +171,14 @@ function onFetch(event) {
             }
           );
           if (cacheOrNet == 1){
-            console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
+            //console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
           } else{
-            console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
+            //console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
           }
           return resp;
         }
       }).catch(function(){
-            console.log('[SW]','Range OFFLINE: ');
+            //console.log('[SW]','Range OFFLINE: ');
             return caches.match('/offlineTactile.html');
       }));
   } 
@@ -194,7 +194,7 @@ function onFetch(event) {
         .then(function(response) {
           // Cache hit - return response
           if (response) {
-            console.log('[SW]','Found in cache: ', response.url, response.status);
+            //console.log('[SW]','Found in cache: ', response.url, response.status);
             return response;
           }
 
@@ -209,10 +209,10 @@ function onFetch(event) {
             .then(function(response) {
               // Check if we received a valid response
               if(!response || response.status !== 200 || response.type !== 'basic') {
-                console.log('[SW]','Not Found in network:', response.url, response.status);
+                //console.log('[SW]','Not Found in network:', response.url, response.status);
                 return caches.match('/offlineTactile.html');
               }
-              console.log('[SW]','Found in network: ', response.url, response.status, response.type);
+              //console.log('[SW]','Found in network: ', response.url, response.status, response.type);
               // IMPORTANT:Clone the response. A response is a stream
               // and because we want the browser to consume the response
               // as well as the cache consuming the response, we need
@@ -221,18 +221,18 @@ function onFetch(event) {
               //'put' on 'Cache': Request method 'POST' is unsupported
               var responseToCache = response.clone();
               if (fetchRequest.method === 'POST'){
-                console.log('[SW]','Can not put to cache: ', responseToCache.url);
+                //console.log('[SW]','Can not put to cache: ', responseToCache.url);
                 return response;
               }
               caches.open(CACHE_NAME)
                 .then(function(cache) {
-                  console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
+                  //console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
                   //cache.put(event.request, responseToCache);
               });
               return response;
             })
             .catch(function(){
-              console.log('[SW]','OFFLINE: ', fetchRequest.url);
+              //console.log('[SW]','OFFLINE: ', fetchRequest.url);
               return caches.match('/offlineTactile.html');
             });
         })
@@ -255,19 +255,19 @@ function onFetch(event) {
     let pos = Number(rangeMatch[1]);
     let pos2 = rangeMatch[2];
     if (pos2) { pos2 = Number(pos2); }
-    console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
+    //console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
   
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
-        console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
+        //console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
         return cache.match(event.request.url);
       }).then(function(res) {
         if (!res){
           cacheOrNet = 1;
-          console.log('[SW]','Range: Not Found then load from network', event.request.url);
+          //console.log('[SW]','Range: Not Found then load from network', event.request.url);
           return fetch(event.request).then(res => res.arrayBuffer());
         } else{
-          console.log('[SW]','Range: Found in cache', event.request.url,', status:', res.status);
+          //console.log('[SW]','Range: Found in cache', event.request.url,', status:', res.status);
           return res.arrayBuffer();
         }
       }).then(function(ab) {
@@ -283,9 +283,9 @@ function onFetch(event) {
             }
           );
           if (cacheOrNet == 1){
-            console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
+            //console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
           } else{
-            console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
+            //console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
           }
           return resp;
         }
@@ -301,7 +301,7 @@ function onFetch(event) {
         function(response) {
           // Cache hit - return response
           if (response) {
-            console.log('[SW]','Found in cache: ', response.url, response.status);
+            //console.log('[SW]','Found in cache: ', response.url, response.status);
             return response;
           }
 
@@ -314,10 +314,10 @@ function onFetch(event) {
             function(response) {
               // Check if we received a valid response
               if(!response || response.status !== 200 || response.type !== 'basic') {
-                console.log('[SW]','Not Found in network: !=200 ', response.url, response.status);
+                //console.log('[SW]','Not Found in network: !=200 ', response.url, response.status);
                 return caches.match('/offlineTactile.html');
               }
-              console.log('[SW]','Found in network: ', response.url, response.status);
+              //console.log('[SW]','Found in network: ', response.url, response.status);
               // IMPORTANT:Clone the response. A response is a stream
               // and because we want the browser to consume the response
               // as well as the cache consuming the response, we need
@@ -326,18 +326,18 @@ function onFetch(event) {
               //'put' on 'Cache': Request method 'POST' is unsupported
               var responseToCache = response.clone();
               if (fetchRequest.method === 'POST'){
-                console.log('[SW]','Can not put to cache: ', responseToCache.url);
+                //console.log('[SW]','Can not put to cache: ', responseToCache.url);
                 return response;
               }
               caches.open(CACHE_NAME)
                 .then(function(cache) {
-                  console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
+                  //console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
                   cache.put(event.request, responseToCache);
               });
               return response;
             }
           ).catch(function(){
-            console.log('[SW]','OFFLINE: ');
+            //console.log('[SW]','OFFLINE: ');
             return caches.match('/offlineTactile.html');
           });
         })
