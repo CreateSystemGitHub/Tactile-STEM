@@ -366,8 +366,13 @@ function audioPlay2(src, start, stop){
 //////////////////////////////////////////////////////
 //    3'rd Mp3 player for hover enter
 //////////////////////////////////////////////////////
-function effectPlay_enter(src){
-  document.getElementById("effect_sound_enter").play();
+function effectPlay_enter(clipboard){
+  if (clipboard.length ==0){
+    document.getElementById("effect_sound_enter").play();
+  }
+  else{
+    document.getElementById("effect_sound_enter2").play();
+  }
   console.log("effectPlay_enter")
 }
 
@@ -532,20 +537,15 @@ function load_tts_param(){
 // sound: target=mp3,TTS3 English Male      Speak with TTS3, mp3s are ignored.
 // sound: target=mp3,TTS4 English Female    Speak with TTS4, mp3s are ignored.
 ///////////////////////////////////////////////////////////////////////////////
-function speakOne(path, text, sound, click){
-  console.log("speakOne:path=%s,sound=%s,click=%d",path,sound,click);
+function speakOne(path, text, sound, clipboard, click){
+  console.log("speakOne:path=%s,sound=%s,clipboard=%s,click=%d",path,sound,clipboard,click);
   if (click==0){
-    if (effect_hover) effectPlay_enter();
+    if (effect_hover) effectPlay_enter(clipboard);
     return;
   }
   //Clipboard file serch
-  if (sound!=null && sound.length>0){
-    var sound1 = sound.split(',');
-    var filename = path + sound1[0] + ".ltx"
-    if (filename.length > 0){
-      readTextFileToClipboard(filename);
-    }
-    filename = path + sound1[0] + ".pyt"
+  if (clipboard!=null && clipboard.length>0){
+    var filename = path + clipboard
     if (filename.length > 0){
       readTextFileToClipboard(filename);
     }

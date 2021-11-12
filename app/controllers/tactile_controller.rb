@@ -291,7 +291,7 @@ class TactileController < ApplicationController
   # file format
   # (play end time):(speaking text):(imagemap data)
   # 28000:近くに龍清寺があります。:target=100 title=--- shape ---
-  # ::target=010 title="茅葺屋根" shape=poly coords=59,414,224,340,225,323,--------
+  # ::target=010,1000,2000 title="茅葺屋根" shape=poly coords=59,414,224,340,225,323,--------
   #
   def readtextfile(txtfile, file_path)
     src = "app/assets/images/" + txtfile
@@ -300,6 +300,7 @@ class TactileController < ApplicationController
     #@book_content = []
     @imagemap = []
     @imagemap_target = []
+    @imagemap_clipboard = []
     @max_imagemap = -1;
     File.open(src, "r").each_line do |line|
       
@@ -310,7 +311,7 @@ class TactileController < ApplicationController
         cc=""   #imagemap data
         if (strs[0]!=nil) then aa = strs[0].strip end
         if (strs[1]!=nil) then bb = strs[1].strip end
-        if (strs[2]!=nil) then cc = strs[2].strip end
+        if (strs[2]!=nil) then cc = strs[2].strip end #target=010,1000,2000 title="茅葺屋根" shape=poly coords=---
         #p "aa=#{aa}"
         #p "bb=#{bb}"
         #p "cc=#{cc}"
@@ -323,12 +324,16 @@ class TactileController < ApplicationController
         if !cc.blank? then
           #target=nnn を探す
           dd = cc.index('target=')
-          ee = nil
+          ee = ""    #.mp3
+          ltx = ""   #.ltx
+          pyt = ""   #.pyt
           if dd!=nil then
-            dd1 = cc.index(' ') #first separator ::target=XXXXX,YYY,ZZZ_
-            ee = cc[dd+7..dd1-1]
-            ff = ee.split(',')
+            dd1 = cc.index(' ')   #first separator ::target=XXXXX,YYY,ZZZ_
+            ee = cc[dd+7..dd1-1]  #ee=XXXXX,YYY,ZZZ
+            ff = ee.split(',')    #ff=[XXXXX][YYY][ZZZ]
             gg = file_path+ff[0]+".mp3"
+            hh = file_path+ff[0]+".ltx"
+            ii = file_path+ff[0]+".pyt"
             if !asset_exists?(gg) then
               #mp3 not found
               if (ff[1] and ff[1].length > 0) then
@@ -337,10 +342,29 @@ class TactileController < ApplicationController
                 ee = ff[0] + ",TTS"
               end
             end
+            if asset_exists?(hh) then
+              ltx = ff[0] + ".ltx"
+            else
+              ltx = ""    #.ltx not found
+            end
+            if asset_exists?(ii) then
+              pyt = ff[0] + ".pyt"
+            else
+              pyt = ""    #.pyt not found
+            end
           end
-          p "target =#{ee}"
-          @imagemap_target << ee
-          @imagemap << cc
+          @imagemap_target << ee  #.mp3
+          if ltx.length > 0 then
+            @imagemap_clipboard << ltx  #.ltx
+          elsif pyt.length >0 then
+            @imagemap_clipboard << pyt  #.pyt
+          else
+            @imagemap_clipboard << ""   #nothing
+          end 
+          @imagemap << cc         #target=010 ---
+          p "target mp3=#{ee}"
+          p "target ltx=#{ltx}"
+          p "target pyt=#{pyt}"
         end
       end
     end

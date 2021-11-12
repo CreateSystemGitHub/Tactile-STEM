@@ -6,7 +6,7 @@
         <!-- この領域がクリックされた時、または入ってきた時に再生または読み上げ(speakOne)が実行される    -->
         <map name="image-map" oncontextmenu="return false" >
           <% for i in 0..@max_imagemap do %>
-            <area href="#" <%= @imagemap[i]%> onclick="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>',1); return false;}"  onmouseover="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>',0); return false;}" >
+            <area href="#" <%= @imagemap[i]%> onclick="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>','<%=@imagemap_clipboard[i]%>',1); return false;}"  onmouseover="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>','<%=@imagemap_clipboard[i]%>',0); return false;}" >
           <% end %>
         </map>
         <!-- 解説用の別頁起動ボタン -->
@@ -29,9 +29,11 @@
         
       </div>
 </div>
-<audio id="audio2"></audio>
 <audio id="effect_sound_enter" preload="auto">
   <source src="/assets/effect32.mp3">
+</audio>
+<audio id="effect_sound_enter2" preload="auto">
+  <source src="/assets/effect28.mp3">
 </audio>
 
 <footer class="show_footer">
