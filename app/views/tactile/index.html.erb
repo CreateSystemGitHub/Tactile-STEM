@@ -10,9 +10,9 @@
   </tr>
   <% for i in 0..@max_book_size  do %>
     <tr>
-      <td>
+      <td width=20% style="text-align:center">
         <%=link_to tactile_mokuji_path(book_id:i), data: {"turbolinks"=>false} do %>
-          <%= image_tag  @book_imgfile[i], :size =>'108x156'  %>
+          <%= image_tag  @book_imgfile[i], :width => '150' %>
         <% end %>
       </td>
       <td >

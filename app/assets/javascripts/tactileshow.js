@@ -370,6 +370,8 @@ function effectPlay_enter(src){
   document.getElementById("effect_sound_enter").play();
   console.log("effectPlay_enter")
 }
+
+
 //////////////////////////////////////////////////////
 //    Web Speech API WC3
 //////////////////////////////////////////////////////

@@ -91,7 +91,8 @@
 
   // selectタグに音声を集計
   function appendVoices() {
-    //初回実行時の getVoices() は空配列が返される。ユーザーによる操作が介在しないといけないのでシーンコンボの操作でカバー
+    //初回実行時の getVoices() は空配列が返される。
+    //この関数はユーザーによる操作が介在しないといけないので、シーンコンボの操作をトリガーとする。
     const voices = speechSynthesis.getVoices();
     if (voices.length==0){
       console.log("voices.length=0");
