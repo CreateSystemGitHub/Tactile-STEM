@@ -318,6 +318,7 @@ function audioPlay2(src, start, stop){
     mp3.currentTime=0;
     //console.log(src+",AAAAA:mp3.paused");
   }
+  //以下だと再生が最後まで行われた。
   mp3 = new Audio();
   mp3.src = src;
   mp3.load();
@@ -402,15 +403,15 @@ function appendVoices(){
     return voice.name === v_names[v_scene];
   });
   if (voice){
-    if (voice.name == "Takashi") dt = voice;
-    if (voice.name == "Keiko")   dt = voice;
-    if (voice.name == "Taro")    dt = voice;
-    if (voice.name == "Hanako")  dt = voice;
-    if (voice.name == "たかし")   dt = voice;
-    if (voice.name == "けいこ")   dt = voice;
-    if (voice.name == "太郎")     dt = voice;
-    if (voice.name == "花子")     dt = voice;
-    if (voice.name == "日本語 日本")     dt = voice;
+    if (voice.name == "Takashi")      dt = voice;
+    else if (voice.name == "Keiko")   dt = voice;
+    else if (voice.name == "Taro")    dt = voice;
+    else if (voice.name == "Hanako")  dt = voice;
+    else if (voice.name == "たかし")   dt = voice;
+    else if (voice.name == "けいこ")   dt = voice;
+    else if (voice.name == "太郎")     dt = voice;
+    else if (voice.name == "花子")     dt = voice;
+    else if (voice.name == "日本語 日本") dt = voice;
     uttr.voice = voice;
   };
   if (dt != null) {

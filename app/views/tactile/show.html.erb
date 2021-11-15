@@ -6,7 +6,7 @@
         <!-- この領域がクリックされた時、または入ってきた時に再生または読み上げ(speakOne)が実行される    -->
         <map name="image-map" oncontextmenu="return false" >
           <% for i in 0..@max_imagemap do %>
-            <area href="#" <%= @imagemap[i]%> onclick="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>','<%=@imagemap_clipboard[i]%>',1); return false;}"  onmouseover="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>','<%=@imagemap_clipboard[i]%>',0); return false;}" >
+            <area data-clp='<%=@imagemap_clipboard[i]%>' href="#" <%= @imagemap[i]%> onclick="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>','<%=@imagemap_clipboard[i]%>',1); return false;}"  onmouseover="{speakOne('/assets/<%=@file_path%>',title,'<%=@imagemap_target[i]%>','<%=@imagemap_clipboard[i]%>',0); return false;}" >
           <% end %>
         </map>
         <!-- 解説用の別頁起動ボタン -->
@@ -164,10 +164,20 @@
     $('img[usemap]').rwdImageMaps();
   });
 
+  //hover(over,out)
+  //クリップボードデータがあるimagemapは色を変える
   $(function(){
     $('area').hover(
-     function() { $(this).focus().css('outline','1px solid #FF0000');  },
-     function() { $(this).blur().css('outline','none'); }
+      function() {
+        var clp = $(this).data('clp');
+        if (clp.length==0) {
+          $(this).focus().css('outline','1px solid #FF0000');
+        }else{
+          if (clp.endsWith(".ltx")) $(this).focus().css('outline','1px solid #FF8000');
+          else  $(this).focus().css('outline','1px solid #FFC000'); 
+        }
+      },
+      function() { $(this).blur().css('outline','none'); }
     )
   });
 
