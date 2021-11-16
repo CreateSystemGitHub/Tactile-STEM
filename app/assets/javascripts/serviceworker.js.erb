@@ -1,27 +1,28 @@
 //https://developers.google.com/web/fundamentals/primers/service-workers?hl=ja
 
 
-var CACHE_VERSION = 'v1_001';
+var CACHE_VERSION = 'v1_002';
 var CACHE_NAME = CACHE_VERSION + ':tactilestem-sw-cache';
 var urlsToCache = [
   // make sure serviceworker.js is not required by application.js
   // if you want to reference application.js from here
-        '/',
-        '/?',
-        '/manifest.json',
+          '.',
+      //  '/',
+      //  '/?',
+      //  '/manifest.json',
         '/favicon.ico', 
-      //  '/assets/cable.js',
-      //  '/assets/jquery.rwdImageMaps.min.js',
-      //  '/assets/jsQR.js',
+        '/assets/cable.js',
+        '/assets/jquery.rwdImageMaps.min.js',
+        '/assets/jsQR.js',
       //  '/assets/manifest.json',
-      //  '/assets/serviceworker-companion.js',
+        '/assets/serviceworker-companion.js',
       //  '/assets/tactileshow.js',
       //  '/assets/application.css',
       //  '/assets/tactile.css',
 
 
-        '/assets/appicon/tactileicon-192.png',
-        '/assets/appicon/tactileicon-512.png',
+        '/assets/appicon/tactilestemicon-192.png',
+        '/assets/appicon/tactilestemicon-376.jpg',
         '/assets/nosound.mp3',
         '/assets/arrow_0.png',
         '/assets/arrow_1.png',
@@ -31,14 +32,11 @@ var urlsToCache = [
         '/assets/arrow_5.png',
         '/assets/arrow_6.png',
         '/assets/tts_settings.png',
-        '/assets/BOOKS/books.csv',
-        '/assets/BOOKS/II.jpg',
-        '/assets/BOOKS/TT.jpg',
-        '/assets/TT/Contents.txt',
-        '/assets/II/Contents.txt',
-
-
-//  '/assets/TT/TT0/TT-1/TT-1_1.mp3',
+//        '/assets/BOOKS/books.csv',
+//        '/assets/BOOKS/II.jpg',
+//        '/assets/BOOKS/TT.jpg',
+//        '/assets/TT/Contents.txt',
+//        '/assets/II/Contents.txt',
 
 //  '/tactile/index.html',
 //  '/tactile/mokuji.html',
@@ -46,42 +44,15 @@ var urlsToCache = [
 //  '/tactile/tts_settings.html',
 
 
-  '/offlineTactile.html',
+  '/offlineTactile.html'
 
 ];
 
 
 var HHTTimages = [
-  '/tactile/mokuji?book_id=0',
-  '/tactile/mokuji?book_id=1',
+//  '/tactile/mokuji?book_id=0',
+//  '/tactile/mokuji?book_id=1',
 
-  '/tactile/show?book=HH&fn=0&pid=0&spid=0',
-  '/assets/HH/HH0/HH-0-1/HH-0-1.jpg',
-  '/assets/HH/HH0/HH-0-1/HH-0-1.mp3',
-  '/assets/HH/HH0/HH-0-1/HH-0-1.txt',
-
-  '/tactile/show?book=HH&fn=0&pid=1&spid=0',
-  '/assets/HH/HH0/HH-0-2/HH-0-2.jpg',
-  '/assets/HH/HH0/HH-0-2/HH-0-2.mp3',
-  
-  '/tactile/show?book=HH&fn=0&pid=2&spid=0',
-  '/assets/HH/HH0/HH-1/HH-1.jpg',
-  '/assets/HH/HH0/HH-1/HH-1.mp3',
-
-  '/tactile/show?book=HH&fn=0&pid=3&spid=0',
-  '/assets/HH/HH0/HH-2/HH-2.jpg',
-  '/assets/HH/HH0/HH-2/HH-2.mp3',
-  '/assets/HH/HH0/HH-2/HH-2.txt',
-
-  '/tactile/show?book=HH&fn=0&pid=4&spid=0',
-  '/assets/HH/HH0/HH-3/HH-3.jpg',
-  '/assets/HH/HH0/HH-3/HH-3.mp3',
-  '/assets/HH/HH0/HH-3/HH-3.txt',
-
-  '/tactile/show?book=HH&fn=0&pid=5&spid=0',
-  '/assets/HH/HH0/HH-4/HH-4.jpg',
-  '/assets/HH/HH0/HH-4/HH-4.mp3',
-  '/assets/HH/HH0/HH-4/HH-4.txt',
 
 ];
 var HHTTimagesX = [
@@ -91,21 +62,21 @@ var contentToCache = urlsToCache.concat(HHTTimagesX);
 
 
 function onInstall(event) {
-  console.log('[Serviceworker]', "Installing!", event);
+  console.log('[SW]', "Installing!", event);
   event.waitUntil(
     caches.open(CACHE_NAME).then(function prefill(cache) {
-      console.log('[Serviceworker]', "Opened cache");
-      return cache.addAll(contentToCache);
+      console.log('[SW]', "Opened cache");
+      return cache.addAll(urlsToCache);
     })        
   );
 }
 
 function onActivate(event) {
-  console.log('[Serviceworker]', "Activating!", event);
+  console.log('[SW]', "Activating!", event);
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
-      console.log('[Serviceworker]', "Activating1!", cacheNames);
+      console.log('[SW]', "Activating1!", cacheNames);
       return Promise.all(
         cacheNames.filter(function(cacheName) {
           // Return true if you want to remove this cache,
@@ -187,14 +158,14 @@ function onFetch(event) {
     // Non-Range request
     //「onFetch」イベントは「GET」リクエストのみをキャッシュできる
     //  ==> Rails : link_to で method: :getを指定するとPOSTで呼ばれてしまう。
-    //console.log('[SW]','AAAAAAAAA', event.request.url, event.request.method, event.request.mode);
+    console.log('[SW]','onFetch', event.request.url, event.request.method, event.request.mode);
     event.respondWith(
       //ignoreSearch:true は正しく動作しない。 ?以下を省略してcache hitするが、rails action が呼ばれないみたい      
       caches.match(event.request, {ignoreSearch:false})
         .then(function(response) {
           // Cache hit - return response
           if (response) {
-            //console.log('[SW]','Found in cache: ', response.url, response.status);
+            console.log('[SW]','Found in cache: ', response.url, response.status);
             return response;
           }
 
