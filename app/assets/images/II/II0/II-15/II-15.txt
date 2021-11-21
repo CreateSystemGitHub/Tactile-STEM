@@ -28,7 +28,7 @@
 
 ::target=multieq022 title="Pythonでは、a,アステリスク,x,2連のアステリスク,2,+,b,アステリスク,x,+,c" shape=rect coords=201,509,457,563
 
-::target=multieq023,TTS3 title="quadratic　expression、a,times　x-squared,　plus,b,times,x、plus　c" shape=rect coords=461,458,705,550
+::target=multieq023,TTS3 title="quadratic　expression、a,times　x-squared,　plus,b,times,x、plus　c" shape=rect coords=420,458,705,550
 
 ::target=multieq024 title="一次式の2乗,　左括弧,x,プラス,a,右括弧,２乗" shape=rect coords=23,572,218,653
 

@@ -20,7 +20,7 @@
 
 ::target=diff018 title="シンボリック・パイソン、sympyでは、import,スペース,sympy,スペース,as,スペース,sp,改行,x,コンマ,y,イコール,sp,ドット,symbols,左括弧,シングル引用,x,コンマ,y,シングル引用,右括弧,改行,f,イコール,左括弧,x,2連のアステリスク,2,右括弧,アステリスク,y,改行,sp,ドット,d,i,f,f,左括弧,f,コンマ,x,右括弧" shape=rect coords=193,466,483,586
 
-::target=diff019,TTS3 title="Partial,derivative,of,height,f,at,x,comma,y,is,given,by,x,caret,2,times,y.Then,partial,derivative,in,x,is,slope,in,x,direction." shape=rect coords=495,326,722,582
+::target=diff019,TTS3 title="Partial,derivative,of,height,f,at,x,comma,y,is,given,by,x,caret,2,times,y.Then,partial,derivative,in,x,is,slope,in,x,direction." shape=rect coords=480,350,722,595
 
 ::target=diff020 title="多変数関数の全微分、df" shape=rect coords=8,582,186,702
 
@@ -28,7 +28,7 @@
 
 ::target=diff022 title="シムパイでは、x,コンマ,dx,コンマ,y,コンマ,dy,イコール,sp,ドット,symbols,左括弧,シングル引用,x,コンマ,y,シングル引用,右括弧,改行,f,イコール,左括弧,x,アステリスク,アステリスク,2,右括弧,アステリスク,y,改行,sp,ドット,diff,左括弧,f,コンマ,x,右括弧,アステリスク,dx,プラス,sp,ドット,diff,左括弧,f,コンマ,y,右括弧,アステリスク,d,y" shape=rect coords=192,720,587,835
 
-::target=diff023,TTS3 title="Total,derivative,is,the,slope,in,direction,parenthesis,dx,comma,dy,parenthesis." shape=rect coords=509,583,686,720
+::target=diff023,TTS3 title="Total,derivative,is,the,slope,in,direction,parenthesis,dx,comma,dy,parenthesis." shape=rect coords=509,605,686,760
 
 ::target=diff024 title="１変数関数の積分、速度の積分" shape=rect coords=9,828,190,967
 

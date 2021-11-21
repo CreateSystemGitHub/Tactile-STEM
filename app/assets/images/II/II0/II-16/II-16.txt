@@ -28,7 +28,7 @@
 
 ::target=trig022 title="Pythonでは、n,p,ドット,c,o,s,左括弧,x,右括弧" shape=rect coords=291,444,442,480
 
-::target=trig023,TTS3 title="cosine function,cos　x" shape=rect coords=466,406,690,476
+::target=trig023,TTS3 title="cosine　function,cos　x" shape=rect coords=466,406,690,476
 
 ::target=trig024 title="タンジェント関数、タンジェント,左括弧,x,右括弧" shape=rect coords=20,494,207,573
 

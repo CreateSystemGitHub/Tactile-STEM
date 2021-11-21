@@ -6,13 +6,13 @@
 
 ::target=trigeq011 title="各行の左は日本語読み、中央は、上にラテフ、下にパイソン、右は英語読み。文字と声で提示。" shape=rect coords=29,71,707,159
 
-::target=trigeq012 title="加法定理1、sin,左括弧,a+b,右括弧,イコール,sin,左括弧,a,右括弧,cos,左括弧,b,右括弧,プラス,cos,左括弧,a,右括弧,sin,左括弧,b,右括弧" shape=rect coords=30,168,219,280
+::target=trigeq012 title="加法定理1、sin,左括弧,a+b,右括弧,イコール,sin,左括弧,a,右括弧,cos,左括弧,b,右括弧,プラス,cos,左括弧,a,右括弧,sin,左括弧,b,右括弧" shape=rect coords=30,168,219,300
 
 ::target=trigeq013 title="ラテフでは、$,円記号,sin,左括弧,a,+,b,右括弧,イコール,円記号,sin,左括弧,a,右括弧,円記号,cos,左括弧,b,右括弧,+,円記号,cos,左括弧,a,右括弧,円記号,sin,左括弧,b,右括弧,$" shape=rect coords=214,168,436,272
 
 ::target=trigeq014 title="シムパイでは、import,スペース,sympy,スペース,as,スペース,sp,改行,sp,ドット,v,a,r,左括弧,シングル引用,a,カンマ,b,シングル引用,右括弧,改行,sp,ドット,e,x,p,a,n,d,アンダースコア,t,r,i,g,左括弧,sp,ドット,sin,左括弧,a,プラス,b,右括弧,右括弧" shape=rect coords=217,299,498,432
 
-::target=trigeq015,TTS3 title="sine,in,parentheses,a,+,b,=,sine,a,cosine,b,+,cosine,a,sine,b" shape=rect coords=425,166,698,301
+::target=trigeq015,TTS3 title="sine,in,parentheses,a,+,b,=,sine,a,cosine,b,+,cosine,a,sine,b" shape=rect coords=450,166,720,301
 
 ::target=trigeq016 title="加法定理2、cos,左括弧,a+b,右括弧,=,cos,左括弧,a,右括弧,cos,左括弧,b,右括弧,マイナス,sin,左括弧,a,右括弧,sin,左括弧,b,右括弧" shape=rect coords=15,444,210,582
 
