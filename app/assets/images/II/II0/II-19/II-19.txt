@@ -12,7 +12,7 @@
 
 ::target=series014 title="パイソンでは、import,スペース,numpy,スペース,as,スペース,np,改行,数列の最初の項,i,0,イコール,1,改行,最後の項,i,e,n,d,イコール,5,改行,np,ドット,a,r,a,n,g,e,左括弧,i0,コンマ,i,e,n,dに、ステップより小さい数値を足した数、例えば、i,e,n,d,プラス,0.5,コンマ,ステップの大きさ,1,右括弧,ドット,sum,左括弧,右括弧。別の表記法もある。例えば、np,ドット,sum,左括弧,左角括弧,1,コンマ,2,コンマ,3,コンマ,4,コンマ,5,右角括弧,右括弧のように数値を並べて書く" shape=rect coords=195,224,510,384
 
-::target=series015,TTS3 title="Numerical　sum　over　a　series.　Upper　case　sigma　with　the　first　and　last　indices." shape=rect coords=536,167,714,394
+::target=series015 title="Numerical　sum　over　a　series.　Upper　case　sigma　with　the　first　and　last　indices." shape=rect coords=536,167,714,394
 
 ::target=series016 title="数式列総和、変数のべきで展開する" shape=rect coords=9,397,183,506
 
@@ -20,7 +20,7 @@
 
 ::target=series018 title="シムパイでテイラー展開する例、import,スペース,s,y,m,p,y,スペース,as,スペース,sp,改行,x,イコール,sp,ドット,大文字で始まる,Symbol,左括弧,シングル引用,x,シングル引用,右括弧,改行,sp,ドット,series,左括弧,sp,ドット,sin,左括弧,x,右括弧,コンマ,x,コンマ,0,コンマ,5,右括弧" shape=rect coords=185,509,530,645
 
-::target=series019,TTS3 title="Power　series　expansion" shape=rect coords=538,411,704,531
+::target=series019 title="Power　series　expansion" shape=rect coords=538,411,704,531
 
 ::target=series020 title="数値列総積、ギリシャ文字、大文字、パイで表す" shape=rect coords=16,645,189,793
 
@@ -28,7 +28,7 @@
 
 ::target=series022 title="パイソンでは、最初の項,i0,イコール,1,セミコロン,最後の項,i,end,イコール,5,改行,np,ドット,a,r,a,n,g,e,左括弧,i0,コンマ,最後の項に小さな数値を足す,i,end+0.5,コンマ,1,右括弧,ドット,p,r,o,d,左括弧,右括弧。別の表記法では、np,ドット,p,r,o,d,左括弧,左角括弧,1,コンマ,2,コンマ,3,コンマ,4,コンマ,5,右角括弧,右括弧" shape=rect coords=193,716,510,883
 
-::target=series023,TTS3 title="Numerical　product　over　a　series.Upper　case　pi　with　the　first　and　last　indices" shape=rect coords=525,645,711,872
+::target=series023 title="Numerical　product　over　a　series.Upper　case　pi　with　the　first　and　last　indices" shape=rect coords=525,645,711,872
 
 ::target=series024 title="階乗、自然数の１から指定した数までの総積。数値、nに続けて感嘆記号を書く" shape=rect coords=16,882,180,1021
 
@@ -36,4 +36,4 @@
 
 ::target=series026 title="パイソンでは、import,スペース,m,a,t,h,改行,n,イコール,10,改行,m,a,t,h,ドット,factorial,左括弧,n,右括弧" shape=rect coords=188,921,434,1020
 
-::target=series027,TTS3 title="Factorial:　numerical　product　from　1　to　n." shape=rect coords=515,886,698,1024
+::target=series027 title="Factorial:　numerical　product　from　1　to　n." shape=rect coords=515,886,698,1024

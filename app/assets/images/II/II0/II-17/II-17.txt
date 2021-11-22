@@ -12,7 +12,7 @@
 
 ::target=trigeq014 title="シムパイでは、import,スペース,sympy,スペース,as,スペース,sp,改行,sp,ドット,v,a,r,左括弧,シングル引用,a,カンマ,b,シングル引用,右括弧,改行,sp,ドット,e,x,p,a,n,d,アンダースコア,t,r,i,g,左括弧,sp,ドット,sin,左括弧,a,プラス,b,右括弧,右括弧" shape=rect coords=217,299,498,432
 
-::target=trigeq015,TTS3 title="sine,in,parentheses,a,+,b,=,sine,a,cosine,b,+,cosine,a,sine,b" shape=rect coords=450,166,720,301
+::target=trigeq015 title="sine,in,parentheses,a,+,b,=,sine,a,cosine,b,+,cosine,a,sine,b" shape=rect coords=450,166,720,301
 
 ::target=trigeq016 title="加法定理2、cos,左括弧,a+b,右括弧,=,cos,左括弧,a,右括弧,cos,左括弧,b,右括弧,マイナス,sin,左括弧,a,右括弧,sin,左括弧,b,右括弧" shape=rect coords=15,444,210,582
 
@@ -20,7 +20,7 @@
 
 ::target=trigeq018 title="シムパイでは、sp,ドット,e,x,p,a,n,d,アンダースコア,t,r,i,g,左括弧,sp,ドット,cos,左括弧,a,プラス,b,右括弧,右括弧" shape=rect coords=209,569,505,706
 
-::target=trigeq019,TTS3 title="cosine,in,parentheses,a,+,b,equal,cosine,a,cosine,b,minus,sine,a,sine,b" shape=rect coords=457,444,714,570
+::target=trigeq019 title="cosine,in,parentheses,a,+,b,equal,cosine,a,cosine,b,minus,sine,a,sine,b" shape=rect coords=457,444,714,570
 
 ::target=trigeq020 title="加法定理3、tan,左括弧,a+b,右括弧,=,左括弧,tan,左括弧,a,右括弧,+,tan,左括弧,b,右括弧,右括弧,/,左括弧,1,マイナス,tan,左括弧,a,右括弧,tan,左括弧,b,右括弧,右括弧" shape=rect coords=21,722,210,898
 
@@ -28,5 +28,5 @@
 
 ::target=trigeq022 title="シムパイでは、sp,ドット,e,x,p,a,n,d,アンダースコア,t,r,i,g,左括弧,sp,ドット,tan,左括弧,a,プラス,b,右括弧,右括弧" shape=rect coords=213,887,536,1024
 
-::target=trigeq023,TTS3 title="tan,in,parenthese,a,+,b,equal,parenthesis,tan,a,+,tan,b,parenthesis,slash,parenthesis,1,minus,tan,a,tan,b,parenthesis" shape=rect coords=470,729,710,836
+::target=trigeq023 title="tan,in,parenthese,a,+,b,equal,parenthesis,tan,a,+,tan,b,parenthesis,slash,parenthesis,1,minus,tan,a,tan,b,parenthesis" shape=rect coords=470,729,710,836
 

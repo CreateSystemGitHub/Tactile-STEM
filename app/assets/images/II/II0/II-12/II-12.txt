@@ -12,7 +12,7 @@
 
 ::target=numerals014 title="Pythonでは、２,点,５" shape=rect coords=262,219,363,255
 
-::target=numerals015,TTS3 title="Decimal,two　point　five" shape=rect coords=490,176,694,252
+::target=numerals015 title="Decimal,two　point　five" shape=rect coords=490,176,694,252
 
 ::target=numerals016 title="循環小数、0,点,8,9,7で、９と,７が繰り返す場合、９と,7の上に点をつけるか,下線を引いて、その二つがセットで循環することを表す。上に点を打つのは困難なため、下線を引くことを勧める" shape=rect coords=36,255,194,341
 
@@ -20,7 +20,7 @@
 
 ::target=numerals018 title="Pythonに、循環小数を表す方法はない" shape=rect coords=208,303,486,381
 
-::target=numerals019,TTS3 title="repetend　decimal,0.8,followed　by　repeating,9,7" shape=rect coords=497,265,690,408
+::target=numerals019 title="repetend　decimal,0.8,followed　by　repeating,9,7" shape=rect coords=497,265,690,408
 
 ::target=numerals020 title="分数、5ぶんの2。一行の中では、２,スラッシュ,５と書く" shape=rect coords=45,421,201,467
 
@@ -28,7 +28,7 @@
 
 ::target=numerals022 title="Pythonでは、２,スラッシュ,５" shape=rect coords=225,458,426,495
 
-::target=numerals023,TTS3 title="two　fifths　or　two　over　five" shape=rect coords=498,414,689,488
+::target=numerals023 title="two　fifths　or　two　over　five" shape=rect coords=498,414,689,488
 
 ::target=numerals024 title="べき乗、aのn乗" shape=rect coords=44,511,173,591
 
@@ -36,7 +36,7 @@
 
 ::target=numerals026 title="Pythonでは、a,アステリスク,アステリスク,n" shape=rect coords=231,558,349,608
 
-::target=numerals027,TTS3 title="a,　to　n,　or,　a,　to　the　n'th　power,　or,　a,　to　the　power　of　n" shape=rect coords=422,502,698,629
+::target=numerals027 title="a,　to　n,　or,　a,　to　the　n'th　power,　or,　a,　to　the　power　of　n" shape=rect coords=422,502,698,629
 
 ::target=numerals028 title="aの平方根、あるいは、ルート,a" shape=rect coords=34,648,209,735
 
@@ -44,7 +44,7 @@
 
 ::target=numerals030 title="Pythonでは、a,アステリスク,アステリスク,左丸括弧,0,点,5,右丸括弧,または、n,p,ドット,s,q,r,t,左丸括弧,a,右丸括弧" shape=rect coords=229,699,397,775
 
-::target=numerals031,TTS3 title="root　a,　or　square　root,　a." shape=rect coords=455,652,668,734
+::target=numerals031 title="root　a,　or　square　root,　a." shape=rect coords=455,652,668,734
 
 ::target=numerals032 title="aの立方根、または、3乗根" shape=rect coords=34,794,194,879
 
@@ -52,7 +52,7 @@
 
 ::target=numerals034 title="Pythonでは、a,アステリスク,アステリスク,左丸括弧,1,スラッシュ,3,右丸括弧" shape=rect coords=232,847,383,892
 
-::target=numerals035,TTS3 title="cube　root,　a,　or,　a,　to　one　third" shape=rect coords=457,798,670,881
+::target=numerals035 title="cube　root,　a,　or,　a,　to　one　third" shape=rect coords=457,798,670,881
 
 ::target=numerals036 title="aの左括弧,c,割る,b,右括弧,乗" shape=rect coords=33,920,211,976
 
@@ -60,4 +60,4 @@
 
 ::target=numerals038 title="Pythonでは、a,アステリスク,アステリスク,左丸括弧,b,スラッシュ,c,右丸括弧" shape=rect coords=237,973,411,1014
 
-::target=numerals039,TTS3 title="a,to,bracket,b,over　c,bracket" shape=rect coords=453,925,684,1011
+::target=numerals039 title="a,to,bracket,b,over　c,bracket" shape=rect coords=453,925,684,1011

@@ -11,7 +11,7 @@
 
 ::target=equation014 title="Pythonでは、a,小なり記号,b" shape=rect coords=237,231,364,265
 
-::target=equation015,TTS3 title="a,　is　less　than　b." shape=rect coords=409,187,634,233
+::target=equation015 title="a,　is　less　than　b." shape=rect coords=409,187,634,233
 
 ::target=equation016 title="a,小なり,イコール,b" shape=rect coords=25,268,212,383
 
@@ -19,7 +19,7 @@
 
 ::target=equation018 title="Pythonでは、a,小なり,続けて,イコール,b" shape=rect coords=241,316,370,362
 
-::target=equation019,TTS3 title="a.　is　less　than,　or　equal　to　b" shape=rect coords=413,271,632,349
+::target=equation019 title="a.　is　less　than,　or　equal　to　b" shape=rect coords=413,271,632,349
 
 ::target=equation020 title="a,大なり,b" shape=rect coords=28,388,192,470
 
@@ -27,7 +27,7 @@
 
 ::target=equation022 title="Pythonでは、a,大なり,b" shape=rect coords=235,433,373,464
 
-::target=equation023,TTS3 title="a,　is　greater　than　b" shape=rect coords=409,391,668,438
+::target=equation023 title="a,　is　greater　than　b" shape=rect coords=409,391,668,438
 
 ::target=equation024 title="a,大なり,イコール,b" shape=rect coords=31,475,210,585
 
@@ -35,7 +35,7 @@
 
 ::target=equation026 title="Pythonでは、a,大なり,続けて,イコール,b" shape=rect coords=239,519,366,559
 
-::target=equation027,TTS3 title="a,　is　greater　than,　or　equal　to　b" shape=rect coords=412,471,678,546
+::target=equation027 title="a,　is　greater　than,　or　equal　to　b" shape=rect coords=412,471,678,546
 
 ::target=equation028 title="a,小なり,x,小なり,続けて,イコール,b" shape=rect coords=33,595,231,751
 
@@ -43,7 +43,7 @@
 
 ::target=equation030 title="Pythonでは、２つのスクリプトに分けて表す。　a,小なり,x,セミコロン,または,改行,x,小なり,イコール,b" shape=rect coords=237,652,403,696
 
-::target=equation031,TTS3 title="a,　less　than　x,　and　x,　less　than,　or　equal　to　b" shape=rect coords=417,599,690,719
+::target=equation031 title="a,　less　than　x,　and　x,　less　than,　or　equal　to　b" shape=rect coords=417,599,690,719
 
 ::target=equation032 title="aとbは同じと定義する" shape=rect coords=35,759,247,877
 
@@ -51,7 +51,7 @@
 
 ::target=equation034 title="Pythonには無い" shape=rect coords=251,808,456,851
 
-::target=equation035,TTS3 title="a,　is　equivalent　to,　b" shape=rect coords=462,752,686,835
+::target=equation035 title="a,　is　equivalent　to,　b" shape=rect coords=462,752,686,835
 
 ::target=equation036 title="a,ノット,イコール,b" shape=rect coords=34,876,238,1002
 
@@ -59,5 +59,5 @@
 
 ::target=equation038 title="Pythonでは、a,感嘆符,続けて,イコール,b" shape=rect coords=258,933,350,976
 
-::target=equation039,TTS3 title="a,　is　not　equal　to,　b" shape=rect coords=450,881,686,970
+::target=equation039 title="a,　is　not　equal　to,　b" shape=rect coords=450,881,686,970
 

@@ -12,7 +12,7 @@
 
 ::target=trig014 title="角度,60度は、3ぶんの1,パイ,ラジアン" shape=rect coords=235,235,408,300
 
-::target=trig015,TTS3 title="90　degree　is　a　half　of　pi　radian　and　60　degree　is　one　third　of　pi　radian" shape=rect coords=432,164,704,292
+::target=trig015 title="90　degree　is　a　half　of　pi　radian　and　60　degree　is　one　third　of　pi　radian" shape=rect coords=432,164,704,292
 
 ::target=trig016 title="サイン関数、または、正弦関数、サイン、x" shape=rect coords=20,296,238,404
 
@@ -20,7 +20,7 @@
 
 ::target=trig018 title="Pythonでは、import,n,u,m,p,y,スペース,a,s,スペース,n,p,改行,n,p,ドット,s,i,n,左括弧,x,右括弧" shape=rect coords=240,337,530,402
 
-::target=trig019,TTS3 title="sine　function,sin　x" shape=rect coords=435,299,693,336
+::target=trig019 title="sine　function,sin　x" shape=rect coords=435,299,693,336
 
 ::target=trig020 title="コサイン関数、または、余弦関数、コサインx" shape=rect coords=20,408,273,485
 
@@ -28,7 +28,7 @@
 
 ::target=trig022 title="Pythonでは、n,p,ドット,c,o,s,左括弧,x,右括弧" shape=rect coords=291,444,442,480
 
-::target=trig023,TTS3 title="cosine　function,cos　x" shape=rect coords=466,406,690,476
+::target=trig023 title="cosine　function,cos　x" shape=rect coords=466,406,690,476
 
 ::target=trig024 title="タンジェント関数、タンジェント,左括弧,x,右括弧" shape=rect coords=20,494,207,573
 
@@ -36,7 +36,7 @@
 
 ::target=trig026 title="Pythonでは、n,p,ドット,t,a,n,左括弧,x,右括弧" shape=rect coords=241,534,398,568
 
-::target=trig027,TTS3 title="tangent　function,　tan　x" shape=rect coords=431,488,678,562
+::target=trig027 title="tangent　function,　tan　x" shape=rect coords=431,488,678,562
 
 ::target=trig028 title="コタンジェント関数、コタンジェント,左括弧,x,右括弧" shape=rect coords=19,582,217,665
 
@@ -44,7 +44,7 @@
 
 ::target=trig030 title="Pythonでは、n,p,ドット,c,o,t,左括弧,x,右括弧" shape=rect coords=240,625,394,656
 
-::target=trig031,TTS3 title="co-tangent　function,　cot　x" shape=rect coords=427,587,701,653
+::target=trig031 title="co-tangent　function,　cot　x" shape=rect coords=427,587,701,653
 
 ::target=trig032 title="セカント関数、セカント,左括弧,x,右括弧" shape=rect coords=21,671,216,749
 
@@ -52,7 +52,7 @@
 
 ::target=trig034 title="Pythonでは、n,p,ドット,s,e,c,左括弧,x,右括弧" shape=rect coords=251,712,396,745
 
-::target=trig035,TTS3 title="secant　function,　sec　x" shape=rect coords=425,670,698,737
+::target=trig035 title="secant　function,　sec　x" shape=rect coords=425,670,698,737
 
 ::target=trig036 title="コセカント関数、コセカント,左括弧,x,右括弧" shape=rect coords=20,759,234,837
 
@@ -60,7 +60,7 @@
 
 ::target=trig038 title="Pythonでは、n,p,ドット,c,s,c,左括弧,x,右括弧" shape=rect coords=253,801,388,835
 
-::target=trig039,TTS3 title="co-secant　function,　csc,　x" shape=rect coords=427,764,701,828
+::target=trig039 title="co-secant　function,　csc,　x" shape=rect coords=427,764,701,828
 
 ::target=trig040 title="アークサイン関数、アークサイン,左括弧,x,右括弧" shape=rect coords=21,845,233,923
 
@@ -68,7 +68,7 @@
 
 ::target=trig042 title="Pythonでは、n,p,ドット,a,r,c,s,i,n,左括弧,x,右括弧" shape=rect coords=248,886,429,919
 
-::target=trig043,TTS3 title="arc-sine　function,　arcsin　x" shape=rect coords=436,845,695,910
+::target=trig043 title="arc-sine　function,　arcsin　x" shape=rect coords=436,845,695,910
 
 ::target=trig044 title="アークコサイン関数、アークコサイン,左括弧,x,右括弧" shape=rect coords=21,931,248,1011
 
@@ -76,5 +76,5 @@
 
 ::target=trig046 title="Pythonでは、n,p,ドット,a,r,c,c,o,s,左括弧,x,右括弧" shape=rect coords=252,971,434,1008
 
-::target=trig047,TTS3 title="arc-cosine　function,　arccos　x" shape=rect coords=438,918,621,1018
+::target=trig047 title="arc-cosine　function,　arccos　x" shape=rect coords=438,918,621,1018
 

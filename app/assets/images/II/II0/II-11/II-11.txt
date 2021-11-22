@@ -12,7 +12,7 @@
 
 ::target=arithematic014 title="Pythonでは、左丸括弧,a,+,b,右丸括弧" shape=rect coords=205,270,300,300
 
-::target=arithematic015,TTS3 title="open　parenthesis.　a.　plus.　b.　close　parenthesis.　Or　round　brackets." shape=rect coords=349,219,695,330
+::target=arithematic015 title="open　parenthesis.　a.　plus.　b.　close　parenthesis.　Or　round　brackets." shape=rect coords=349,219,695,330
 
 ::target=arithematic016 title="角括弧または、大括弧、例えば、左角括弧,a,+,b,右角括弧,と読む" shape=rect coords=36,336,155,452
 
@@ -20,7 +20,7 @@
 
 ::target=arithematic018 title="Pythonでは、左角括弧,a,+,b,右角括弧" shape=rect coords=210,390,310,432
 
-::target=arithematic019,TTS3 title="open　bracket.　a.　plus.　b.　close　bracket.　Or　square　bracket." shape=rect coords=353,337,667,450
+::target=arithematic019 title="open　bracket.　a.　plus.　b.　close　bracket.　Or　square　bracket." shape=rect coords=353,337,667,450
 
 ::target=arithematic020 title="波括弧、または、中括弧。例えば、左波括弧,a,+,b,右波括弧,と読む" shape=rect coords=37,455,181,581
 
@@ -28,7 +28,7 @@
 
 ::target=arithematic022 title="Pythonでは、左波括弧,a,+,b,右波括弧" shape=rect coords=210,520,310,550
 
-::target=arithematic023,TTS3 title="open　brace.　a.　plus.　b.　close　brace.　Or　curly　bracket." shape=rect coords=367,460,637,574
+::target=arithematic023 title="open　brace.　a.　plus.　b.　close　brace.　Or　curly　bracket." shape=rect coords=367,460,637,574
 
 ::target=arithematic024 title="a,+,b,イコール,c" shape=rect coords=45,590,154,635
 
@@ -36,7 +36,7 @@
 
 ::target=arithematic026 title="Pythonでは順序が変わり、c,イコール,a,+,b" shape=rect coords=206,650,320,680
 
-::target=arithematic027,TTS3 title="a,　plus　b　is　c.　or,　a,　plus　b　equals　c" shape=rect coords=364,594,614,672
+::target=arithematic027 title="a,　plus　b　is　c.　or,　a,　plus　b　equals　c" shape=rect coords=364,594,614,672
 
 ::target=arithematic028 title="a,マイナス,b,イコール,c" shape=rect coords=45,705,154,750
 
@@ -44,7 +44,7 @@
 
 ::target=arithematic030 title="Pythonでは順序が変わり、c,イコール,a,マイナス,b" shape=rect coords=206,755,310,795
 
-::target=arithematic031,TTS3 title="a,　minus　b　equals　c,　or,　a,　minus　b　leaves　c,or,　b,　subtracted　from　a,　leaves　c" shape=rect coords=357,705,654,822
+::target=arithematic031 title="a,　minus　b　equals　c,　or,　a,　minus　b　leaves　c,or,　b,　subtracted　from　a,　leaves　c" shape=rect coords=357,705,654,822
 
 ::target=arithematic032 title="a,割る,b,イコール,c" shape=rect coords=50,821,160,875
 
@@ -52,7 +52,7 @@
 
 ::target=arithematic034 title="Pythonでは順序が変わり、c,イコール,a,スラッシュ,b" shape=rect coords=208,880,300,920
 
-::target=arithematic035,TTS3 title="a.　divided　by　b　is　c." shape=rect coords=365,832,639,880
+::target=arithematic035 title="a.　divided　by　b　is　c." shape=rect coords=365,832,639,880
 
 ::target=arithematic036 title="a,掛ける,b,イコール,c" shape=rect coords=50,930,160,980
 
@@ -60,4 +60,4 @@
 
 ::target=arithematic038 title="Pythonでは順序が変わり、c,イコール,a,アステリスク,b" shape=rect coords=200,975,286,1007
 
-::target=arithematic039,TTS3 title="a,　times　b　is　c,　or,　a,　by　b　equals　c,　or,　a,　multiplied　by　b　is　c" shape=rect coords=401,893,694,1005
+::target=arithematic039 title="a,　times　b　is　c,　or,　a,　by　b　equals　c,　or,　a,　multiplied　by　b　is　c" shape=rect coords=401,893,694,1005

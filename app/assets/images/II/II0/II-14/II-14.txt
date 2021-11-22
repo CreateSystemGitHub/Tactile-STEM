@@ -12,7 +12,7 @@
 
 ::target=array014 title="Pythonには無い" shape=rect coords=199,219,458,264
 
-::target=array015,TTS3 title="character,　a,　with　superscript　n" shape=rect coords=472,223,692,294
+::target=array015 title="character,　a,　with　superscript　n" shape=rect coords=472,223,692,294
 
 ::target=array016 title="数式でないａに、下付き添え字n" shape=rect coords=25,298,170,412
 
@@ -20,7 +20,7 @@
 
 ::target=array018 title="Pythonには無い" shape=rect coords=197,346,454,390
 
-::target=array019,TTS3 title="character,　a,　with　subscript　n" shape=rect coords=469,345,693,420
+::target=array019 title="character,　a,　with　subscript　n" shape=rect coords=469,345,693,420
 
 ::target=array020 title="数式表現での、上付きと下付き" shape=rect coords=26,425,185,547
 
@@ -28,7 +28,7 @@
 
 ::target=array022 title="パイソンでは、上下の区別なくアレーで表す。例えば、import,スペース,numpy,スペース,as,スペース,np,改行,a,イコール,n,p,ドット,a,r,r,a,y,左丸括弧,左角括弧,0,コンマ,1,コンマ,2,コンマ,3,右角括弧,右丸括弧" shape=rect coords=196,472,498,629
 
-::target=array023,TTS3 title="math　expression,　array　with　superscript,　or,　subscript" shape=rect coords=504,428,690,626
+::target=array023 title="math　expression,　array　with　superscript,　or,　subscript" shape=rect coords=504,428,690,626
 
 ::target=array024 title="ベクトル表示,vの上に矢印を付ける、または、ｖを、太文字にする" shape=rect coords=17,650,226,815
 
@@ -36,7 +36,7 @@
 
 ::target=array026 title="Pythonでは、三次元ベクトルは、n,p,ドット,a,r,r,a,y,左括弧,左角括弧,x,コンマ,y,コンマ,z,右角括弧,右括弧となる" shape=rect coords=244,696,499,816
 
-::target=array027,TTS3 title="vector　v" shape=rect coords=513,660,673,701
+::target=array027 title="vector　v" shape=rect coords=513,660,673,701
 
 ::target=array028 title="2点、A,Bを結ぶ、ベクトル表示、ABの上に矢印" shape=rect coords=21,820,234,946
 
@@ -44,4 +44,4 @@
 
 ::target=array030 title="Pythonでは、位置ベクトルの差で表す。np,ドット,array,左括弧,左角括弧,A,x,コンマ,A,y,コンマ,A,z,右角括弧,右括弧,マイナス,np,ドット,array,左括弧,左角括弧,B,x,コンマ,B,y,コンマ,B,z,右角括弧,右括弧" shape=rect coords=241,870,518,987
 
-::target=array032,TTS3 title="vector　connecting　points　A　and　B" shape=rect coords=525,871,690,1007
+::target=array031 title="vector　connecting　points　A　and　B" shape=rect coords=525,871,690,1007

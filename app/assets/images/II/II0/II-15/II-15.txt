@@ -12,7 +12,7 @@
 
 ::target=multieq014 title="パイソンでは、import,スペース,numpy,スペース,as,スペース,np,改行,np,ドット,d,o,t,左括弧,左角括弧,a,x,コンマ,a,y,右角括弧,コンマ,左角括弧,b,x,コンマ,b,y,右角括弧,右括弧が,ゼロなら、aとbは、直交" shape=rect coords=182,233,514,311
 
-::target=multieq015,TTS3 title="vector　a,is　orthogonal,　or　perpendicular　to　vector　b." shape=rect coords=521,179,709,353
+::target=multieq015 title="vector　a,is　orthogonal,　or　perpendicular　to　vector　b." shape=rect coords=521,179,709,353
 
 ::target=multieq016 title="一次式、a,x,プラス,b" shape=rect coords=27,343,153,435
 
@@ -20,7 +20,7 @@
 
 ::target=multieq018 title="Pythonでは、a,アステリスク,x,+,b" shape=rect coords=217,398,362,437
 
-::target=multieq019,TTS3 title="linear　expression、a,times　x,　plus　b" shape=rect coords=489,364,690,453
+::target=multieq019 title="linear　expression、a,times　x,　plus　b" shape=rect coords=489,364,690,453
 
 ::target=multieq020 title="二次式、a,x,2乗,プラス,b,x,プラス,c" shape=rect coords=23,459,184,561
 
@@ -28,7 +28,7 @@
 
 ::target=multieq022 title="Pythonでは、a,アステリスク,x,2連のアステリスク,2,+,b,アステリスク,x,+,c" shape=rect coords=201,509,457,563
 
-::target=multieq023,TTS3 title="quadratic　expression、a,times　x-squared,　plus,b,times,x、plus　c" shape=rect coords=420,458,705,550
+::target=multieq023 title="quadratic　expression、a,times　x-squared,　plus,b,times,x、plus　c" shape=rect coords=420,458,705,550
 
 ::target=multieq024 title="一次式の2乗,　左括弧,x,プラス,a,右括弧,２乗" shape=rect coords=23,572,218,653
 
@@ -36,7 +36,7 @@
 
 ::target=multieq026 title="Pythonでは、左括弧,x,プラス,a,右括弧,２連のアステリスク,2" shape=rect coords=245,613,412,650
 
-::target=multieq027,TTS3 title="parenthesis,x,plus,a,parenthesis,squared" shape=rect coords=444,566,698,663
+::target=multieq027 title="parenthesis,x,plus,a,parenthesis,squared" shape=rect coords=444,566,698,663
 
 ::target=multieq028 title="一次式の積、左括弧,x,プラス,a,右括弧,掛ける,左括弧,x,マイナス,a,右括弧" shape=rect coords=15,665,199,744
 
@@ -44,7 +44,7 @@
 
 ::target=multieq030 title="Pythonでは、左括弧,ｘ,+,a,右括弧,アステリスク,左括弧,x,マイナス,a,右括弧" shape=rect coords=238,709,430,750
 
-::target=multieq031,TTS3 title="x,+,a,in,parentheses,x,minus,a,in,parentheses" shape=rect coords=435,663,658,787
+::target=multieq031 title="x,+,a,in,parentheses,x,minus,a,in,parentheses" shape=rect coords=435,663,658,787
 
 ::target=multieq032 title="添え字付き多項式、a,下付き,3,x,上付き,3,+,a,下付き,2,x,上付き,2,+,a,下付き,1,x,+,a,下付き,0" shape=rect coords=16,788,186,958
 
@@ -52,4 +52,4 @@
 
 ::target=multieq034 title="シムパイでは、a3,アステリスク,x,2連のアステリスク,3,プラス,a2,アステリスク,x,2連のアステリスク,2,プラス,a1,アステリスク,x,プラス,a0。印刷では複数行にまたがることを示す円記号が使われている" shape=rect coords=196,898,400,1015
 
-::target=multieq035,TTS3 title="a,sub,3,times,x,to,3,+,a,sub,2,times,x,to,2,+,a,sub,1,times,x,+,a,sub,0" shape=rect coords=437,790,668,962
+::target=multieq035 title="a,sub,3,times,x,to,3,+,a,sub,2,times,x,to,2,+,a,sub,1,times,x,+,a,sub,0" shape=rect coords=437,790,668,962

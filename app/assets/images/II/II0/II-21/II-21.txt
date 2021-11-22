@@ -10,7 +10,7 @@
 
 ::target=lim014 title="シムパイでは、import,sympy,as,sp,改行,x,イコール,sp,ドット,symbols,左括弧,シングル引用,x,シングル引用,右括弧,改行,無限大極限では,sp,ドット,limit,左括弧,1,スラッシュ,x,コンマ,x,コンマ,小文字,o,を二つ並べる,右括弧,改行,ゼロ極限では,sp,ドット,limit,左括弧,1,スラッシュ,x,コンマ,x,コンマ,0,右括弧" shape=rect coords=212,235,513,364
 
-::target=lim015,TTS3 title="Limiting　value　ｗhen　a　variable　approaches　0　or　infinity　or　a　value." shape=rect coords=521,156,712,347
+::target=lim015 title="Limiting　value　ｗhen　a　variable　approaches　0　or　infinity　or　a　value." shape=rect coords=521,156,712,347
 
 ::target=lim016 title="無限大、文章では特殊記号∞を挿入" shape=rect coords=9,371,158,510
 
@@ -18,7 +18,7 @@
 
 ::target=lim018 title="シムパイでは、小文字,oを二つ続けて無限大を表す。例えば、1,プラス,sp,ドット,o,o,や、42,スラッシュ,sp,ドット,o,o,のように書く" shape=rect coords=181,440,480,568
 
-::target=lim019,TTS3 title="Infinity　symbol　looks　like　numeral　8　laid　down　sideway." shape=rect coords=517,362,669,558
+::target=lim019 title="Infinity　symbol　looks　like　numeral　8　laid　down　sideway." shape=rect coords=517,362,669,558
 
 ::target=lim020 title="微小量を表す、ギリシャ語小文字、イプシロン" shape=rect coords=7,574,155,744
 
@@ -26,7 +26,7 @@
 
 ::target=lim022 title="シムパイでは、x,イコール,sp,ドット,symbols,左括弧,シングル引用,x,シングル引用,右括弧,改行,sp,ドット,e,x,p,r,イコール,sin,左括弧,x,右括弧,スラッシュ,x,改行,sp,ドット,e,x,p,r,ドット,e,v,a,l,f,左括弧,s,u,b,s,イコール,左波括弧,x,コロン,0.01,右波括弧,右括弧" shape=rect coords=172,678,499,777
 
-::target=lim023,TTS3 title="Infinitesimal.　Greek　lower-case　epsilon　is　used　when　numerical　value　is　presumed　to　be　very　small." shape=rect coords=513,569,710,820
+::target=lim023 title="Infinitesimal.　Greek　lower-case　epsilon　is　used　when　numerical　value　is　presumed　to　be　very　small." shape=rect coords=513,569,710,820
 
 ::target=lim024 title="微小量に対する近似表現" shape=rect coords=9,818,146,961
 
@@ -34,4 +34,4 @@
 
 ::target=lim026 title="シムパイでの例、x,イコール,sp,ドット,symbols,左括弧,シングル引用,x,シングル引用,右括弧,改行,sp,ドット,e,x,p,r,イコール,sp,ドット,ln,左括弧,1,プラス,x,右括弧,改行,sp,ドット,e,x,p,r,ドット,e,v,a,l,f,左括弧,s,u,b,s,イコール,左波括弧,x,コロン,0.01,右波括弧,右括弧" shape=rect coords=153,899,503,1006
 
-::target=lim027,TTS3 title="For　example　if　x　is　small,　sine　or　logarithm　for　x　takes　a　simple　polynomial　form." shape=rect coords=513,829,712,1026
+::target=lim027 title="For　example　if　x　is　small,　sine　or　logarithm　for　x　takes　a　simple　polynomial　form." shape=rect coords=513,829,712,1026

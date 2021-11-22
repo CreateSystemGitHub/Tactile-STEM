@@ -12,7 +12,7 @@
 
 ::target=complex014 title="パイソンでは、import,スペース,n,u,m,p,y,スペース,as,スペース,np,改行,a,イコール,2.0,改行,np,ドット,l,o,g,左括弧,a,右括弧" shape=rect coords=206,261,496,362
 
-::target=complex015,TTS3 title="natural　log,or,natural　logarithm" shape=rect coords=438,189,694,260
+::target=complex015 title="natural　log,or,natural　logarithm" shape=rect coords=438,189,694,260
 
 ::target=complex016 title="常用対数、log,下付き,10,左括弧,a,右括弧" shape=rect coords=21,365,175,452
 
@@ -20,7 +20,7 @@
 
 ::target=complex018 title="パイソンでは、np,ドット,l,o,g,10,左括弧,a,右括弧" shape=rect coords=206,422,374,464
 
-::target=complex019,TTS3 title="common　logarithm,or,log　base　10,or,log　with　base　10" shape=rect coords=405,371,672,468
+::target=complex019 title="common　logarithm,or,log　base　10,or,log　with　base　10" shape=rect coords=405,371,672,468
 
 ::target=complex020 title="複素数、z,イコール,x,+,y,i" shape=rect coords=22,489,159,571
 
@@ -28,7 +28,7 @@
 
 ::target=complex022 title="パイソンで一例を示す。x,イコール,3,改行,y,イコール,4,j,改行,次のｚは複素数である。z,イコール,x,+,y" shape=rect coords=217,534,374,610
 
-::target=complex023,TTS3 title="complex　number,z,=,x,+,y,i,where　i　is　the　imaginary　unit.　Python　uses　j　as　the　imaginary　unit." shape=rect coords=425,479,702,638
+::target=complex023 title="complex　number,z,=,x,+,y,i,where　i　is　the　imaginary　unit.　Python　uses　j　as　the　imaginary　unit." shape=rect coords=425,479,702,638
 
 ::target=complex024 title="複素数の実部、大文字,R,小文字,e,左括弧,z,右括弧" shape=rect coords=30,649,158,762
 
@@ -36,7 +36,7 @@
 
 ::target=complex026 title="パイソンで一例を示す。x,イコール,3,改行,y,イコール,4,j,改行,z,イコール,x,+,y,改行、このzの実部は、np,ドット,r,e,a,l,左括弧,z,右括弧" shape=rect coords=179,749,442,821
 
-::target=complex027,TTS3 title="real　part　of　a　complex　number　z." shape=rect coords=457,645,646,745
+::target=complex027 title="real　part　of　a　complex　number　z." shape=rect coords=457,645,646,745
 
 ::target=complex028 title="複素数の虚部、大文字,I,小文字,m,左括弧,z,右括弧" shape=rect coords=32,831,161,938
 
@@ -44,4 +44,4 @@
 
 ::target=complex030 title="パイソンでは、x,イコール,3,改行,y,イコール,4,j,改行,z,イコール,x,+,y,改行、このzの、虚部は、np,ドット,i,m,a,g,左括弧,z,右括弧" shape=rect coords=184,943,446,1020
 
-::target=complex031,TTS3 title="imaginary　part　of　a　complex　number　z." shape=rect coords=464,828,680,942
+::target=complex031 title="imaginary　part　of　a　complex　number　z." shape=rect coords=464,828,680,942
