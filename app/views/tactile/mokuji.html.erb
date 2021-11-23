@@ -7,7 +7,7 @@
     <% for page in 0..@max_page do %>
       <tr>
         <td>
-          <%=link_to tactile_show_path(book_id:@book_id,pid:page.to_s,spid:"0",fn:"0") do %>
+          <%=link_to tactile_show_path(book_id:@book_id,pid:page.to_s,spid:"0",fn:"0") ,data: {"turbolinks" => false} do %>
             <font size="1"><%= @pagenos[page] %></font><br>
             <%= @contents[page] %>
           <% end %>

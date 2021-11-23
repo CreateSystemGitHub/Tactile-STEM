@@ -150,7 +150,7 @@
       a4.checked = true;
       onA4(true);
     }
-
+    //audio volume
     var vol = localStorage.getItem("audioVolume");
     if (isNaN(vol)) vol = 1;
     if (vol == 0) vol = 1;
@@ -159,8 +159,8 @@
 </script>
 
 <script>
+  //Imagemap execute
   $(function() {
-    //console.log("rwdImageMaps()");
     $('img[usemap]').rwdImageMaps();
   });
 
@@ -189,4 +189,5 @@
       $('img[usemap]').rwdImageMaps();
     });
   });
+
 </script>

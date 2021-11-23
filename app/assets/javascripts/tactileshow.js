@@ -86,7 +86,7 @@ function onA4(bA4){
   jj.disabled=true;               //set Height- button hidden
   kk.disabled=true;               //set Width+ button hidden
   ll.disabled=true;               //set Width- button hidden
-resizeImage();
+  resizeImage();
   $('img[usemap]').rwdImageMaps();
 }
 function enableA4Setting(){
