@@ -17,6 +17,7 @@ var v_names = new Array("","","","");
 var v_rates  = new Array("0.8","0.8","0.8","0.8");
 var v_pitchs = new Array("1.0","1.0","1.0","1.0");
 var v_volums = new Array("0.7","0.7","0.7","0.7");
+var v_mp3rate = 1.0;
 
 //Hover_Enter effect sound
 var effect_hover = false;
@@ -305,7 +306,7 @@ function resizeImage(){
 var mp3 = null;
 function audioPlay2(src, start, stop){
   let tm;
-  console.log(src+",start="+start+",stop="+stop);
+  //console.log(src+",start="+start+",stop="+stop);
   var strtTime = Number(start);
   var stopTime = Number(stop);
   if (strtTime == NaN) strtTime=0;
@@ -328,7 +329,7 @@ function audioPlay2(src, start, stop){
     mp3.play();
     if (stopTime != 0){
       tm = setTimeout(function(){
-        console.log(src+",BBBB:mp3.timeout then pause");
+        //console.log(src+",BBBB:mp3.timeout then pause");
         clearTimeout(tm);
         mp3.pause();
         mp3.currentTime = 0;
@@ -339,11 +340,12 @@ function audioPlay2(src, start, stop){
     mp3.addEventListener('canplaythrough', function (e) {
       mp3.removeEventListener('canplaythrough', arguments.callee);
       mp3.currentTime = strtTime/1000.0;
+      mp3.playbackRate = v_mp3rate;
       mp3.play();
       //console.log(src+",CCCC:mp3.play()");
       if (stopTime != 0){
         tm = setTimeout(function(){
-          console.log(src+",CCCC:mp3.timeout the pause");
+          //console.log(src+",CCCC:mp3.timeout the pause");
           clearTimeout(tm);
           mp3.pause();
           mp3.currentTime = 0;
@@ -522,6 +524,8 @@ function load_tts_param(){
   if (cc != null ) v_pitchs = cc.split(",");
   var dd = localStorage.getItem("voiceVolum");
   if (dd != null ) v_volums = dd.split(",");
+  var ee = localStorage.getItem("mp3Rate");
+  if (ee != null ) v_mp3rate = ee;
 
   console.log("load_tts_param():voice="+v_names[0]+","+v_names[1]+","+v_names[2]+","+v_names[3]);
   console.log("load_tts_param():rates="+v_rates[0]+","+v_rates[1]+","+v_rates[2]+","+v_rates[3]);

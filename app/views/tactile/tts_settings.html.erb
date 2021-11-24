@@ -1,5 +1,14 @@
-<p>音声の選択</p>
-
+<p>MP3<br>速さ　：
+<select id="mp3-rate">
+  <option value=0.5>遅い2</option>
+  <option value=0.8>遅い1</option>
+  <option value=1.0 selected>普通</option>
+  <option value=1.3>速い1</option>
+  <option value=1.5>速い2</option>
+</select>
+<br><br>
+</p>
+<p>音声(TTS)の選択</p>
 <p>シーン：
   <select id="scene-select" >
     <option value=-1 selected>TTSを使用するシーンを選択</option>
@@ -38,11 +47,11 @@
   <option value=1.0>大　　　</option>
 </select>
 </p>
+<br>
 <p>
   <input type="button" onclick="history.back()" value="キャンセル">　　　
   <input type="button" onclick="save_exit()" value="　　ＯＫ　　">　　　
 </p>
-
 
 <script type="text/javascript">
   const sceneSelect = document.querySelector('#scene-select')
@@ -50,6 +59,7 @@
   const rateSelect   = document.querySelector('#voice-rate')
   const pitchSelect  = document.querySelector('#voice-pitch')
   const volumSelect  = document.querySelector('#voice-volume')
+  const mp3rateSelect  = document.querySelector('#mp3-rate')
   const speakBtn    = document.querySelector('#speak-btn')
   const okBtn       = document.querySelector('#ok-btn')
 
@@ -57,6 +67,7 @@
   var rates  = new Array("0.8","0.8","0.8","0.8");
   var pitchs = new Array("1.0","1.0","1.0","1.0");
   var volums = new Array("0.7","0.7","0.7","0.7");
+  var mp3rate  = "1.0";
 
   var v_scene = -1;
   function sceneSelectChanged(){
@@ -87,6 +98,9 @@
   })
   volumSelect.addEventListener('change', function() {
     volums[v_scene] = volumSelect.value;
+  })
+  mp3rateSelect.addEventListener('change', function() {
+    mp3rate = mp3rateSelect.value;
   })
 
   // selectタグに音声を集計
@@ -136,10 +150,13 @@
     localStorage.setItem("voiceVoice", svoices.toString());
     localStorage.setItem("voiceRate",  rates);
     localStorage.setItem("voicePitch", pitchs);
-    localStorage.setItem("voiceVolum", volums);  
+    localStorage.setItem("voiceVolum", volums);
+    localStorage.setItem("mp3Rate",    mp3rate);
+
     console.log("save_exit():voice="+svoices.toString());
     console.log("save_exit():rates="+rates);
     console.log("save_exit():pitch="+pitchs+","+volums);
+    console.log("save_exit():mp3rate="+mp3rate);
     history.back();
   }
   function load_tts_param(){
@@ -151,11 +168,14 @@
     if (cc != null ) pitchs = cc.split(",");
     var dd = localStorage.getItem("voiceVolum");
     if (dd != null ) volums = dd.split(",");
+    var bb = localStorage.getItem("mp3Rate");
+    if (bb != null ) mp3rate = bb;
 
     console.log("load_tts_param():voice="+svoices[0]+","+svoices[1]+","+svoices[2]+","+svoices[3]);
     console.log("load_tts_param():rates="+rates[0]+","+rates[1]+","+rates[2]+","+rates[3]);
     console.log("load_tts_param():pitchs="+pitchs[0]+","+pitchs[1]+","+pitchs[2]+","+pitchs[3]);
     console.log("load_tts_param():volums="+volums[0]+","+volums[1]+","+volums[2]+","+volums[3]);
+    console.log("load_tts_param():mp3rate="+mp3rate);
   }
   //Timer
   function sleep(waitMsec) {
@@ -164,10 +184,9 @@
   }
 
 
-
-
-
   //各シーン毎のTTSパラメーターをロード
   load_tts_param();
+  mp3rateSelect.value = mp3rate;
+
 
 </script>
