@@ -19,56 +19,77 @@ class TactileController < ApplicationController
   @@book_id = 0
 
   $now_page_id = 4
-#  @@title = ""
-
-  #####################################
-
-    
   
   
-  #####################################
-  def cashfile
-    @max_cashFile = 0
-    @cash_FilePath = []
-    readcashfilename("HH")
-    readcashfilename("TT")
-
-    @max_cashFile = @cash_FilePath.length - 1;
-    p "max_cashFile=#{@max_cashFile}"
-  end
-
-  def readcashfilename(folder)
-    nex = @cash_FilePath.length
-    readmokujifile(folder)
-    for i in 0..@filenames.length-1  do
-      pagename = @filenames[i]
-      if pagename != nil then
-        f_folder = folder + "/" + folder + "0/" + pagename + "/"
-        image_filename = f_folder + pagename + ".jpg"
-        audio_filename = f_folder + pagename + ".mp3"
-        text_filename =  f_folder + pagename + ".txt"
-        if asset_exists?(image_filename) then @cash_FilePath << image_filename end
-        if asset_exists?(audio_filename) then @cash_FilePath << audio_filename end
-        if asset_exists?(text_filename)  then
-          @cash_FilePath << text_filename  
-          #find mp3 files
-
+  #################################################
+  #  unzip book data to WORK folder
+  # ex) unzippagedata(zipname, pagename)
+  #   zipname: 'HH.zip'
+  #             HH/HH0/HH-1/*.jpg, *.mpg, *.txt ---
+  #             HH/Contents.txt
+  #   pagename: 'HH-10' or nil means 'Content.txt'
+  #################################################
+  def unzippagedata(zipname, pagename)
+    require 'zip'
+    require 'fileutils'
+    src = 'app/assets/images/' 
+    dest = 'app/assets/images/WORK'
+    FileUtils.rm_rf(dest)     #delete folder and files
+    FileUtils.mkdir_p(dest)   #make folder
+    Zip::File.open(src + zipname + '.zip') do |zip|  #open zipfile
+      zip.each do |entry|
+        files = entry.name.split("/",4)
+        if files.length==2 then
+          if files[1].casecmp?("contents.txt") then
+            #copy contents.txt
+            #srcf = entry.name
+            #dstf = dest + "/" +files[1]
+            #p "copy " + srcf + " to " + dstf
+            #zip.extract(entry, dstf) { true }  #true=上書き
+            dir = File.join(dest, File.dirname(entry.name))
+            FileUtils.mkdir_p(dir)
+            zip.extract(entry, dest +"/"+ entry.name) { true }  #true=上書き
+            if pagename==nil then return end
+          end
         end
-
+        if files.length==4 && pagename!=nil then
+          if pagename.casecmp?(files[2]) && files[3].length>0 then
+            dir = File.join(dest, File.dirname(entry.name))
+            FileUtils.mkdir_p(dir)
+            zip.extract(entry, dest +"/"+ entry.name) { true }  #true=上書き
+          end
+        end
       end
     end
-    p "path1=#{@cash_FilePath[nex]}"
-    p "path2=#{@cash_FilePath[nex+1]}"
-    p "path3=#{@cash_FilePath[nex+2]}"
-
   end
-
+  def copyContentsFileToWorkForDebug(folder)
+    require 'fileutils'
+    src = "app/assets/images/" + folder + "/Contents.txt"
+    dst = "app/assets/images/WORK/" + folder 
+    FileUtils.mkdir_p(dst)   #make folder
+    FileUtils.cp(src, dst)
+  end
+  def copyDataToWorkForDebug(folder, pagename)
+    require 'fileutils'
+    src = "app/assets/images/" + folder + "/" + folder + "0/" + pagename
+    dst = "app/assets/images/WORK"
+    dst2 = dst + "/" + folder + "/" + folder + "0/" + pagename
+    FileUtils.rm_rf(dst)     #delete folder and files
+    FileUtils.mkdir_p(dst2)   #make folder
+    FileUtils.cp_r(src, dst2)
+  end
 
   #####################################
   def readmokujifile(folder)
     require "csv"
-    path = "app/assets/images/" + folder + "/"
-    src  = path + "Contents.txt"
+    if asset_exists?(folder + ".zip")then
+      p "MOKUJI:Unzip:#{folder}.zip"
+      unzippagedata(folder, nil)
+    else
+      p "MOKUJI:Copy:#{folder}"
+      copyContentsFileToWorkForDebug(folder)
+    end
+    src = "app/assets/images/WORK/"+ folder + "/Contents.txt"
     @pagenos = []
     @filenames = []
     @contents = []
@@ -160,12 +181,12 @@ class TactileController < ApplicationController
     @subpage = params[:spid]   #sub page no 0..9
     p "show subpage_id=#{@subpage}"
     @fileid  = params[:fn]     #fileid "0"=no  "filename"
-    p "show field=#{@field}"
+    p "show field=#{@fileid}"
 
     #read mokuji content.txt in book
     readmokujifile(@folder)
     #Camera からfilenameが指定されて飛んできた場合 
-    if @fileid!="0" then 
+    if @fileid != "0" then 
       @filename = @fileid   #filename HH-01
       #Filename to page_id
       id = 0
@@ -174,7 +195,23 @@ class TactileController < ApplicationController
       end
       if id >= @max_page then id = 0 end
       @page_id = id
+      p "show camera page_id=#{@page_id}"
     end
+
+    #Dat load to WORK folder
+    @filename = @filenames[@page_id.to_i]
+    if asset_exists?(@folder + ".zip")then
+      #unzip data
+      p "SHOW:Unzip : #{@filename}"
+      unzippagedata(@folder, @filename)
+    else
+      #copy Data to WORKfolder for debug
+      p "SHOW:Copy : #{@filename}"
+      copyDataToWorkForDebug(@folder, @filename)
+    end
+
+
+
 
     #check sub page data exist
     nxtPlane = @subpage.to_i + 1;
@@ -362,9 +399,9 @@ class TactileController < ApplicationController
             @imagemap_clipboard << ""   #nothing
           end 
           @imagemap << cc         #target=010 ---
-          p "target mp3=#{ee}"
-          p "target ltx=#{ltx}"
-          p "target pyt=#{pyt}"
+          #p "target mp3=#{ee}"
+          #p "target ltx=#{ltx}"
+          #p "target pyt=#{pyt}"
         end
       end
     end
