@@ -58,6 +58,7 @@ function onPlayEnded(folder, id, subpage){
 function onA4(bA4){
   var aa = document.getElementById('image-area');
   var bb = document.getElementById('settings');
+  var bb1 = document.getElementById('settingsBtnImg');
   var cc = document.getElementById('A4SettingBtn_IP');
   var dd = document.getElementById('A4SettingBtn_IM');
   var ee = document.getElementById('A4SettingBtn_TU');
@@ -71,12 +72,16 @@ function onA4(bA4){
   if (bA4){
     localStorage.setItem("A4_Display", 1);
     aa.className="show_image_A4";   //set A4 form class
-    if (bb) bb.style.visibility='visible';  //set settings button visible
+    bb.disabled=false;
+    bb1.src="/assets/arrow_0.png";
   }else{
     localStorage.setItem("A4_Display", 0);
-    aa.className="show_image";      //set form fit class
-    if (bb) bb.style.visibility='hidden';   //set settings button hidden
+    aa.className="show_image";         //set form fit class
+    bb.disabled=true;
+    bb1.disabled=true;
+    bb1.src="/assets/arrow_0_gray.png";
   }
+
   cc.disabled=true;               //set Image+ button hidden
   dd.disabled=true;               //set Image- button hidden
   ee.disabled=true;               //set Top+ button hidden
@@ -91,6 +96,7 @@ function onA4(bA4){
   $('img[usemap]').rwdImageMaps();
 }
 function enableA4Setting(){
+  console.log("enableA4Setting()");
   speakCancel();
   var cc = document.getElementById('A4SettingBtn_IP');
   var dd = document.getElementById('A4SettingBtn_IM');

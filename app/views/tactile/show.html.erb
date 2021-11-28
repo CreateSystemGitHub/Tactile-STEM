@@ -11,7 +11,7 @@
         </map>
         <!-- 解説用の別頁起動ボタン -->
         <div class="floating"> 
-          <%= button_to @tenjiModeBtnTitle, tactile_show_path(book_id:@book_id,pid:@page_id,spid:@subpage,fn:"0"), {method: :get, onclick:"speakCancel()", id:"tenjiBtn", class:"show_floating_btn1", disabled:@subpage_disable} %>
+          <%= button_to @tenjiModeBtnTitle, tactile_show_path,  {params:{book_id:@book_id,pid:@page_id,spid:@subpage,fn:"0"},method: :get, onclick:"speakCancel()", id:"tenjiBtn", class:"show_floating_btn1", disabled:@subpage_disable} %>
         </div>
         <!-- 全画面設定用ボタン -->
         <div class="floating_A4" id="A4SettingBtn" > 
@@ -52,17 +52,25 @@
     <div class="flex-item1">
       <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
     </div>
-    <!-- A4 check box -->
-    <div class="flex-item3" >
+    <!-- 絵固定 check box -->
+    <div class="flex-item3">
       <form class="show_footer_btn3">
-        <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>A4</span></label>
+        <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
       </form>
     </div>
     <!-- A4 Settings button -->
-    <div class="flex-item4" , id="settings", style="visibility:hidden" >
-      <button type="button" class="show_footer_btn4" onclick="enableA4Setting()">
-        <img src="/assets/arrow_0.png" width="20" height="20" alt="画像のサイズ設定"/>
-      </button>
+    <div class="flex-item4"  >
+      <form class="show_footer_btn3">
+          <button type="button" , id="settings" class="show_footer_btn4" onclick="enableA4Setting()">
+            <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
+          </button>
+      </form>
+    </div>
+    <!-- TTS Settings button -->
+    <div class="flex-item4">
+      <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn"} do %>
+        <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定"/>
+      <% end %>
     </div>
     <!-- controlslist="nodownload" for Chrome-->
     <audio id="audio" preload="auto"
@@ -76,7 +84,7 @@
     <!-- mp3 なし txtあり-->
     <% if @text_file_exist == 1 %>
       <div class="flex-item2">
-        <%= button_to "Speak", nil, {remote: true, method: :post, onclick:"{speak('#{@text_content}'); return false;}", id:"playBtn", class:"show_footer_btn3"} %>
+        <%= button_to "Speak", nil, {remote: true, method: :post, onclick:"{speak('#{@text_content}'); return false;}", id:"playBtn", class:"show_footer_btn2"} %>
       </div>
       <div class="flex-item1">
         <input type="button" value="次頁" onclick="{location.href='<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>'; speakCancel(); }" id="nextBtn", class="show_footer_btn" <%=@next_disable%>>
@@ -87,23 +95,25 @@
       <div class="flex-item1">
         <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
       </div>
-      <!-- A4 check box -->
+      <!-- 絵固定 check box -->
       <div class="flex-item3">
         <form class="show_footer_btn3">
-          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>A4</span></label>
+          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
+        </form>
+      </div>
+      <!-- A4 Settings button -->
+      <div class="flex-item4"  >
+        <form class="show_footer_btn3">
+            <button type="button" , id="settings" class="show_footer_btn4" onclick="enableA4Setting()">
+              <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
+            </button>
         </form>
       </div>
       <!-- TTS Settings button -->
       <div class="flex-item4">
         <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn"} do %>
-          <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定"/>
+          <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定" />
         <% end %>
-      </div>
-      <!-- A4 Settings button -->
-        <div class="flex-item4" , id="settings", style="visibility:hidden" >
-          <button type="button" class="show_footer_btn4" onclick="enableA4Setting()">
-            <img src="/assets/arrow_0.png" width="20" height="20" alt="画像のサイズ設定"/>
-          </button>
       </div>
       <audio id="audio" 
         src= "/assets/nosound.mp3" 

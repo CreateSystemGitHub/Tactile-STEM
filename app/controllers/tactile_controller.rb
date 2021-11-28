@@ -20,16 +20,70 @@ class TactileController < ApplicationController
 
   $now_page_id = 4
   
-  
   #################################################
+  # Release時には zip data を解凍しながら運用するが、
+  # Debug時には zipを消去し、実データそのものを使用する。
+  # Release時には、実データをzip化すること。
+  #################################################
+  def isDebugMode(folder)
+    if File.exist?("app/assets/images/" + folder + ".zip") then
+      p "isDebugMode:File.exist? : true :" +folder +".zip"
+      return false;
+    else
+      p "isDebugMode:File.exist? : false :" +folder +".zip"
+      return true
+    end
+  end
+  #################################################
+  # For debug
+  # Copy data to WORK folder
+  #################################################
+  def copyContentsFileToWorkForDebug(folder)
+    require 'fileutils'
+    src = "app/assets/images/" + folder + "/Contents.txt"
+    dst = "app/assets/images/WORK/" + folder 
+    FileUtils.mkdir_p(dst)   #make folder
+    FileUtils.cp(src, dst)
+  end
+  def copyPageDataToWorkForDebug(folder, pagename)
+    require 'fileutils'
+    dst = "app/assets/images/WORK"
+    FileUtils.rm_rf(dst)     #delete folder and files
+    begin
+      src = "app/assets/images/" + folder + "/" + folder + "0/" + pagename
+      dst = "app/assets/images/WORK"
+      dst2 = dst + "/" + folder + "/" + folder + "0/"
+      #FileUtils.rm_rf(dst)     #delete folder and files
+      FileUtils.mkdir_p(dst2)   #make folder
+      FileUtils.cp_r(src, dst2)
+    rescue => e
+      p e.message
+    ensure
+      p "copyPageDataToWorkForDebug():#{src}"
+    end
+    begin
+      src = "app/assets/images/" + folder + "/" + folder + "1/" + pagename
+      dst = "app/assets/images/WORK"
+      dst2 = dst + "/" + folder + "/" + folder + "1/"
+      #FileUtils.rm_rf(dst)     #delete folder and files
+      FileUtils.mkdir_p(dst2)   #make folder
+      FileUtils.cp_r(src, dst2)
+    rescue => e
+      p e.message
+    ensure
+      p "copyPageDataToWorkForDebug():#{src}"
+    end
+
+  end
+  ########################################################
   #  unzip book data to WORK folder
   # ex) unzippagedata(zipname, pagename)
   #   zipname: 'HH.zip'
   #             HH/HH0/HH-1/*.jpg, *.mpg, *.txt ---
   #             HH/Contents.txt
-  #   pagename: 'HH-10' or nil means 'Content.txt'
-  #################################################
-  def unzippagedata(zipname, pagename)
+  #   pagename: 'HH-10' or nil means 'NN/Content.txt' only
+  #########################################################
+  def unzipPageData(zipname, pagename)
     require 'zip'
     require 'fileutils'
     src = 'app/assets/images/' 
@@ -41,11 +95,6 @@ class TactileController < ApplicationController
         files = entry.name.split("/",4)
         if files.length==2 then
           if files[1].casecmp?("contents.txt") then
-            #copy contents.txt
-            #srcf = entry.name
-            #dstf = dest + "/" +files[1]
-            #p "copy " + srcf + " to " + dstf
-            #zip.extract(entry, dstf) { true }  #true=上書き
             dir = File.join(dest, File.dirname(entry.name))
             FileUtils.mkdir_p(dir)
             zip.extract(entry, dest +"/"+ entry.name) { true }  #true=上書き
@@ -62,33 +111,40 @@ class TactileController < ApplicationController
       end
     end
   end
-  def copyContentsFileToWorkForDebug(folder)
-    require 'fileutils'
-    src = "app/assets/images/" + folder + "/Contents.txt"
-    dst = "app/assets/images/WORK/" + folder 
-    FileUtils.mkdir_p(dst)   #make folder
-    FileUtils.cp(src, dst)
-  end
-  def copyDataToWorkForDebug(folder, pagename)
-    require 'fileutils'
-    src = "app/assets/images/" + folder + "/" + folder + "0/" + pagename
-    dst = "app/assets/images/WORK"
-    dst2 = dst + "/" + folder + "/" + folder + "0/" + pagename
-    FileUtils.rm_rf(dst)     #delete folder and files
-    FileUtils.mkdir_p(dst2)   #make folder
-    FileUtils.cp_r(src, dst2)
-  end
-
-  #####################################
-  def readmokujifile(folder)
-    require "csv"
-    if asset_exists?(folder + ".zip")then
-      p "MOKUJI:Unzip:#{folder}.zip"
-      unzippagedata(folder, nil)
+  #################################################
+  # Copy 'Contents.txt' to WORK folder
+  #   ==> assets/images/WORK/(folder)/Contents.txt
+  #################################################
+  def copyContentsFileToWork(folder)
+    if !isDebugMode(folder) then unzipPageData(folder, nil) 
     else
-      p "MOKUJI:Copy:#{folder}"
       copyContentsFileToWorkForDebug(folder)
     end
+  end
+  #########################################################
+  # Copy page data to WORK folder
+  #   ==> assets/images/WORK/(folder)/(folder)0/pagename
+  #########################################################
+  def copyPageDataToWork(folder, pagename)
+    if !isDebugMode(folder) then unzipPageData(folder, pagename)
+    else 
+      copyPageDataToWorkForDebug(folder, pagename)
+      copyContentsFileToWorkForDebug(folder)
+    end
+    p "copyPageDataToWork() done!"
+  end
+
+  #################################################
+  # read Mokuji file
+  #   Contents.txt ファイルを解析し以下を作成する。
+  #   以下のパラメータで、mokuji.htmlを表示する。
+  #   @pagenos[],@filenames[],@contents[],@max_page
+  #################################################
+  def readmokujifile(folder)
+    #Contents.txt fileをWORK下にコピーする。
+    copyContentsFileToWork(folder)
+
+    require "csv"
     src = "app/assets/images/WORK/"+ folder + "/Contents.txt"
     @pagenos = []
     @filenames = []
@@ -108,7 +164,7 @@ class TactileController < ApplicationController
   end
 
   #####################################
-  # index
+  # index(index.html)
   #####################################
   def index
     p "**** INDEX START *****"
@@ -120,7 +176,6 @@ class TactileController < ApplicationController
     @book_folder = []
     @book_content = []
     CSV.foreach(src, headers: true) do |line|
-#      @book_id << line["id"]
       @book_title << line["title"]
       @book_imgfile << "/assets/BOOKS/"+line["imgfile"]
       @book_folder << line["folder"]
@@ -136,7 +191,7 @@ class TactileController < ApplicationController
 
 
   #####################################
-  # 目次
+  # 目次(mokuji.html)
   #####################################
   def mokuji
     p "**** MOKUJI START *****"
@@ -153,7 +208,7 @@ class TactileController < ApplicationController
     if @page_id == nil then @page_id = $now_page_id end  #current page id  
     p "Mokuji:book_id=#{@book_id},folder=#{@folder}, title=#{@title}"
 
-    #read mokuji content.txt in book
+    #read mokuji Contents.txt in book
     readmokujifile(@folder)
     @subpage = 0
     @@book_id = @book_id
@@ -161,11 +216,14 @@ class TactileController < ApplicationController
     p "**** MOKUJI END *****"
   end
  
-  ###############################################
-  # 本文
-  # tactile_show_path(@book_id,@next_id,"0","0")
-  #:book/:pid/:spaid/:fn
-  ###############################################
+  ###########################################################################
+  # 本文(show.html)
+  # tactile_show_path(book_id:@book_id, pid:@page_id, spid:'0', fn:'0' )
+  #   :book_id  0,1,2 ---       @folder = @@book_folder[book_id]
+  #   :pid      0,1,2 ---       @filename = @filenames[pid]
+  #   :spid     0,1,2 --- 9     @subpage
+  #   :fn       '0','filename'  @file_id Camera からfilenameが指定されてきた場合
+  ###########################################################################
   def show
     p "**** SHOW START *****"
     @max_imagemap = -1;
@@ -180,14 +238,14 @@ class TactileController < ApplicationController
     p "show page_id=#{@page_id}"
     @subpage = params[:spid]   #sub page no 0..9
     p "show subpage_id=#{@subpage}"
-    @fileid  = params[:fn]     #fileid "0"=no  "filename"
-    p "show field=#{@fileid}"
+    @file_id  = params[:fn]     #@file_id "0"=no  "filename"
+    p "show field=#{@file_id}"
 
     #read mokuji content.txt in book
     readmokujifile(@folder)
     #Camera からfilenameが指定されて飛んできた場合 
-    if @fileid != "0" then 
-      @filename = @fileid   #filename HH-01
+    if @file_id != "0" then 
+      @filename = @file_id   #filename HH-01
       #Filename to page_id
       id = 0
       while @filenames[id.to_i] != @filename and id < @max_page do
@@ -198,32 +256,18 @@ class TactileController < ApplicationController
       p "show camera page_id=#{@page_id}"
     end
 
-    #Dat load to WORK folder
+    #Page data load to WORK folder
     @filename = @filenames[@page_id.to_i]
-    if asset_exists?(@folder + ".zip")then
-      #unzip data
-      p "SHOW:Unzip : #{@filename}"
-      unzippagedata(@folder, @filename)
-    else
-      #copy Data to WORKfolder for debug
-      p "SHOW:Copy : #{@filename}"
-      copyDataToWorkForDebug(@folder, @filename)
-    end
-
-
-
+    copyPageDataToWork(@folder, @filename)
 
     #check sub page data exist
     nxtPlane = @subpage.to_i + 1;
-    @filename = @filenames[@page_id.to_i]
-#    @folderN = @folder + "/" + @folder + "#{nxtPlane}/"
-    @folderN = @folder + "/" + @folder + "#{nxtPlane}/"+ @filename + "/"
+    @folderN = 'WORK/' + @folder + "/" + @folder + "#{nxtPlane}/"+ @filename + "/"  #WORK/HH/HH1/HH-10/
     @audio_filename = @folderN + @filename + ".mp3"
     @text_filename =  @folderN + @filename + ".txt"
     @subpage_disabel = false
     @next_subpage_audio_file_exist = false;
-
-    if asset_exists?(@audio_filename) or asset_exists?(@text_filename) then
+    if file_exists?(@audio_filename) or file_exists?(@text_filename) then
       #enable sub page button
       @next_subpage_audio_file_exist = true;
       @tenjiModeBtnTitle = "解説"+"#{nxtPlane}へ"
@@ -236,25 +280,24 @@ class TactileController < ApplicationController
       end
     end
 
-    #define data folder
-    #@folder0 = @folder + "/" + @folder + "0/"
-    @folder0 = @folder + "/" + @folder + "0/" + @filename + "/"
-    @folderN = @folder + "/" + @folder + "#{@subpage}/"+ @filename + "/"
+    #define data folder and each path
+    @folder0 = 'WORK/' + @folder + "/" + @folder + "0/" + @filename + "/"
+    @folderN = 'WORK/' + @folder + "/" + @folder + "#{@subpage}/"+ @filename + "/"
     if @subpage == "0" then
-      #main page
+      #main page  WORK/HH/HH0/HH-10/
       p "@main page:#{@subpage}"
-      @file_path = @folder0 + @filename
-      @image_filename = @file_path + ".jpg"
-      @audio_filename = @file_path + ".mp3"
-      @text_filename =  @file_path + ".txt"  
+      @file_path = @folder0 + @filename       #WORK/HH/HH0/HH-10/HH-10
+      @image_filename = @file_path + ".jpg"   #WORK/HH/HH0/HH-10/HH-10.jpg
+      @audio_filename = @file_path + ".mp3"   #WORK/HH/HH0/HH-10/HH-10.mp3
+      @text_filename =  @file_path + ".txt"   #WORK/HH/HH0/HH-10/HH-10.txt
       @file_path = @folder0
     else
-      #sub page
-      @file_path = @folderN + @filename
-      @image_filename = @file_path + ".jpg"
-      @audio_filename = @file_path + ".mp3"
-      @text_filename =  @file_path + ".txt"  
-      if asset_exists?(@image_filename)==false then 
+      #sub page 1-9  WORK/HH/HHn/HH-10/
+      @file_path = @folderN + @filename       #WORK/HH/HHn/HH-10/HH-10
+      @image_filename = @file_path + ".jpg"   #WORK/HH/HHn/HH-10/HH-10.jpg
+      @audio_filename = @file_path + ".mp3"   #WORK/HH/HHn/HH-10/HH-10.mp3
+      @text_filename =  @file_path + ".txt"   #WORK/HH/HHn/HH-10/HH-10.txt
+      if file_exists?(@image_filename)==false then 
         #ないので代替
         @image_filename = @folder0 + @filename + ".jpg" 
       end
@@ -267,10 +310,10 @@ class TactileController < ApplicationController
     @imagemap = []
     @max_imagemap = -1;
 
-    if asset_exists?(@audio_filename) then
+    if file_exists?(@audio_filename) then
       @audio_file_exist = 1 
     end
-    if asset_exists?(@text_filename) then
+    if file_exists?(@text_filename) then
         readtextfile(@text_filename, @file_path)
         p "text_file:#{@text_filename}"
         p "text:#{@text_content}"
@@ -371,7 +414,7 @@ class TactileController < ApplicationController
             gg = file_path+ff[0]+".mp3"
             hh = file_path+ff[0]+".ltx"
             ii = file_path+ff[0]+".pyt"
-            if !asset_exists?(gg) then
+            if !file_exists?(gg) then
               #mp3 not found
               if (ff[1] and ff[1].length > 0) then
                 ee = ff[0] + "," + ff[1]
@@ -379,12 +422,12 @@ class TactileController < ApplicationController
                 ee = ff[0] + ",TTS"
               end
             end
-            if asset_exists?(hh) then
+            if file_exists?(hh) then
               ltx = ff[0] + ".ltx"
             else
               ltx = ""    #.ltx not found
             end
-            if asset_exists?(ii) then
+            if file_exists?(ii) then
               pyt = ff[0] + ".pyt"
             else
               pyt = ""    #.pyt not found
@@ -412,11 +455,9 @@ class TactileController < ApplicationController
     p "@max_imagemap=#{@max_imagemap}"
   end
 
-  def asset_exists?(path)
-    if Rails.configuration.assets.compile
-      Rails.application.precompiled_assets.include? path
-    else
-      Rails.application.assets_manifest.assets[path].present?
+  def file_exists?(path)
+    if File.exist?("app/assets/images/" + path) then return true
+      return false
     end
   end
 end
