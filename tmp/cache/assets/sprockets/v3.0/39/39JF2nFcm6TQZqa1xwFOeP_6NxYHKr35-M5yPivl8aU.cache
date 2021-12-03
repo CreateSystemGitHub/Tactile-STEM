@@ -1,10 +1,0 @@
-{:uriI"�file://app/assets/images/TT/TT0/TT-0-1/TT-0-1.txt?type=text/plain&id=b43de1d0061c3b9b2b5ccef0235eaebf7e604300ab00849977d4cec51c074145:ET:load_pathI"app/assets/images;T:filenameI"/app/assets/images/TT/TT0/TT-0-1/TT-0-1.txt;T:	nameI"TT/TT0/TT-0-1/TT-0-1;T:logical_pathI"TT/TT0/TT-0-1/TT-0-1.txt;T:content_typeI"text/plain;T:sourceI"W#Page 0
-#FOLDER=TT-0-1
-#このページのメインのmp3は#FOLDER=で指定したmp3ファイルです。このmp3がページ全体の朗読に使用されます。
-#以下の0:で始まる文はこのページのメインのmp3がない場合にTTSで読み上げられます。
-
-0:グラフィック表示を読む音声付き、触読器;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"4processors:type=text/plain&file_type=text/plain;TTI"=file-digest://app/assets/images/TT/TT0/TT-0-1/TT-0-1.txt;TTF:charsetI"
-utf-8;F:digest"%�(�����XO_8i��қ@��?a,(/L:lengthiW:dependencies_digest"%pB��x����fn��d쪝r��G�f�:��h:idI"Eb43de1d0061c3b9b2b5ccef0235eaebf7e604300ab00849977d4cec51c074145;F:
-mtimel+84�`

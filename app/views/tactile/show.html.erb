@@ -55,20 +55,20 @@
     <!-- 絵固定 check box -->
     <div class="flex-item3">
       <form class="show_footer_btn3">
-        <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
+        <label > <input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
       </form>
     </div>
     <!-- A4 Settings button -->
     <div class="flex-item4"  >
-      <form class="show_footer_btn3">
-          <button type="button" , id="settings" class="show_footer_btn4" onclick="enableA4Setting()">
+      <form class="show_footer_btn4">
+          <button type="button" , id="settingsA4" class="show_footer_btn4" onclick="enableA4Setting()">
             <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
           </button>
       </form>
     </div>
     <!-- TTS Settings button -->
     <div class="flex-item4">
-      <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn"} do %>
+      <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn4"} do %>
         <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定"/>
       <% end %>
     </div>
@@ -98,20 +98,20 @@
       <!-- 絵固定 check box -->
       <div class="flex-item3">
         <form class="show_footer_btn3">
-          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
+          <label ><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
         </form>
       </div>
       <!-- A4 Settings button -->
       <div class="flex-item4"  >
-        <form class="show_footer_btn3">
-            <button type="button" , id="settings" class="show_footer_btn4" onclick="enableA4Setting()">
-              <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
-            </button>
+        <form class="show_footer_btn4">
+          <button type="button" , id="settingsA4" class="show_footer_btn4" onclick="enableA4Setting()">
+            <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
+          </button>
         </form>
       </div>
       <!-- TTS Settings button -->
       <div class="flex-item4">
-        <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn"} do %>
+        <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn4"} do %>
           <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定" />
         <% end %>
       </div>

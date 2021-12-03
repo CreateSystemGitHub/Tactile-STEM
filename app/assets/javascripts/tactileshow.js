@@ -57,7 +57,7 @@ function onPlayEnded(folder, id, subpage){
 
 function onA4(bA4){
   var aa = document.getElementById('image-area');
-  var bb = document.getElementById('settings');
+  var bb = document.getElementById('settingsA4');
   var bb1 = document.getElementById('settingsBtnImg');
   var cc = document.getElementById('A4SettingBtn_IP');
   var dd = document.getElementById('A4SettingBtn_IM');
@@ -77,7 +77,7 @@ function onA4(bA4){
   }else{
     localStorage.setItem("A4_Display", 0);
     aa.className="show_image";         //set form fit class
-    bb.disabled=true;
+    bb.disabled=false;
     bb1.disabled=true;
     bb1.src="/assets/arrow_0_gray.png";
   }
@@ -97,6 +97,9 @@ function onA4(bA4){
 }
 function enableA4Setting(){
   console.log("enableA4Setting()");
+  //Disabled?  Disableにすると枠が消えるのでボタンにはDisableをかけないので画像で判断する。
+  var bb1 = document.getElementById('settingsBtnImg');
+  if (bb1.src.endsWith("arrow_0_gray.png")) return;
   speakCancel();
   var cc = document.getElementById('A4SettingBtn_IP');
   var dd = document.getElementById('A4SettingBtn_IM');
