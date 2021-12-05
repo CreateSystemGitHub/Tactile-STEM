@@ -148,7 +148,7 @@ body {
   object-fit:fill;
   margin:0px auto;
 } 
-.show_image_A4{
+.show_image_Fix{
   background-color: var(--backgndcolor);
   //background-color: #008F00;    //for debug
   position: absolute;
@@ -157,7 +157,7 @@ body {
   object-fit:fill;
 }
 
-.show_image_A4 img {
+.show_image_Fix img {
   width: 100%;
   height:100%;
 } 
@@ -208,18 +208,18 @@ body {
 } 
 //Flex item A4 check area
 .show_footer_btn3{
-	background: rgb(240, 252, 252);
+	background: rgb(255, 252, 252);
   width:100%;
-  height:calc(var(--show-btn-height) - 14px);
-  border-style: solid; 
-  border-width: 2px;
+  height:calc(var(--show-btn-height) - 10px);
+//  border-style: solid; 
+//  border-width: 2px;
   -webkit-appearance: none;
-  line-height: calc(var(--show-btn-height) - 14px);
   font-size: 0.8em;
 }
 .show_footer_btn3 input {
   display:none;
 }
+/*
 .show_footer_btn3 span {
   color: #AAA;
   border: 1px solid #AAA;
@@ -231,6 +231,7 @@ body {
   background: #FCC; 
   border: 1px solid red;
 } 
+*/
 //A4, TTS Settings
 .show_footer_btn4 {
   width:100%;

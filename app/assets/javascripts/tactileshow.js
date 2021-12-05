@@ -55,9 +55,9 @@ function onPlayEnded(folder, id, subpage){
 }
 
 
-function onA4(bA4){
+function onA4(button){
   var aa = document.getElementById('image-area');
-  var bb = document.getElementById('settingsA4');
+  var bb = document.getElementById('imageFixBtn');
   var bb1 = document.getElementById('settingsBtnImg');
   var cc = document.getElementById('A4SettingBtn_IP');
   var dd = document.getElementById('A4SettingBtn_IM');
@@ -69,19 +69,19 @@ function onA4(bA4){
   var jj = document.getElementById('A4SettingBtn_HM');
   var kk = document.getElementById('A4SettingBtn_WP');
   var ll = document.getElementById('A4SettingBtn_WM');
-  if (bA4){
+  if (bb.value=="絵固定"){
+    //name is FIX ==> set to FIX mode, CENTER display
     localStorage.setItem("A4_Display", 1);
-    aa.className="show_image_A4";   //set A4 form class
-    bb.disabled=false;
+    aa.className="show_image_Fix";   //set Fix form class
+    bb.value="絵中央";
     bb1.src="/assets/arrow_0.png";
   }else{
+    //name is CENTER ==> set to CENTER mode, FIX display
     localStorage.setItem("A4_Display", 0);
     aa.className="show_image";         //set form fit class
-    bb.disabled=false;
-    bb1.disabled=true;
+    bb.value="絵固定";
     bb1.src="/assets/arrow_0_gray.png";
   }
-
   cc.disabled=true;               //set Image+ button hidden
   dd.disabled=true;               //set Image- button hidden
   ee.disabled=true;               //set Top+ button hidden
@@ -92,6 +92,7 @@ function onA4(bA4){
   jj.disabled=true;               //set Height- button hidden
   kk.disabled=true;               //set Width+ button hidden
   ll.disabled=true;               //set Width- button hidden
+  
   resizeImage();
   $('img[usemap]').rwdImageMaps();
 }

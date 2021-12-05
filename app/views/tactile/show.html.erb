@@ -52,11 +52,11 @@
     <div class="flex-item1">
       <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
     </div>
-    <!-- 絵固定 check box -->
+    <!-- 絵・中央/固定 check box -->
     <div class="flex-item3">
-      <form class="show_footer_btn3">
-        <label > <input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
-      </form>
+      <div class="flex-item3">
+        <input type="button" value="" onclick="onA4(this)" id="imageFixBtn", class="show_footer_btn3" />
+      </div>
     </div>
     <!-- A4 Settings button -->
     <div class="flex-item4"  >
@@ -81,7 +81,7 @@
       あなたのブラウザーは <code>audio</code> 要素に対応していません。
     </audio>
   <% else %>
-    <!-- mp3 なし txtあり-->
+    <!-- mp3 なし txtあり -->
     <% if @text_file_exist == 1 %>
       <div class="flex-item2">
         <%= button_to "Speak", nil, {remote: true, method: :post, onclick:"{speak('#{@text_content}'); return false;}", id:"playBtn", class:"show_footer_btn2"} %>
@@ -95,11 +95,9 @@
       <div class="flex-item1">
         <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
       </div>
-      <!-- 絵固定 check box -->
+      <!-- 絵・中央/固定 button-->
       <div class="flex-item3">
-        <form class="show_footer_btn3">
-          <label ><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>絵固定</span></label>
-        </form>
+        <input type="button" name="" onclick="onA4(this)" id="imageFixBtn", class="show_footer_btn3" />
       </div>
       <!-- A4 Settings button -->
       <div class="flex-item4"  >
@@ -136,7 +134,7 @@
       <!-- A4 check box -->
       <div class="flex-item3">
         <form class="show_footer_btn3">
-          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.checked); return;"><span>A4</span></label>
+          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.value); return;"><span>A4</span></label>
         </form>
       </div>
     <% end %>
@@ -151,14 +149,14 @@
 <script type="text/javascript">
     var v_A4 = parseInt(localStorage.getItem("A4_Display"),10);
     if (isNaN(v_A4)) v_A4 = 0;
-    const a4 = document.getElementById("A4Chck");
+    const a4 = document.getElementById("imageFixBtn");
     if (v_A4==0){
-      a4.checked = false;
-      onA4(false);
+      a4.value="絵中央";
+      onA4(a4);
     }
     else{
-      a4.checked = true;
-      onA4(true);
+      a4.value="絵固定";
+      onA4(a4);
     }
     //audio volume
     var vol = localStorage.getItem("audioVolume");
