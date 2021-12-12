@@ -37,113 +37,58 @@
 </audio>
 
 <footer class="show_footer">
+  <!--「再生」or「Speak」 -->
   <% if @audio_file_exist == 1 %> 
-    <!-- mp3 あり-->
+    <!-- mp3 あり 「再生」ボタン-->
     <div class="flex-item2" >
       <%= button_to "再生", nil, {remote: true, method: :post, onclick:"{audioPlay(); return false;}", id:"playBtn", class:"show_footer_btn2"} %>
     </div>
-    <div class="flex-item1">
+  <% else %>
+    <!-- mp3 なし 「Speak」ボタン-->
+    <div class="flex-item2">
+        <%= button_to "Speak", nil, {remote: true, method: :post, onclick:"{speak('#{@text_content}'); return false;}", id:"playBtn", class:"show_footer_btn2"} %>
+    </div>
+  <% end %>
+  <!--「次頁」ボタン -->
+  <div class="flex-item1">
       <!-- button_toは、getでパラメータを渡してくれないので解決策として input type="button"で代替え -->
       <input type="button" value="次頁" onclick="location.replace('<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>')" id="nextBtn", class="show_footer_btn" <%=@next_disable%>>
-    </div>
-    <div class="flex-item1">
+  </div>
+  <!--「前頁」ボタン -->
+  <div class="flex-item1">
       <input type="button" value="前頁" onclick="location.replace('<%= tactile_show_path(book_id:@book_id,pid:@prev_id.to_s,spid:'0',fn:'0') %>')" id="backBtn", class="show_footer_btn" <%=@prev_disable%>>
-    </div>
-    <div class="flex-item1">
+  </div>
+  <!--「目次」ボタン -->
+  <div class="flex-item1">
       <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
-    </div>
-    <!-- 絵・中央/固定 check box -->
-    <div class="flex-item3">
-      <div class="flex-item3">
-        <input type="button" value="" onclick="onA4(this)" id="imageFixBtn", class="show_footer_btn3" />
-      </div>
-    </div>
-    <!-- A4 Settings button -->
-    <div class="flex-item4"  >
+  </div>
+  <!-- 絵・中央/固定 button-->
+  <div class="flex-item3">
+      <input type="button" name="" onclick="onA4(this)" id="imageFixBtn", class="show_footer_btn3" />
+  </div>
+  <!-- A4 Settings button -->
+  <div class="flex-item4"  >
       <form class="show_footer_btn4">
           <button type="button" , id="settingsA4" class="show_footer_btn4" onclick="enableA4Setting()">
             <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
           </button>
       </form>
-    </div>
-    <!-- TTS Settings button -->
-    <div class="flex-item4">
+  </div>
+  <!-- TTS Settings button -->
+  <div class="flex-item4">
       <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn4"} do %>
         <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定"/>
       <% end %>
-    </div>
-    <!-- controlslist="nodownload" for Chrome-->
-    <audio id="audio" preload="auto"
-      src= "/assets/<%=@audio_filename%>"
+  </div>
+  <!-- controlslist="nodownload" for Chrome-->
+  <audio id="audio" 
+      preload="auto"
       onPlay="onPlay()"
       onPause="onPause()"
       currentTime=0
       あなたのブラウザーは <code>audio</code> 要素に対応していません。
-    </audio>
-  <% else %>
-    <!-- mp3 なし txtあり -->
-    <% if @text_file_exist == 1 %>
-      <div class="flex-item2">
-        <%= button_to "Speak", nil, {remote: true, method: :post, onclick:"{speak('#{@text_content}'); return false;}", id:"playBtn", class:"show_footer_btn2"} %>
-      </div>
-      <div class="flex-item1">
-        <input type="button" value="次頁" onclick="{location.href='<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>'; speakCancel(); }" id="nextBtn", class="show_footer_btn" <%=@next_disable%>>
-      </div>
-      <div class="flex-item1">
-        <input type="button" value="前頁" onclick="{location.href='<%= tactile_show_path(book_id:@book_id,pid:@prev_id.to_s,spid:'0',fn:'0') %>'; speakCancel(); }" id="backBtn", class="show_footer_btn" <%=@prev_disable%>>
-      </div>
-      <div class="flex-item1">
-        <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
-      </div>
-      <!-- 絵・中央/固定 button-->
-      <div class="flex-item3">
-        <input type="button" name="" onclick="onA4(this)" id="imageFixBtn", class="show_footer_btn3" />
-      </div>
-      <!-- A4 Settings button -->
-      <div class="flex-item4"  >
-        <form class="show_footer_btn4">
-          <button type="button" , id="settingsA4" class="show_footer_btn4" onclick="enableA4Setting()">
-            <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
-          </button>
-        </form>
-      </div>
-      <!-- TTS Settings button -->
-      <div class="flex-item4">
-        <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn4"} do %>
-          <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定" />
-        <% end %>
-      </div>
-      <audio id="audio" 
-        src= "/assets/nosound.mp3" 
-        あなたのブラウザーは <code>audio</code> 要素に対応していません。
-      </audio>
-    <% else %>
-      <!-- mp3 txt 共になし-->
-      <div class="flex-item2">
-        <%= button_to "再生", nil, {remote: true, method: :post, id:"playBtn", class:"show_footer_btn2", disabled:true } %>
-      </div>
-      <div class="flex-item1">
-        <input type="button" value="次頁" onclick="location.href='<%= tactile_show_path(book_id:@book_id,pid:@next_id.to_s,spid:'0',fn:'0') %>'" id="nextBtn", class="show_footer_btn" <%=@next_disable%> >
-      </div>
-      <div class="flex-item1">
-        <input type="button" value="前頁" onclick="location.href='<%= tactile_show_path(book_id:@book_id,pid:@prev_id.to_s,spid:'0',fn:'0') %>'" id="backBtn", class="show_footer_btn" <%=@prev_disable%> >
-      </div>
-      <div class="flex-item1">
-        <input type="button" value="目次" onclick="{location.replace('<%= tactile_mokuji_path(book_id:@book_id,pid:@page_id) %>'); speakCancel(); }" id="mokjBtn", class="show_footer_btn" >
-      </div>
-      <!-- A4 check box -->
-      <div class="flex-item3">
-        <form class="show_footer_btn3">
-          <label><input type="checkbox" value="A4" id="A4Chck" onclick="onA4(this.value); return;"><span>A4</span></label>
-        </form>
-      </div>
-    <% end %>
-  <% end %>
-
-  <div id="output"></div>
-
+  </audio>
 </footer>
-
 
 
 <script type="text/javascript">

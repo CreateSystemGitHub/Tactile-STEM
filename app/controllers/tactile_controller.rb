@@ -155,9 +155,11 @@ class TactileController < ApplicationController
       cc = line1[2]
       if aa.blank? or bb.blank? or cc.blank?
       else
-        @pagenos << aa.strip
-        @filenames << bb.strip
-        @contents << cc.strip
+        if !aa.start_with?("#") then
+          @pagenos << aa.strip
+          @filenames << bb.strip
+          @contents << cc.strip
+        end
       end
     end
     @max_page = @pagenos.length - 1

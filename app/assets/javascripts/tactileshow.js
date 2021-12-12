@@ -70,13 +70,13 @@ function onA4(button){
   var kk = document.getElementById('A4SettingBtn_WP');
   var ll = document.getElementById('A4SettingBtn_WM');
   if (bb.value=="絵固定"){
-    //name is FIX ==> set to FIX mode, CENTER display
+    //name is FIX ==> set to FIX mode, title=CENTER
     localStorage.setItem("A4_Display", 1);
     aa.className="show_image_Fix";   //set Fix form class
     bb.value="絵中央";
     bb1.src="/assets/arrow_0.png";
   }else{
-    //name is CENTER ==> set to CENTER mode, FIX display
+    //name is CENTER ==> set to CENTER mode, title=FIX
     localStorage.setItem("A4_Display", 0);
     aa.className="show_image";         //set form fit class
     bb.value="絵固定";
@@ -536,11 +536,12 @@ function load_tts_param(){
   if (dd != null ) v_volums = dd.split(",");
   var ee = localStorage.getItem("mp3Rate");
   if (ee != null ) v_mp3rate = ee;
-
+/*
   console.log("load_tts_param():voice="+v_names[0]+","+v_names[1]+","+v_names[2]+","+v_names[3]);
   console.log("load_tts_param():rates="+v_rates[0]+","+v_rates[1]+","+v_rates[2]+","+v_rates[3]);
   console.log("load_tts_param():pitchs="+v_pitchs[0]+","+v_pitchs[1]+","+v_pitchs[2]+","+v_pitchs[3]);
   console.log("load_tts_param():volums="+v_volums[0]+","+v_volums[1]+","+v_volums[2]+","+v_volums[3]);
+*/
 }
 
 ///////////////////////////////////////////////////////////////////////////////

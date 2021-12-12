@@ -1,5 +1,12 @@
 {
-  "name": "tactilereader",
+  "name": "tactilestemreader",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "babel": "^6.23.0",
+    "pwacompat": "^2.0.17",
+    "workbox-sw": "^6.4.2"
+  },
+  "devDependencies": {
+    "workbox-webpack-plugin": "^6.4.2"
+  }
 }
