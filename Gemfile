@@ -78,3 +78,6 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 #Add 2021/08/03
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+#Add 2021/12/17
+gem 'webpacker'

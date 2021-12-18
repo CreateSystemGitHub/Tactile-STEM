@@ -142,10 +142,11 @@ class TactileController < ApplicationController
   #################################################
   def readmokujifile(folder)
     #Contents.txt fileをWORK下にコピーする。
-    copyContentsFileToWork(folder)
+#    copyContentsFileToWork(folder)
 
     require "csv"
-    src = "app/assets/images/WORK/"+ folder + "/Contents.txt"
+#    src = "app/assets/images/WORK/"+ folder + "/Contents.txt"
+    src = "app/assets/images/"+ folder + "/Contents.txt"
     @pagenos = []
     @filenames = []
     @contents = []
@@ -260,11 +261,12 @@ class TactileController < ApplicationController
 
     #Page data load to WORK folder
     @filename = @filenames[@page_id.to_i]
-    copyPageDataToWork(@folder, @filename)
+#    copyPageDataToWork(@folder, @filename)
 
     #check sub page data exist
     nxtPlane = @subpage.to_i + 1;
-    @folderN = 'WORK/' + @folder + "/" + @folder + "#{nxtPlane}/"+ @filename + "/"  #WORK/HH/HH1/HH-10/
+#    @folderN = 'WORK/' + @folder + "/" + @folder + "#{nxtPlane}/"+ @filename + "/"  #WORK/HH/HH1/HH-10/
+    @folderN = @folder + "/" + @folder + "#{nxtPlane}/"+ @filename + "/"  #HH/HH1/HH-10/
     @audio_filename = @folderN + @filename + ".mp3"
     @text_filename =  @folderN + @filename + ".txt"
     @subpage_disabel = false
@@ -283,8 +285,10 @@ class TactileController < ApplicationController
     end
 
     #define data folder and each path
-    @folder0 = 'WORK/' + @folder + "/" + @folder + "0/" + @filename + "/"
-    @folderN = 'WORK/' + @folder + "/" + @folder + "#{@subpage}/"+ @filename + "/"
+#    @folder0 = 'WORK/' + @folder + "/" + @folder + "0/" + @filename + "/"
+    @folder0 = @folder + "/" + @folder + "0/" + @filename + "/"
+#    @folderN = 'WORK/' + @folder + "/" + @folder + "#{@subpage}/"+ @filename + "/"
+    @folderN = @folder + "/" + @folder + "#{@subpage}/"+ @filename + "/"
     if @subpage == "0" then
       #main page  WORK/HH/HH0/HH-10/
       p "@main page:#{@subpage}"
