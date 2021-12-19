@@ -1,14 +1,11 @@
 // webpack.config.js
-const workboxPlugin = require('workbox-webpack-plugin');
+const workBoxWebpackPlugin = require("workbox-webpack-plugin");
+const outputPath = path.resolve(__dirname, "public");
 
-const dist = __dirname + '/dist';
-
-module.exports = {
-    plugins: [
-        new workboxPlugin({
-            globDirectory: __dirname + '/images',
-            globPatterns: ['**/*.{html,js,jpg}'],
-            swDest: dist + '/sw.js',
-        })
-    ]
-};
+module.export  ={
+  plugins: [
+    new workBoxWebpackPlugin.GenerateSW({
+      swDest: outputPath + "/service-worker.js"
+    })
+  ]
+}

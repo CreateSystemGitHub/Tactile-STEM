@@ -1,74 +1,32 @@
-//https://developers.google.com/web/fundamentals/primers/service-workers?hl=ja
+import {precacheAndRoute} from 'workbox-precaching';
+precacheAndRoute(self.__WB_MANIFEST);
 
-var CACHE_VERSION = 'v1_104';
-var CACHE_NAME = CACHE_VERSION + ':tactilestem-sw-cache';
-var urlsToCache = [
-  // make sure serviceworker.js is not required by application.js
-  // if you want to reference application.js from here
-  //'<%#= asset_path "www_domain/application.js" %>',
-  '/',
-  '/assets/tactile\.css',
-  '/assets/cable.js',
-  '/assets/jquery.rwdImageMaps.min.js',
-  '/assets/jsQR.js',
-  '/assets/serviceworker-companion.js',
-  '/assets/tactileshow.js',
-  '/assets/application.css',
-  '/assets/manifest.json',
-  '/manifest.json',
-
-
-  '/favicon.ico', 
-  '/assets/appicon/tactilestemicon-192.jpg',
-  '/assets/appicon/tactilestemicon-376.jpg',
-  '/assets/nosound.mp3',
-  '/assets/arrow_0.png',
-  '/assets/arrow_0_gray.png',
-  '/assets/arrow_1.png',
-  '/assets/arrow_2.png',
-  '/assets/arrow_3.png',
-  '/assets/arrow_4.png',
-  '/assets/arrow_5.png',
-  '/assets/arrow_6.png',
-  '/assets/tts_settings.png',
-  '/assets/effect22.mp3',
-  '/assets/effect28.mp3',
-  '/assets/effect32.mp3',
-
-  '/offlineTactile.html',
-  '/tactile/index.html',
-  '/tactile/mokuji.html',
-  '/tactile/show.html',
-  '/tactile/tts_settings.html',
-
-];
-
-//BOOKSが増えたら追加
-var BOOK_Images = [
-  '/assets/BOOKS/books.csv',
-  '/assets/BOOKS/II.jpg',
-  '/assets/BOOKS/TT.jpg'
-
-
-];
-var contentToCache = urlsToCache.concat(BOOK_Images);
-
+var CACHE_VERSION = 'v1';
+var CACHE_NAME = CACHE_VERSION + ':sw-cache-';
 
 function onInstall(event) {
-  console.log('[SW]', "Installing!", event);
+  console.log('[Serviceworker]', "Installing!", event);
   event.waitUntil(
     caches.open(CACHE_NAME).then(function prefill(cache) {
-      console.log('[SW]', "Opened cache");
-      return cache.addAll(contentToCache);
-    })        
+      return cache.addAll([
+
+        // make sure serviceworker.js is not required by application.js
+        // if you want to reference application.js from here
+        '<%#= asset_path "application.js" %>',
+
+        '<%= asset_path "application.css" %>',
+
+        '/offline.html',
+
+      ]);
+    })
   );
 }
 
 function onActivate(event) {
-  console.log('[SW]', "Activating!", event);
+  console.log('[Serviceworker]', "Activating!", event);
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
-      console.log('[SW]', "Activating1!", cacheNames);
       return Promise.all(
         cacheNames.filter(function(cacheName) {
           // Return true if you want to remove this cache,
@@ -83,129 +41,7 @@ function onActivate(event) {
   );
 }
 
-
-
-//
-//Rangeリクエストがあった場合。(Audio file などで再生範囲を指定して再生する場合など)
-//Rangeリクエストの場合20を返す必要がある。
-//cathe.matchではRangeリクエストに対応していないので
-//cathe.matchでは200が返る。networkからは206で返る。
-// ==> cathe.matchでも部分取得と206が返るようにする。
-// ==>206 で put すると error となるので現在 put していない。
-//
-function onFetch(event) {
-  if (event.request.headers.has('range')) {
-    //
-    //  Range request
-    //
-    //var pos = Number(/^bytes\=(\d+)\-$/g.exec(event.request.headers.get('range'))[1]);
-    let cacheOrNet = 0;
-    let rangeHeader = event.request.headers.get('range');
-    let rangeMatch = rangeHeader.match(/^bytes\=(\d+)\-(\d+)?/)
-    let pos = Number(rangeMatch[1]);
-    let pos2 = rangeMatch[2];
-    if (pos2) { pos2 = Number(pos2); }
-    console.log('[SW]','onFetch has Range', event.request.url,', pos=', pos, ':', pos2);
-  
-    event.respondWith(
-      caches.open(CACHE_NAME).then(function(cache) {
-        //console.log('[SW]','Range: Search in cache', event.request.url,', pos=', pos);
-        return cache.match(event.request.url);
-      }).then(function(res) {
-        if (!res){
-          cacheOrNet = 1;
-          console.log('[SW]','Range: *********** load from network', event.request.url);
-          return fetch(event.request).then(res => res.arrayBuffer());
-        } else{
-          console.log('[SW]','Range: In cache: DDDDD', event.request.url,', status:', res.status);
-          return res.arrayBuffer();
-        }
-      }).then(function(ab) {
-        {
-          var resp = new Response(
-            ab.slice(pos),
-            {
-              status: 206,
-              statusText: 'Partial Content',
-              headers: [
-                //['Content-Type', 'video/webm'],
-                ['Content-Range', 'bytes ' + pos + '-' + (pos2 || (ab.byteLength - 1)) + '/' + ab.byteLength]] 
-            }
-          );
-          if (cacheOrNet == 1){
-            //console.log('[SW]','Range: Found in network', resp.url,', status:', resp.status);
-          } else{
-            //console.log('[SW]','Range: Found in cache',   resp.url,', status:', resp.status);
-          }
-          return resp;
-        }
-      }).catch(function(){
-            //console.log('[SW]','Range OFFLINE: ');
-            return caches.match('/offlineTactile.html');
-      }));
-  } 
-  else{
-    //
-    // Non-Range request
-    //「onFetch」イベントは「GET」リクエストのみをキャッシュできる
-    //  ==> Rails : link_to で method: :getを指定するとPOSTで呼ばれてしまう。
-    //console.log('[SW]','onFetch', event.request.url, event.request.method, event.request.mode);
-    event.respondWith(
-      //ignoreSearch:true は正しく動作しない。 ?以下を省略してcache hitするが、rails action が呼ばれないみたい      
-      caches.match(event.request, {ignoreSearch:false})
-        .then(function(response) {
-          // Cache hit - return response
-          if (response) {
-            console.log('[SW]','onFetch In cache: CCCCC', response.url, response.status);
-            return response;
-          }
-
-          console.log('[SW]','Not in cache: ***********', event.request.url, event.request.method);
-
-          // IMPORTANT:Clone the request. A request is a stream and
-          // can only be consumed once. Since we are consuming this
-          // once by cache and once by the browser for fetch, we need
-          // to clone the response.
-          var fetchRequest = event.request.clone();
-          return fetch(fetchRequest)
-            .then(function(response) {
-              // Check if we received a valid response
-              if(!response || response.status !== 200 || response.type !== 'basic') {
-                //console.log('[SW]','Not Found in network:', response.url, response.status);
-                return caches.match('/offlineTactile.html');
-              }
-              console.log('[SW]','Found in network: BBBBB', response.url, response.status, response.type);
-              // IMPORTANT:Clone the response. A response is a stream
-              // and because we want the browser to consume the response
-              // as well as the cache consuming the response, we need
-              // to clone it so we have two streams.
-
-              //'put' on 'Cache': Request method 'POST' is unsupported
-              var responseToCache = response.clone();
-              if (fetchRequest.method === 'POST'){
-                //console.log('[SW]','Can not put to cache: ', responseToCache.url);
-                return response;
-              }
-              caches.open(CACHE_NAME)
-                .then(function(cache) {
-                  //********************************************
-                  //console.log('[SW]','Put to cache: ', responseToCache.url, responseToCache.status);
-                  //cache.put(event.request, responseToCache);
-              });
-              return response;
-            })
-            .catch(function(){
-              //console.log('[SW]','OFFLINE: ', fetchRequest.url);
-              return caches.match('/offlineTactile.html');
-            });
-        })
-    );
-  }
-
-}
-
-
-/*
+// Borrowed from https://github.com/TalAter/UpUp
 function onFetch(event) {
   event.respondWith(
     // try to return untouched request from network first
@@ -225,12 +61,14 @@ function onFetch(event) {
     })
   );
 }
-*/
 
+function onMessage(event) {
+  // event.dataにフロントから渡された値が入ってくる
+
+  // htmlキャッシュを生成したり、削除する処理  
+}
 
 self.addEventListener('install', onInstall);
 self.addEventListener('activate', onActivate);
 self.addEventListener('fetch', onFetch);
-
-
-
+self.addEventListener('message', onMessage);
