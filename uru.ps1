@@ -4,7 +4,7 @@ $env:URU_INVOKER = 'powershell'
 
 uru_rt.exe $args
 
-if ($env:URU_HOME) {
+if (env:URU_HOME) {
   if(Test-Path "$env:URU_HOME\uru_lackee.ps1"){ & $env:URU_HOME\uru_lackee.ps1 }
 } else {
   if(Test-Path "$env:USERPROFILE\.uru\uru_lackee.ps1"){ & $env:USERPROFILE\.uru\uru_lackee.ps1 }

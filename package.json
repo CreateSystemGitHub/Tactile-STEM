@@ -2,8 +2,12 @@
   "name": "tactilestemreader",
   "private": true,
   "dependencies": {
+    "@rails/activestorage": "^7.0.1",
+    "@rails/ujs": "^7.0.1",
     "@rails/webpacker": "5.4.3",
     "babel": "^6.23.0",
+    "jquery": "^3.6.0",
+    "jsqr": "^1.4.0",
     "pwacompat": "^2.0.17",
     "webpack": "^4.46.0"
   },
@@ -13,5 +17,8 @@
     "workbox-build": "^6.4.2",
     "workbox-sw": "^6.4.2",
     "workbox-webpack-plugin": "^6.4.2"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config ./config/webpack.config.js"
   }
 }

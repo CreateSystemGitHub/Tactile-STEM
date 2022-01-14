@@ -1,11 +1,19 @@
-// webpack.config.js
-const workBoxWebpackPlugin = require("workbox-webpack-plugin");
-const outputPath = path.resolve(__dirname, "public");
-
-module.export  ={
-  plugins: [
-    new workBoxWebpackPlugin.GenerateSW({
-      swDest: outputPath + "/service-worker.js"
-    })
-  ]
-}
+module.exports = {
+  // モード値を production に設定すると最適化された状態で、
+  // development に設定するとソースマップ有効でJSファイルが出力される
+  mode: "production",
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { url: false }
+          }
+        ]
+      }
+    ]
+  }
+};

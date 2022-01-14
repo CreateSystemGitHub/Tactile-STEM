@@ -54,7 +54,6 @@ function onPlayEnded(folder, id, subpage){
   onPause();
 }
 
-
 function onA4(button){
   var aa = document.getElementById('image-area');
   var bb = document.getElementById('imageFixBtn');
@@ -668,6 +667,14 @@ function camera(folder){
             location.href = "../tactile/show?book=" + folder + "&pid=0&spid=0&fn=" + fnames[0];
             return;
           }
+          else{
+            alert("本が違います。");
+            if (video) video.pause();
+            if (timer) clearInterval(timer);
+            stopFlag = false;
+            location.reload();
+            return;
+          }
         }
       }
     }, 300);
@@ -710,3 +717,33 @@ function  readTextFileToClipboard(sfile){
   loadTextFile(sfile);
 }
 
+
+//
+window.audioPlay = audioPlay;
+window.onPlay = onPlay;
+window.onPause = onPause;
+window.onPlayEnded = onPlayEnded;
+
+window.onA4 = onA4;
+window.speakOne = speakOne;
+window.enableA4Setting = enableA4Setting
+window.onA4Setting_plus = onA4Setting_plus;
+window.onA4Setting_mins = onA4Setting_mins;
+window.onA4Setting_hplus = onA4Setting_hplus;
+window.onA4Setting_hmins = onA4Setting_hmins;
+window.onA4Setting_wplus = onA4Setting_wplus;
+window.onA4Setting_wmins = onA4Setting_wmins;
+window.onA4Setting_down = onA4Setting_down;
+window.onA4Setting_up = onA4Setting_up;
+window.onA4Setting_right = onA4Setting_right;
+window.onA4Setting_left = onA4Setting_left;
+
+window.resizeImage = resizeImage;
+window.audioPlay2 = audioPlay2;
+window.effectPlay_enter = effectPlay_enter;
+window.speechEnabled = speechEnabled;
+window.appendVoices = appendVoices;
+window.speak = speak;
+window.speakCancel = speakCancel;
+window.load_tts_param = load_tts_param;
+window.camera = camera;
