@@ -15,12 +15,12 @@
         </div>
         <!-- 全画面設定用ボタン -->
         <div class="floating_A4" id="A4SettingBtn" > 
-          <button type="button" id="A4SettingBtn_IP" class="show_floating_A4" onclick="onA4Setting_plus()"  title="拡大"><img src="/assets/arrow_1.png" width="20" height="20"/></button>
-          <button type="button" id="A4SettingBtn_IM" class="show_floating_A4" onclick="onA4Setting_mins()"  title="縮小"><img src="/assets/arrow_2.png" width="20" height="20"/></button>
-          <button type="button" id="A4SettingBtn_HM" class="show_floating_A4" onclick="onA4Setting_hmins()" title="高さ微調整マイナス"><img src="/assets/arrow_4.png" width="20" height="20"/></button>
-          <button type="button" id="A4SettingBtn_HP" class="show_floating_A4" onclick="onA4Setting_hplus()" title="高さ微調整プラス"><img src="/assets/arrow_3.png" width="20" height="20"/></button>
-          <button type="button" id="A4SettingBtn_WM" class="show_floating_A4" onclick="onA4Setting_wmins()" title="幅微調整マイナス"><img src="/assets/arrow_6.png" width="20" height="20"/></button>
-          <button type="button" id="A4SettingBtn_WP" class="show_floating_A4" onclick="onA4Setting_wplus()" title="幅微調整プラス"><img src="/assets/arrow_5.png" width="20" height="20"/></button>
+          <button type="button" id="A4SettingBtn_IP" class="show_floating_A4" onclick="onA4Setting_plus()"  title="拡大"><%= image_pack_tag 'arrow_1.png', size:'20x20' %></button>
+          <button type="button" id="A4SettingBtn_IM" class="show_floating_A4" onclick="onA4Setting_mins()"  title="縮小"><%= image_pack_tag 'arrow_2.png', size:'20x20' %></button>
+          <button type="button" id="A4SettingBtn_HM" class="show_floating_A4" onclick="onA4Setting_hmins()" title="高さ微調整マイナス"><%= image_pack_tag 'arrow_4.png', size:'20x20' %></button>
+          <button type="button" id="A4SettingBtn_HP" class="show_floating_A4" onclick="onA4Setting_hplus()" title="高さ微調整プラス"><%= image_pack_tag 'arrow_3.png', size:'20x20' %></button>
+          <button type="button" id="A4SettingBtn_WM" class="show_floating_A4" onclick="onA4Setting_wmins()" title="幅微調整マイナス"><%= image_pack_tag 'arrow_6.png', size:'20x20' %></button>
+          <button type="button" id="A4SettingBtn_WP" class="show_floating_A4" onclick="onA4Setting_wplus()" title="幅微調整プラス"><%= image_pack_tag 'arrow_5.png', size:'20x20' %></button>  
           <button type="button" id="A4SettingBtn_TU" class="show_floating_A4" onclick="onA4Setting_up()"    title="上に移動"  >⬆️</button>
           <button type="button" id="A4SettingBtn_TD" class="show_floating_A4" onclick="onA4Setting_down()"  title="下に移動"  >⬇️</button>
           <button type="button" id="A4SettingBtn_LM" class="show_floating_A4" onclick="onA4Setting_left()"  title="左へ移動"  >⬅️</button>
@@ -70,14 +70,14 @@
   <div class="flex-item4"  >
       <form class="show_footer_btn4">
           <button type="button" , id="settingsA4" class="show_footer_btn4" onclick="enableA4Setting()">
-            <img src="/assets/arrow_0.png" id="settingsBtnImg" width="20" height="20" alt="画像のサイズ設定"/>
+            <%= image_pack_tag 'arrow_0.png', id:"settingsBtnImg",size:'20x20',alt:"画像のサイズ設定" %>
           </button>
       </form>
   </div>
   <!-- TTS Settings button -->
   <div class="flex-item4">
       <%= button_to  tactile_tts_settings_path, {method: :get, onclick:"speakCancel()", id:"settingsBtn", class:"show_footer_btn4"} do %>
-        <img src="/assets/tts_settings.png" width="20" height="20" alt="TTSの設定"/>
+        <%= image_pack_tag 'tts_settings.png', size:'20x20',alt:"TTSの設定" %>
       <% end %>
   </div>
   <!-- controlslist="nodownload" for Chrome-->

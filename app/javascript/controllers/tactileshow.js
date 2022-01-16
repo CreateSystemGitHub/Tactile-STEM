@@ -54,6 +54,8 @@ function onPlayEnded(folder, id, subpage){
   onPause();
 }
 
+import arrow0png from '../images/arrow_0.png';
+import arrow0graypng from '../images/arrow_0_gray.png';
 function onA4(button){
   var aa = document.getElementById('image-area');
   var bb = document.getElementById('imageFixBtn');
@@ -73,13 +75,13 @@ function onA4(button){
     localStorage.setItem("A4_Display", 1);
     aa.className="show_image_Fix";   //set Fix form class
     bb.value="絵中央";
-    bb1.src="/assets/arrow_0.png";
+    bb1.src=arrow0png;
   }else{
     //name is CENTER ==> set to CENTER mode, title=FIX
     localStorage.setItem("A4_Display", 0);
     aa.className="show_image";         //set form fit class
     bb.value="絵固定";
-    bb1.src="/assets/arrow_0_gray.png";
+    bb1.src=arrow0graypng;
   }
   cc.disabled=true;               //set Image+ button hidden
   dd.disabled=true;               //set Image- button hidden
@@ -158,10 +160,12 @@ function onA4Setting_mins(){
   $('img[usemap]').rwdImageMaps();
 }
 //  Image height size plus
+var addvalueH= 11.69/2;   //1dpiの半分
+var addvalueW= 8.27/2;    //1dpiの半分
 function onA4Setting_hplus(){
   var hoffset = parseInt(localStorage.getItem("A4_HEIGHT_OFFSET"), 10);
   if (isNaN(hoffset)) hoffset = 0;
-  hoffset = hoffset + 1;
+  hoffset = hoffset + addvalueH;
   localStorage.setItem("A4_HEIGHT_OFFSET", hoffset);
   resizeImage();
   $('img[usemap]').rwdImageMaps();
@@ -170,7 +174,7 @@ function onA4Setting_hplus(){
 function onA4Setting_hmins(){
   var hoffset = parseInt(localStorage.getItem("A4_HEIGHT_OFFSET"), 10);
   if (isNaN(hoffset)) hoffset = 0;
-  hoffset = hoffset - 1;
+  hoffset = hoffset - addvalueH;
   localStorage.setItem("A4_HEIGHT_OFFSET", hoffset);
   resizeImage();
   $('img[usemap]').rwdImageMaps();
@@ -179,7 +183,7 @@ function onA4Setting_hmins(){
 function onA4Setting_wplus(){
   var woffset = parseInt(localStorage.getItem("A4_WIDTH_OFFSET"), 10);
   if (isNaN(woffset)) woffset = 0;
-  woffset = woffset + 1;
+  woffset = woffset + addvalueW;
   localStorage.setItem("A4_WIDTH_OFFSET", woffset);
   resizeImage();
   $('img[usemap]').rwdImageMaps();
@@ -188,7 +192,7 @@ function onA4Setting_wplus(){
 function onA4Setting_wmins(){
   var woffset = parseInt(localStorage.getItem("A4_WIDTH_OFFSET"), 10);
   if (isNaN(woffset)) woffset = 0;
-  woffset = woffset - 1;
+  woffset = woffset - addvalueW;
   localStorage.setItem("A4_WIDTH_OFFSET", woffset);
   resizeImage();
   $('img[usemap]').rwdImageMaps();
@@ -197,7 +201,7 @@ function onA4Setting_wmins(){
 function onA4Setting_down(){
   var top = parseInt(localStorage.getItem("A4_TOP"), 10);
   if (isNaN(top)) top = 0;
-  top = top + 2;
+  top = top + addvalueH;
   localStorage.setItem("A4_TOP", top);
   resizeImage();
   console.log('Top down=%d',top);
@@ -206,7 +210,7 @@ function onA4Setting_down(){
 function onA4Setting_up(){
   var top = parseInt(localStorage.getItem("A4_TOP"), 10);
   if (isNaN(top)) top = 0;
-  top = top - 2;
+  top = top - addvalueH;
   if (top < -50 ) top = -50;
   localStorage.setItem("A4_TOP", top);
   resizeImage();
@@ -216,7 +220,7 @@ function onA4Setting_up(){
 function onA4Setting_right(){
   var left = parseInt(localStorage.getItem("A4_LEFT"), 10);
   if (isNaN(left)) left = 0;
-  left += 2;
+  left += addvalueW;
   localStorage.setItem("A4_LEFT", left);
   resizeImage();
   console.log('Left=%d',left);
@@ -225,7 +229,7 @@ function onA4Setting_right(){
 function onA4Setting_left(){
   var left = parseInt(localStorage.getItem("A4_LEFT"), 10);
   if (isNaN(left)) left = 0;
-  left -= 2;
+  left -= addvalueW;
   localStorage.setItem("A4_LEFT", left);
   resizeImage();
   console.log('Left=%d',left);
@@ -347,7 +351,7 @@ function audioPlay2(src, start, stop){
   }
   else {
     mp3.addEventListener('canplaythrough', function (e) {
-      mp3.removeEventListener('canplaythrough', arguments.callee);
+      //mp3.removeEventListener('canplaythrough', arguments.callee);
       mp3.currentTime = strtTime/1000.0;
       mp3.playbackRate = v_mp3rate;
       mp3.play();
