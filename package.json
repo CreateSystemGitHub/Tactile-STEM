@@ -21,6 +21,6 @@
     "workbox-webpack-plugin": "^6.4.2"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config ./config/webpack.config.js"
+    "build": "workbox generateSW workbox-config.js"
   }
 }
