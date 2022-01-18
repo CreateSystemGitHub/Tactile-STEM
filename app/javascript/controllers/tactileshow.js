@@ -317,68 +317,71 @@ function resizeImage(){
 //  自動再生機能ポリシーで許可を取っておくこと
 //////////////////////////////////////////////////////
 var mp3 = null;
+var tm = null;
 function audioPlay2(src, start, stop){
-  let tm;
   //console.log(src+",start="+start+",stop="+stop);
-  var strtTime = Number(start);
-  var stopTime = Number(stop);
+  let strtTime = Number(start);
+  let stopTime = Number(stop);
   if (strtTime == NaN) strtTime=0;
   if (stopTime == NaN) stopTime=0;
-  //以下は再生が途中で止まってしまう時がある。
-  //  var mp3 = document.getElementById("audio2");
+  let duration = stopTime - strtTime;
   if (mp3!=null && !mp3.paused){
     clearTimeout(tm);
     mp3.pause();
     mp3.currentTime=0;
     //console.log(src+",AAAAA:mp3.paused");
   }
+  //以下は再生が途中で止まってしまう時がある。
+  if (mp3==null) mp3 = new Audio();
   //以下だと再生が最後まで行われた。
-  mp3 = new Audio();
+//  mp3 = new Audio();
   mp3.src = src;
   mp3.load();
+  mp3.currentTime = strtTime/1000.0;
+  mp3.playbackRate = v_mp3rate;
   if (mp3.readyState == 4) {
     //console.log(src+",BBBB:mp3.readyState == 4");
-    mp3.currentTime = start/1000;
     mp3.play();
-    if (stopTime != 0){
+    if (duration > 0){
       tm = setTimeout(function(){
         //console.log(src+",BBBB:mp3.timeout then pause");
         clearTimeout(tm);
         mp3.pause();
         mp3.currentTime = 0;
-      }, stopTime-strtTime);
+      }, duration);
     }
+    return;
   }
-  else {
-    mp3.addEventListener('canplaythrough', function (e) {
-      //mp3.removeEventListener('canplaythrough', arguments.callee);
-      mp3.currentTime = strtTime/1000.0;
-      mp3.playbackRate = v_mp3rate;
-      mp3.play();
-      //console.log(src+",CCCC:mp3.play()");
-      if (stopTime != 0){
-        tm = setTimeout(function(){
-          //console.log(src+",CCCC:mp3.timeout the pause");
-          clearTimeout(tm);
-          mp3.pause();
-          mp3.currentTime = 0;
-        }, stopTime-strtTime);
-      }
-    });
-    mp3.addEventListener('ended',function (e) {
-      //console.log(src+",CCCC:mp3.ended");
-      mp3 = null;
-    });
-    mp3.addEventListener('waiting',function (e) {
-      //console.log(src+",CCCC:mp3.waiting:"+mp3.readyState);
-    });
-    mp3.addEventListener('error',function (e) {
-      //console.log(src+",CCCC:mp3.error:"+e.currentTarget.error.code);
-      mp3 = null;
-    });
-  }
-}
+  mp3.currentTime = strtTime/1000.0;
+  mp3.playbackRate = v_mp3rate;
+  mp3.addEventListener('canplaythrough', callbackForplayStart(duration) );
 
+  mp3.addEventListener('ended',function (e) {
+    //console.log(src+",CCCC:mp3.ended");
+    mp3 = null;
+  });
+  mp3.addEventListener('waiting',function (e) {
+    //console.log(src+",CCCC:mp3.waiting:"+mp3.readyState);
+  });
+  mp3.addEventListener('error',function (e) {
+    console.log(src+",CCCC:mp3.error:"+e.currentTarget.error.code);
+    mp3 = null;
+  });
+}
+//callback for 'canplaythrough'
+function callbackForplayStart(duration){
+  mp3.play();
+  //console.log("CCCC:mp3.play()");
+  if (duration > 0){
+    tm = setTimeout(function(){
+      //console.log("CCCC:mp3.timeout then pause");
+      clearTimeout(tm);
+      mp3.pause();
+      mp3.currentTime = 0;
+    }, duration);
+  }
+  mp3.removeEventListener('canplaythrough', callbackForplayStart);
+}
 //////////////////////////////////////////////////////
 //    3'rd Mp3 player for hover enter
 //////////////////////////////////////////////////////
