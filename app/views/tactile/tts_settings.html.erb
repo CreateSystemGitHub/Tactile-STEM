@@ -48,26 +48,44 @@
 </select>
 </p>
 <br>
+<p>触図に触れた時<br>
+<select id="effect-Hover">
+  <option value=0 selected>サウンドを鳴らさない</option>
+  <option value=1>クリップボードデータがなければサウンドを鳴らす</option>
+  <option value=2>クリップボードデータがあればサウンドを鳴らす</option>
+  <option value=3>クリップボードデータがあってもなくてもSサウンドを鳴らす</option>
+</select>
+<br>
+<br>
+<br>
 <p>
   <input type="button" onclick="history.back()" value="キャンセル">　　　
   <input type="button" onclick="save_exit()" value="　　ＯＫ　　">　　　
 </p>
 
 <script type="text/javascript">
-  const sceneSelect = document.querySelector('#scene-select')
-  const voiceSelect = document.querySelector('#voice-select')
-  const rateSelect   = document.querySelector('#voice-rate')
-  const pitchSelect  = document.querySelector('#voice-pitch')
-  const volumSelect  = document.querySelector('#voice-volume')
-  const mp3rateSelect  = document.querySelector('#mp3-rate')
-  const speakBtn    = document.querySelector('#speak-btn')
-  const okBtn       = document.querySelector('#ok-btn')
+  const sceneSelect  = document.querySelector('#scene-select');
+  const voiceSelect  = document.querySelector('#voice-select');
+  const rateSelect   = document.querySelector('#voice-rate');
+  const pitchSelect  = document.querySelector('#voice-pitch');
+  const volumSelect  = document.querySelector('#voice-volume');
+  const mp3rateSelect  = document.querySelector('#mp3-rate');
+  const speakBtn     = document.querySelector('#speak-btn');
+  const hoverSelect  = document.querySelector('#effect-Hover');
+  const okBtn        = document.querySelector('#ok-btn');
 
   var svoices = new Array("","","","");
   var rates  = new Array("0.8","0.8","0.8","0.8");
   var pitchs = new Array("1.0","1.0","1.0","1.0");
   var volums = new Array("0.7","0.7","0.7","0.7");
+
   var mp3rate  = "1.0";
+  var effect_hover = 0;
+
+  //各シーン毎のTTSパラメーターをロード
+  load_tts_param();
+  mp3rateSelect.value = mp3rate;
+  hoverSelect.value = effect_hover;
 
   var v_scene = -1;
   function sceneSelectChanged(){
@@ -77,13 +95,13 @@
       s = 0;
     }
     v_scene = s;
-    console.log("sceneSelect1:"+v_scene+",voice="+svoices[v_scene]+",rate="+rates[v_scene]+",pitch="+pitchs[v_scene]+",vol="+volums[v_scene]);
+    //console.log("sceneSelect1:"+v_scene+",voice="+svoices[v_scene]+",rate="+rates[v_scene]+",pitch="+pitchs[v_scene]+",vol="+volums[v_scene]);
     appendVoices();
     voiceSelect.value = svoices[v_scene];
     rateSelect.value = rates[v_scene];
     pitchSelect.value = pitchs[v_scene];
     volumSelect.value = volums[v_scene];
-    console.log("sceneSelect2:"+v_scene+",voice="+voiceSelect.value+",rate="+rates[v_scene]+",pitch="+pitchs[v_scene]+",vol="+volums[v_scene]);
+    //console.log("sceneSelect2:"+v_scene+",voice="+voiceSelect.value+",rate="+rates[v_scene]+",pitch="+pitchs[v_scene]+",vol="+volums[v_scene]);
   }
   sceneSelect.addEventListener('change', sceneSelectChanged);
 
@@ -101,6 +119,9 @@
   })
   mp3rateSelect.addEventListener('change', function() {
     mp3rate = mp3rateSelect.value;
+  })
+  hoverSelect.addEventListener('change', function() {
+    effect_hover = hoverSelect.value;
   })
 
   // selectタグに音声を集計
@@ -152,42 +173,37 @@
     localStorage.setItem("voicePitch", pitchs);
     localStorage.setItem("voiceVolum", volums);
     localStorage.setItem("mp3Rate",    mp3rate);
-
+    localStorage.setItem("effectHover",effect_hover);
+/*
     console.log("save_exit():voice="+svoices.toString());
     console.log("save_exit():rates="+rates);
     console.log("save_exit():pitch="+pitchs+","+volums);
     console.log("save_exit():mp3rate="+mp3rate);
+    console.log("save_exit():effectHover="+effect_hover);
+*/
     history.back();
   }
   function load_tts_param(){
-    var aa = localStorage.getItem("voiceVoice");
+    let aa = localStorage.getItem("voiceVoice");
     if (aa != null ) svoices = aa.split(",");
-    var bb = localStorage.getItem("voiceRate");
+    let bb = localStorage.getItem("voiceRate");
     if (bb != null ) rates = bb.split(",");
-    var cc = localStorage.getItem("voicePitch");
+    let cc = localStorage.getItem("voicePitch");
     if (cc != null ) pitchs = cc.split(",");
-    var dd = localStorage.getItem("voiceVolum");
+    let dd = localStorage.getItem("voiceVolum");
     if (dd != null ) volums = dd.split(",");
-    var bb = localStorage.getItem("mp3Rate");
-    if (bb != null ) mp3rate = bb;
+    let ee = localStorage.getItem("mp3Rate");
+    if (ee != null ) mp3rate = ee;
+    let ff = localStorage.getItem("effectHover");
+    if (ff != null ) effect_hover = ff;
 /*
     console.log("load_tts_param():voice="+svoices[0]+","+svoices[1]+","+svoices[2]+","+svoices[3]);
     console.log("load_tts_param():rates="+rates[0]+","+rates[1]+","+rates[2]+","+rates[3]);
     console.log("load_tts_param():pitchs="+pitchs[0]+","+pitchs[1]+","+pitchs[2]+","+pitchs[3]);
     console.log("load_tts_param():volums="+volums[0]+","+volums[1]+","+volums[2]+","+volums[3]);
     console.log("load_tts_param():mp3rate="+mp3rate);
+    console.log("load_tts_param():effectHover="+effect_hover);
 */
-}
-  //Timer
-  function sleep(waitMsec) {
-    var startMsec = new Date();
-    while (new Date() - startMsec < waitMsec);
   }
-
-
-  //各シーン毎のTTSパラメーターをロード
-  load_tts_param();
-  mp3rateSelect.value = mp3rate;
-
 
 </script>

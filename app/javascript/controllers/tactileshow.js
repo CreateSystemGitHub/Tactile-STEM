@@ -19,8 +19,12 @@ var v_pitchs = new Array("1.0","1.0","1.0","1.0");
 var v_volums = new Array("0.7","0.7","0.7","0.7");
 var v_mp3rate = 1.0;
 
-//Hover_Enter effect sound
-var effect_hover = false;
+//ImageMap Hover_Enter effect sound 
+//0:Soundを鳴らさない
+//1=クリップボードデータがなければSoundを鳴らす
+//2=クリップボードデータがあればSoundを鳴らす
+//3=クリップボードデータがあってもなくてもSoundを鳴らす
+var effect_hover = 0;
 
 
 function audioVolumeSave(){
@@ -385,14 +389,20 @@ function callbackForplayStart(duration){
 //////////////////////////////////////////////////////
 //    3'rd Mp3 player for hover enter
 //////////////////////////////////////////////////////
-function effectPlay_enter(clipboard){
-  if (clipboard.length ==0){
-    document.getElementById("effect_sound_enter").play();
+function effectPlay_enter(clipboard, effect_hover){
+  if (effect_hover == 0) return;
+  else {
+    if (clipboard.length ==0){
+      if(effect_hover & 0x01){
+        document.getElementById("effect_sound_enter").play();
+      }
+    }
+    else{
+      if(effect_hover & 0x02){
+        document.getElementById("effect_sound_enter2").play();
+      }
+    }
   }
-  else{
-    document.getElementById("effect_sound_enter2").play();
-  }
-  console.log("effectPlay_enter")
 }
 
 
@@ -532,16 +542,19 @@ function speakResume(){
 }
 
 function load_tts_param(){
-  var aa = localStorage.getItem("voiceVoice");
+  let aa = localStorage.getItem("voiceVoice");
   if (aa != null ) v_names = aa.split(",");
-  var bb = localStorage.getItem("voiceRate");
+  let bb = localStorage.getItem("voiceRate");
   if (bb != null ) v_rates = bb.split(",");
-  var cc = localStorage.getItem("voicePitch");
+  let cc = localStorage.getItem("voicePitch");
   if (cc != null ) v_pitchs = cc.split(",");
-  var dd = localStorage.getItem("voiceVolum");
+  let dd = localStorage.getItem("voiceVolum");
   if (dd != null ) v_volums = dd.split(",");
-  var ee = localStorage.getItem("mp3Rate");
+  let ee = localStorage.getItem("mp3Rate");
   if (ee != null ) v_mp3rate = ee;
+  let ff = localStorage.getItem("effectHover");
+  if (ff != null ) effect_hover = ff;
+
 /*
   console.log("load_tts_param():voice="+v_names[0]+","+v_names[1]+","+v_names[2]+","+v_names[3]);
   console.log("load_tts_param():rates="+v_rates[0]+","+v_rates[1]+","+v_rates[2]+","+v_rates[3]);
@@ -562,7 +575,7 @@ function load_tts_param(){
 function speakOne(path, text, sound, clipboard, click){
   console.log("speakOne:path=%s,sound=%s,clipboard=%s,click=%d",path,sound,clipboard,click);
   if (click==0){
-    if (effect_hover) effectPlay_enter(clipboard);
+    effectPlay_enter(clipboard, effect_hover);
     return;
   }
   //Clipboard file serch
