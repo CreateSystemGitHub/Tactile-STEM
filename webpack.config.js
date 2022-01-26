@@ -1,18 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SRC = path.resolve(__dirname, 'node_modules');
 
-const {GenerateSW} = require('workbox-webpack-plugin')
+const {GenerateSW} = require('workbox-webpack-plugin');
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: 'development',
-  entry: 'app/javascript/packs/applicatin.js',
+  entry: './app/javascript/packs/applicatin.js',
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'js/application.js',
+    filename: 'application.js',
   },
   module: {
     rules: [
@@ -26,7 +26,9 @@ module.exports = {
       {
         test: /\.(scss|sass|css)$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [{loader:'style-loader'},
+              {loader:'css-loader',  options: {sourceMap:true}},
+              {loader:'sass-loader', options: {sourceMap:true}}]
       },
       {
         test: /\.(png|jpeg)$/,
@@ -62,9 +64,7 @@ module.exports = {
   //precache
   plugins: [
     new GenerateSW({
-      maximumFileSizeToCacheInBytes : 500000000,
-      swDest: "app/public/sw.js",
-      cleanupOutdatedCaches: true
+      swDest: "public/packs/sw.js",
     }),
   ]
   

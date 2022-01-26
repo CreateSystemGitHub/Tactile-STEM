@@ -19,5 +19,5 @@ const imagePath = (name) => images(name, true)
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 
-require("../controllers/application.js");
+require("../src/application.js");
 require("../stylesheets/tactile.scss");
